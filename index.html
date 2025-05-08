@@ -673,90 +673,55 @@
         //    - Provide clear user feedback on submission success or failure (e.g., "Message sent successfully!" or "There was an error sending your message. Please try again.").
         //    - Display specific error messages for invalid input fields.
         //    - Consider using a "loading" state for the submit button to indicate processing.
-        //
+        
         // 2. Modals:
         //    - If content is loaded dynamically, display a loading indicator while fetching data.
         //    - Handle errors gracefully if dynamic content fails to load.
-        //
+        
         //    - Ensure smooth opening and closing of modals.
         //    - Handle cases where content fails to load (though in this static example, content is present). In dynamic scenarios, display a loading indicator or an error message if content retrieval fails.
         //    - Ensure modals are accessible (e.g., can be closed with the Escape key, focus management).
         //    - If modal content is loaded dynamically, implement error handling for the data fetching process.
-        //
+        
         // Automation Suggestions:
         // Consider automating repetitive tasks in your workflow to save time and reduce errors.
         // Examples include:
         // - Building and compiling code (e.g., using Webpack or Parcel for JavaScript, Sass for CSS)
         // - Running tests (unit tests, integration tests)
         // - Deployment to a server (using scripts, CI/CD pipelines like GitHub Actions, GitLab CI, Jenkins)
-        // - Code formatting and linting (using tools like Prettier, ESLint)
+        // - Code formatting and linting (using tools like Prettier, ESLint) 
         // - Image optimization (using tools like ImageMagick or online services)
         // How to use: You could set up scripts to automate the build and deployment of this portfolio whenever you push changes to your repository.
-        //
-        //
+        
+        
         // Clean Code Suggestions:
         // - Write code that is easy to read, understand, and maintain.
         // - Use meaningful names for variables, functions, and classes.
         // - Keep functions and methods short and focused on a single task.
         // - Use comments to explain complex logic, but prefer self-explanatory code.
         // - Be consistent with code style (indentation, naming conventions, etc.).
-        // - Avoid unnecessary complexity and remove dead code.
+        // - Avoid unnecessary complexity and remove dead code. 
         // - Use indentation to improve code readability.
         // - How to improve the current code: Review existing JavaScript functions and variables for clarity and conciseness. Refactor repetitive code into reusable functions. Ensure consistent formatting.
-        //
+        
         // 3. General JavaScript Errors:
         //    - Use `try...catch` blocks for potentially problematic code.
-        //    - Use `console.error()` or logging to track JavaScript errors during development.
-        //
+        
         const darkModeToggle = document.getElementById('darkModeToggle');
-        // Loading Animation Suggestions:
-        // - Implement a loading spinner or animation for sections that might take time to load data (e.g., if projects were fetched dynamically).
-        // - Show a loading indicator when the page initially loads, especially if there are large assets.
-        // - For form submissions, display a loading state on the button.
-
-        // Design Inspiration Suggestion:
-        // Remember to regularly look at other websites and design portfolios for inspiration.
-        // Explore platforms like Dribbble, Behance, and Awwwards to see what's trending and get new ideas for layout, animations, and visual styles.
  const backToTopBtn = document.getElementById('backToTopBtn');
  backToTopBtn.classList.add('hidden'); // Initially hide the button
-        // Git Version Control Suggestion:
-        // Using a version control system like Git is crucial for tracking changes, collaborating
-        // with others, and managing different versions of your codebase. It allows you to easily
-        // revert to previous states, work on features in isolation, and merge changes effectively.
-        //
-        // How to use Git effectively:
-        // - Make frequent, small commits with meaningful commit messages that describe the changes.
-        // - Use branches for new features or bug fixes to isolate changes.
-        // - Regularly pull changes from the remote repository to stay up-to-date.
-        // - Use meaningful commit messages (e.g., "feat: add new feature", "fix: resolve bug").
-        // UI Kits Suggestion:
-        // Consider using pre-built UI component libraries (like Bootstrap, Materialize, Tailwind UI)
-        // or creating your own UI kit. This can significantly speed up development and ensure consistency
-        // Modern Frameworks Suggestion:
-        // API Integration Suggestion:
-        //
-        // APIs (Application Programming Interfaces) allow you to connect your website to external services and data sources.
-        // This can extend your website's capabilities and provide dynamic content.
-        //
-        // Examples of common APIs:
-        // - Weather APIs (e.g., OpenWeatherMap)
-        // - Social Media APIs (e.g., Twitter API, Instagram API)
-        // - Mapping APIs (e.g., Google Maps API, Mapbox API)
-        // - Data APIs (e.g., public datasets, financial data)
-        //
-        // You can use JavaScript's built-in `fetch` function or libraries like Axios to make API calls.
-        // Example (fetching public GitHub repositories for a user):
-        // For larger or more complex projects, consider using modern JavaScript frameworks like React,
-        //
-        // Microservices Suggestion:
-        //
-        // Microservices are an architectural style that structures an application as a collection of small, autonomous services.
-        // Each service is independent, focused on a specific business capability, and can be developed, deployed, and scaled independently.
-        // Microservices are useful for complex applications, but for simple applications, like this one, it may be overkill.
-        //
-        // Vue, or Angular. They provide structure, component-based architecture, and state management,
-        // which can greatly improve development efficiency and maintainability.
-        // How to use: You could rebuild this portfolio using a framework to demonstrate your skills in that area, or use it for future, more complex web applications.
+
+
+        // This function checks if an element is in the viewport
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
 
         // Serverless Computing Suggestion:
         //
@@ -791,9 +756,8 @@
         // - Apollo Client
         //
         // Examples of services that provide serverless computing:
+        
         // - AWS Lambda
-        // - Azure Functions
-        // - Google Cloud Functions
  window.addEventListener('scroll', () => {
  if (window.scrollY > 300) {
  backToTopBtn.classList.remove('hidden');
@@ -811,7 +775,7 @@
             }, 500); // Adjust timeout to match animation duration
         });
 
- const sections = document.querySelectorAll('.section-container');
+        const sections = document.querySelectorAll('.section-container');
  const observer = new IntersectionObserver(entries => {
  entries.forEach(entry => {
  if (entry.isIntersecting) {
@@ -823,17 +787,9 @@
  threshold: 0.1 // Percentage of the element that must be visible to trigger
  });
 
- sections.forEach(section => {
-            // Apply animation to sections when they are in the viewport
-            // Initial check for elements already in view on page load
-            if (isElementInViewport(section)) {
-                section.classList.add('animate');
-            } else {
-                observer.observe(section);
-            }
-        });
         sections.forEach(section => {
         observer.observe(section);
+
  });
 
 
