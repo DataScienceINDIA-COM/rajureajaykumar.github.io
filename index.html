@@ -683,6 +683,17 @@
         //    - Ensure modals are accessible (e.g., can be closed with the Escape key, focus management).
         //    - If modal content is loaded dynamically, implement error handling for the data fetching process.
         //
+        // Automation Suggestions:
+        // Consider automating repetitive tasks in your workflow to save time and reduce errors.
+        // Examples include:
+        // - Building and compiling code (e.g., using Webpack or Parcel for JavaScript, Sass for CSS)
+        // - Running tests (unit tests, integration tests)
+        // - Deployment to a server (using scripts, CI/CD pipelines like GitHub Actions, GitLab CI, Jenkins)
+        // - Code formatting and linting (using tools like Prettier, ESLint)
+        // - Image optimization (using tools like ImageMagick or online services)
+        // How to use: You could set up scripts to automate the build and deployment of this portfolio whenever you push changes to your repository.
+        //
+        //
         // Clean Code Suggestions:
         // - Write code that is easy to read, understand, and maintain.
         // - Use meaningful names for variables, functions, and classes.
@@ -692,43 +703,22 @@
         // - Avoid unnecessary complexity and remove dead code.
         // - Use indentation to improve code readability.
         // - How to improve the current code: Review existing JavaScript functions and variables for clarity and conciseness. Refactor repetitive code into reusable functions. Ensure consistent formatting.
+        //
         // 3. General JavaScript Errors:
         //    - Use `try...catch` blocks for potentially problematic code.
         //    - Use `console.error()` or logging to track JavaScript errors during development.
+        //
         const darkModeToggle = document.getElementById('darkModeToggle');
         // Loading Animation Suggestions:
         // - Implement a loading spinner or animation for sections that might take time to load data (e.g., if projects were fetched dynamically).
         // - Show a loading indicator when the page initially loads, especially if there are large assets.
         // - For form submissions, display a loading state on the button.
-        darkModeToggle.addEventListener('click', () => {
- // UI Kits Suggestion:
-        // Consider using pre-built UI component libraries (like Bootstrap, Materialize, Tailwind UI)
-        // or creating your own UI kit. This can significantly speed up development and ensure consistency
-        // Git Version Control Suggestion:
-        // Modern Frameworks Suggestion:
-        // For larger or more complex projects, consider using modern JavaScript frameworks like React,
-        // Vue, or Angular. They provide structure, component-based architecture, and state management,
-        // which can greatly improve development efficiency and maintainability.
-        // How to use: You could rebuild this portfolio using a framework to demonstrate your skills in that area, or use it for future, more complex web applications.
-        // Using a version control system like Git is crucial for tracking changes, collaborating
-        // with others, and managing different versions of your codebase. It allows you to easily
-        // revert to previous states, work on features in isolation, and merge changes effectively.
-        //
-        // in design elements across your website.
-        // Modern Frameworks Suggestion:
-        // For larger or more complex projects, consider using modern JavaScript frameworks like React,
-        // Vue, or Angular. They provide structure, component-based architecture, and state management,
-        // which can greatly improve development efficiency and maintainability.
-            document.body.classList.toggle('dark-mode');
-        // Automation Suggestions:
-        // Consider automating repetitive tasks in your workflow to save time and reduce errors.
-        // Examples include:
-        // - Image optimization (using tools like ImageMagick or online services)
-        // - Running tests (unit tests, integration tests)
-        // - Deployment to a server (using scripts or CI/CD pipelines)
-        // - Code formatting and linting
-            // You might want to save the user's preference in localStorage
-            if (document.body.classList.contains('dark-mode')) {
+
+        // Design Inspiration Suggestion:
+        // Remember to regularly look at other websites and design portfolios for inspiration.
+        // Explore platforms like Dribbble, Behance, and Awwwards to see what's trending and get new ideas for layout, animations, and visual styles.
+ const backToTopBtn = document.getElementById('backToTopBtn');
+ backToTopBtn.classList.add('hidden'); // Initially hide the button
         // Git Version Control Suggestion:
         // Using a version control system like Git is crucial for tracking changes, collaborating
         // with others, and managing different versions of your codebase. It allows you to easily
@@ -736,17 +726,17 @@
         //
         // How to use Git effectively:
         // - Make frequent, small commits with meaningful commit messages that describe the changes.
- localStorage.setItem('theme', 'dark');
-            } else {
- localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // Design Inspiration Suggestion:
-        // Remember to regularly look at other websites and design portfolios for inspiration.
-        // Explore platforms like Dribbble, Behance, and Awwwards to see what's trending and get new ideas for layout, animations, and visual styles.
- const backToTopBtn = document.getElementById('backToTopBtn');
- backToTopBtn.classList.add('hidden'); // Initially hide the button
+        // - Use branches for new features or bug fixes to isolate changes.
+        // - Regularly pull changes from the remote repository to stay up-to-date.
+        // - Use meaningful commit messages (e.g., "feat: add new feature", "fix: resolve bug").
+        // UI Kits Suggestion:
+        // Consider using pre-built UI component libraries (like Bootstrap, Materialize, Tailwind UI)
+        // or creating your own UI kit. This can significantly speed up development and ensure consistency
+        // Modern Frameworks Suggestion:
+        // For larger or more complex projects, consider using modern JavaScript frameworks like React,
+        // Vue, or Angular. They provide structure, component-based architecture, and state management,
+        // which can greatly improve development efficiency and maintainability.
+        // How to use: You could rebuild this portfolio using a framework to demonstrate your skills in that area, or use it for future, more complex web applications.
 
  window.addEventListener('scroll', () => {
  if (window.scrollY > 300) {
@@ -778,6 +768,15 @@
  });
 
  sections.forEach(section => {
+            // Apply animation to sections when they are in the viewport
+            // Initial check for elements already in view on page load
+            if (isElementInViewport(section)) {
+                section.classList.add('animate');
+            } else {
+                observer.observe(section);
+            }
+        });
+        sections.forEach(section => {
         observer.observe(section);
  });
 
