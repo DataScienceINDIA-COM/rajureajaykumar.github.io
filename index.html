@@ -15,17 +15,19 @@
     <script defer>
         mermaid.initialize({
             startOnLoad: true,
-            theme: 'default',
+            // This is a workaround for a bug in mermaid.js 11.0.0
+            // See https://github.com/mermaid-js/mermaid/issues/4782
             flowchart: { curve: 'basis' }
         });
     </script>
 </head>
-<body> 
- <!-- A/B Test Toggle Placeholder -->
- <!-- This is a placeholder comment for future A/B testing functionality.
-      Here you could add code to toggle different versions of the site or specific elements. -->
- <!-- A/B Test Toggle Placeholder --> 
- <div class="container">
+<body>
+    <!-- A/B Test Toggle Placeholder -->
+    <!-- This is a placeholder comment for future A/B testing functionality.
+         Here you could add code to toggle different versions of the site or specific elements. -->
+    <!-- A/B Test Toggle Placeholder -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" aria-label="Main Navigation">
+        <div class="container">
  <a class="navbar-brand" href="#">Rajure Ajay Kumar</a>
  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
  <span class="navbar-toggler-icon"></span>
@@ -40,13 +42,9 @@
  </ul>
  </div>
  </div>
- </nav>
+    </nav>
  <!-- Back-to-Top Button -->
- <!-- This button allows users to quickly scroll back to the top of the page.
-      It is initially hidden and appears after the user scrolls down a certain amount. -->
- <div class="back-to-top" id="backToTopBtn">
- <a href="#top">&#8679;</a>
- </div> 
+ <back-to-top-button></back-to-top-button>
 
  <!-- Main Sections -->
  <!-- This section contains the main content of the website, divided into different sections
@@ -54,34 +52,35 @@
  <!-- Each section uses the 'section-container' class for consistent padding. -->
 
 
-
-
-
-
-
-
     <!-- Hero Section -->
- <header class="hero text-center text-white d-flex align-items-center section-container">
- <!-- This is the main header section, designed to grab the user's attention.
-      It includes a profile picture, name, title, and a brief description. -->
- <!-- A/B Test: Hero Section Layout, Image, Title, Text, Buttons -->
- <div class="container-section" data-aos="fade-up">
- <!-- A/B Test: Profile Image -->
- <img src="profile.webp" alt="Rajure Ajay Kumar's Profile Picture" class="rounded-circle mb-3 bounce" style="width: 150px;" data-aos="zoom-in">
- <!-- A/B Test: Main Title -->
-            <h1>Rajure Ajay Kumar</h1>
- <!-- A/B Test: Subtitle -->
+    <!-- This is the main header section, designed to grab the user's attention.
+         It includes a profile picture, name, title, and a brief description. -->
+    <!-- Added a background image to make the section more visually appealing. -->
+    <!-- Added a dark overlay to improve text readability on the background image. Removed background image. Added a gradient. -->
+    <!-- A/B Test: Hero Section Layout, Image, Title, Text, Buttons -->
+    <header id="hero" class="hero-section text-center text-white d-flex align-items-center section-container">
+        <!-- This is the main header section, designed to grab the user's attention.
+             It includes a profile picture, name, title, and a brief description. -->
+        <!-- A/B Test: Hero Section Layout, Image, Title, Text, Buttons -->
+        <div class="overlay"></div> <!-- Dark overlay for text readability -->
+        <div class="container-section" data-aos="fade-up">
+            <!-- A/B Test: Profile Image -->
+            <img src="profile.webp" alt="Rajure Ajay Kumar's Profile Picture" class="rounded-circle mb-3 bounce profile-image" data-aos="zoom-in">
+            <!-- A/B Test: Main Title -->
+            <h1 class="main-title">Rajure Ajay Kumar</h1>
+            <!-- A/B Test: Subtitle -->
             <h3>Marketing Science & Data Professional</h3>
  <!-- A/B Test: Hero Text Content -->
             <p>Building Automated Data Ecosystems for Strategic Marketing Insights</p>
         </div> 
  <button id="darkModeToggle" class="btn btn-secondary position-absolute top-0 end-0 m-3">Toggle Dark Mode</button>
-    </header>
+ </header>
 
     <!-- About me Section -->
  <!-- A/B Test: About Me Section Content and Layout -->
  <!-- This section provides a brief introduction to Rajure Ajay Kumar,
-      highlighting his profession and passion. -->
+      highlighting his profession and passion. Added a visual separation between sections. -->
+ <hr class="section-divider"> <!-- Visual separation -->
  <section id="about-me" data-aos="fade-up">
         <div class="container-section" data-aos="fade-up">
             <h2 class="text-center" id="about-me">About Me</h2>
@@ -91,6 +90,7 @@
 
     <!-- Skills Section -->
  <section id="skills">
+ <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section lists the technical skills and technologies that Rajure Ajay Kumar is proficient in. -->
  <!-- It uses a list format to display the different skills. -->
         <div class="container-section" data-aos="fade-up">
@@ -115,9 +115,12 @@
 
     <!-- Experience Section -->
  <section id="experience">
+ <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section details Rajure Ajay Kumar's professional experience,
       using a timeline format to present each role and key responsibilities. -->
         <div class="container-section" data-aos="fade-up">
+ <!-- Section title -->
+ <!-- This is the main title for the experience section. -->
             <h2 class="text-center" id="experience">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-right">
@@ -125,6 +128,8 @@
                     <p>Hyderabad | Sep 2023 – Feb 2025</p>
                     <div class="accordion" id="omnicomAccordion">
                         <!-- Reporting Ecosystem -->
+ <!-- Accordion item for the Reporting Ecosystem role. -->
+ <!-- This section details the responsibilities and achievements related to the Reporting Ecosystem. -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
@@ -145,6 +150,8 @@
                             </div>
                         </div>
                         <!-- Data Integration -->
+ <!-- Accordion item for the Data Integration role. -->
+ <!-- This section details the responsibilities and achievements related to the Data Integration. -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
@@ -167,6 +174,8 @@
                             </div>
                         </div>
                         <!-- Data Standardization -->
+ <!-- Accordion item for the Data Standardization role. -->
+ <!-- This section details the responsibilities and achievements related to the Data Standardization. -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
@@ -184,6 +193,8 @@
                             </div>
                         </div>
                         <!-- Training & Innovation -->
+ <!-- Accordion item for the Training & Innovation role. -->
+ <!-- This section details the responsibilities and achievements related to the Training & Innovation. -->
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
@@ -204,6 +215,7 @@
                                                 <div class="card-body">
                                                     <h5>Analysts Trained</h5>
                                                     <p class="counter" data-target="10">0</p>
+                                                    <custom-counter data-target="10"></custom-counter>
                                                 </div>
                                             </div>
                                         </div>
@@ -212,6 +224,7 @@
                                                 <div class="card-body">
                                                     <h5>Regions Scaled</h5>
                                                     <p class="counter" data-target="5">0</p>
+                                                    <custom-counter data-target="5"></custom-counter>
                                                 </div>
                                             </div>
                                         </div>
@@ -220,6 +233,7 @@
                                                 <div class="card-body">
                                                     <h5>Innovation Projects</h5>
                                                     <p class="counter" data-target="3">0</p>
+                                                    <custom-counter data-target="3"></custom-counter>
                                                 </div>
                                             </div>
                                         </div>
@@ -230,6 +244,8 @@
                     </div>
                 </div>
                 <!-- Other Roles -->
+ <!-- Timeline item for the Freelance Data Analyst role. -->
+ <!-- This section details the responsibilities and achievements as a Freelance Data Analyst. -->
                 <div class="timeline-item" data-aos="fade-left">
                     <h4>Freelance Data Analyst, Various Clients</h4>
                     <p>Hyderabad | Oct 2022 – Jul 2023</p>
@@ -241,6 +257,8 @@
                         <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
                     </ul>
                 </div>
+ <!-- Timeline item for the Software Engineer role. -->
+ <!-- This section details the responsibilities and achievements as a Software Engineer. -->
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Software Engineer, Technvision Ventures Limited</h4>
                     <p>Hyderabad | Jun 2022 – Sep 2022</p>
@@ -251,6 +269,8 @@
                         <li>Collaborated cross-functionally to identify and translate business requirements into visually appealing Tableau Dashboards.</li>
                         <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
                     </ul>
+ <!-- Timeline item for the Data Scientist role. -->
+ <!-- This section details the responsibilities and achievements as a Data Scientist. -->
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <h4>Data Scientist, Team Lease Pvt. Ltd. (Client: Novartis)</h4>
@@ -263,6 +283,8 @@
                         <li>Collaborated with data engineering teams to optimize data storage and retrieval processes.</li>
                     </ul>
                 </div>
+ <!-- Timeline item for the Data Analyst role. -->
+ <!-- This section details the responsibilities and achievements as a Data Analyst. -->
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Data Analyst, Spoors Technologies</h4>
                     <p>Hyderabad | Sep 2018 – Mar 2021</p>
@@ -282,6 +304,7 @@
 
     <!-- Achievements Section -->
  <section id="achievements">
+ <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section highlights key achievements and accomplishments in Rajure Ajay Kumar's career. -->
  <!-- It uses a list format to display the different achievements. -->
         <div class="container-section" data-aos="fade-up">
@@ -299,6 +322,7 @@
 
     <!-- Projects Section -->
  <section id="projects">
+ <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section showcases Rajure Ajay Kumar's projects,
       with each project presented as a card containing a brief description and a "Details" button. -->
  <!-- A/B Test: Number and Content of Project Cards -->
@@ -365,9 +389,12 @@
 
     <!-- Education Section -->
  <section id="education">
+ <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section outlines Rajure Ajay Kumar's educational background,
       using a timeline format similar to the experience section. -->
         <div class="container-section" data-aos="fade-up">
+ <!-- Section title -->
+ <!-- This is the main title for the education section. -->
  <h2 class="text-center" id="education">Education</h2>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-right">
@@ -388,25 +415,40 @@
 
     <!-- Contact Section -->
  <section id="contact">
+ <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section provides contact information and a contact form for users to get in touch. -->
  <!-- It includes email, phone number, and a link to download the resume. -->
  <!-- A/B Test: Contact Form Layout and Inputs -->
         <div class="container-section" data-aos="fade-up">
+            <!-- Contact Section Title -->
             <h2 class="text-center" id="contact">Contact Me</h2>
             <form id="contact-form" action="https://formspree.io/f/myzwjbgd" method="POST">
+                <!-- Name Input Field -->
                 <div class="mb-3">
                     <input type="text" class="form-control" name="name" placeholder="Name" required>
                 </div>
+                <!-- Email Input Field -->
                 <div class="mb-3">
                     <input type="email" class="form-control" name="email" placeholder="Email" required>
                 </div>
+                <!-- Message Textarea -->
                 <div class="mb-3">
                     <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                 </div>
+                <!-- Feedback Input Field -->
  <div class="mb-3">
  <label for="feedback" class="form-label">Feedback</label>
  <input type="text" class="form-control" id="feedback" name="feedback" placeholder="Your feedback">
- </div>
+                </div>
+                <!-- AI Feedback Suggestion Web Component -->
+ <!-- AI Description Suggestion Web Component -->
+ <!-- This web component will display AI description suggestions based on user input. -->
+ <ai-description></ai-description>
+
+ <!-- AI Feedback Suggestion Web Component -->
+ <!-- This web component will display AI feedback suggestions based on user input. -->
+                <ai-feedback></ai-feedback>
+
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
             <p class="text-center mt-3">
@@ -417,382 +459,83 @@
         </div>
     </section>
 
-    <!-- Datorama Reporting Ecosystem Modal -->
- <!-- This modal provides detailed information about the Datorama Reporting Ecosystem project.
-      It includes the goal, technologies, tools, and an architecture diagram. -->
-    <div id="datoramaModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Datorama Reporting Ecosystem</h2>
-            <p><strong>Goal:</strong> To create a centralized, automated, and scalable reporting platform for over 800 marketing campaigns, enabling real-time insights and reducing manual reporting effort.</p>
-            <p><strong>Technologies</strong>: Datorama, Google Ads, Meta, The Trade Desk, Double Verify, IAS, Pinterest, Bing Ads, Walmart</p>
-            <p>Architected real-time reporting for 800+ campaigns, integrating multiple platforms and reducing report turnaround time by 70%. Standardized data with Harmonization Center and designed dynamic dashboards for stakeholders.</p>
-            <h6>Architecture Diagram</h6>
-            <pre class="mermaid">
- graph TD
- A[Google Ads] --> B(Datorama);
- C[Meta] --> B;
- D[The Trade Desk] --> B(Datorama Marketing Cloud);
- E[Double Verify] --> B;
- F[IAS] --> B;
- G[Pinterest] --> B;
- H[Bing Ads] --> B;
- I[Walmart] --> B;
- B --> J{Harmonization Center};
- J --> K[Data Model & Analysis];
- K --> L[Dynamic Dashboards];
- L --> M[Stakeholders (Media Planning, Client Services, Strategy)];
-
- subgraph Data Sources
-    A
-    C
-    D
-    E
-    F
-    G
-    H
-    I
- end
-
- subgraph Datorama Processing
-    B
-    J
-    K
- end
-
- subgraph Reporting & Insights
-    L
-    M
- end
-
- style A fill:#f9f,stroke:#333,stroke-width:2px
- style C fill:#ccf,stroke:#333,stroke-width:2px
- style D fill:#9cf,stroke:#333,stroke-width:2px
- style E fill:#9cf,stroke:#333,stroke-width:2px
- style F fill:#9cf,stroke:#333,stroke-width:2px
- style G fill:#9cf,stroke:#333,stroke-width:2px
- style H fill:#9cf,stroke:#333,stroke-width:2px
- style I fill:#9cf,stroke:#333,stroke-width:2px
- style B fill:#ff9,stroke:#333,stroke-width:2px
- style J fill:#ffa,stroke:#333,stroke-width:2px
- style K fill:#ffc,stroke:#333,stroke-width:2px
- style L fill:#9f9,stroke:#333,stroke-width:2px
- style L fill:#fff,stroke:#333,stroke-width:2px
- style M fill:#eef,stroke:#333,stroke-width:2px
-
- style Data_Sources fill:#f0f0f0
- style Datorama_Processing fill:#f9f9f9
- style Reporting_&_Insights fill:#e9e9e9
-            </pre>
+    <!-- SAAS Section -->
+ <!-- This section explains the Software as a Service (SAAS) nature of the services offered.
+         It highlights the benefits of the SAAS model using a card-based layout with icons.
+         Added visual separation between sections.
+         Ensured consistent card design with other sections.
+         Aligned text and increased title font size for better readability. -->
+    <section id="SAAS">
+ <hr class="section-divider"> <!-- Visual separation -->
+ <!-- This section explains the SAAS nature of the services offered. -->
+ <div class="container-section" data-aos="fade-up">
+ <!-- Section title -->
+            <h2 class="text-center" id="SAAS">SAAS Service</h2>
+            <div class="card">
+                <div class="card-body">
+                    <!-- Description of the SAAS service -->
+                    <p class="text-center section-description">Leveraging the power of Software as a Service (SAAS) for accessible and efficient solutions, focusing on your benefits:</p>
+                    <div class="row mt-4">
+                        <!-- SAAS Feature: Cost-Effective -->
+                        <div class="col-md-4 text-center">
+                            <i class="fas fa-dollar-sign feature-icon"></i>
+                            <h5 class="feature-title">Cost-Effective</h5>
+                            <p class="feature-description">No large upfront investments, pay as you scale.</p>
+                        </div>
+                        <!-- SAAS Feature: Scalable -->
+                        <div class="col-md-4 text-center">
+                            <i class="fas fa-chart-line feature-icon"></i>
+                            <h5 class="feature-title">Scalable</h5>
+                            <p class="feature-description">Easily adjust resources based on your business growth.</p>
+                        </div>
+                        <!-- SAAS Feature: Customizable -->
+                        <div class="col-md-4 text-center">
+                            <i class="fas fa-cogs feature-icon"></i>
+                            <h5 class="feature-title">Tailored Solutions</h5>
+                            <p class="feature-description">Services customized to meet your unique needs.</p>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <!-- SAAS Feature: Automated Updates -->
+                        <div class="col-md-6 text-center">
+                            <i class="fas fa-sync-alt feature-icon"></i>
+                            <h5 class="feature-title">Hassle-Free Maintenance</h5>
+                            <p class="feature-description">Automatic updates and maintenance handled for you.</p>
+                        </div>
+                        <!-- SAAS Feature: Easy Access -->
+                        <div class="col-md-6 text-center">
+                            <i class="fas fa-globe feature-icon"></i>
+                            <h5 class="feature-title">Access Anywhere</h5>
+                            <p class="feature-description">Securely access services from any location with internet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Dataiku ML Model Deployment Modal -->
- <!-- This modal provides detailed information about the Dataiku ML Model Deployment project.
-      It includes the goal, technologies, tools, and an architecture diagram. -->
-    <div id="dataikuMlModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Dataiku ML Model Deployment</h2>
-            <p><strong>Goal:</strong> To develop and deploy machine learning models within a production environment using Dataiku DSS to generate actionable business insights.</p>
-            <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
-            <p><strong>Tools:</strong> Dataiku DSS, Python Libraries (Scikit-learn, Pandas, NumPy)</p>
-            <p>Implemented machine learning models in production for business insights, conducting POCs and ensuring data quality for reliable outcomes.</p>
-            <h6>Architecture Diagram</h6>
-            <pre class="mermaid">
- graph TD
-    A[Raw Data] --> B(Data Cleaning & Preprocessing);
-    B --> C(Feature Engineering);
-    C --> D{Model Training & Evaluation};
-    D --> E(Model Deployment - Dataiku DSS);
-    E --> F[Predictions & Insights];
-    F --> G[Business Stakeholders];
+    <!-- Font Awesome for icons -->
+    <!-- This script tag includes the Font Awesome library for using icons. -->
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#eef,stroke:#333,stroke-width:2px
-            </pre>
-        </div>
-    </div>
-
-    <!-- Tableau Dashboard Optimization Modal -->
- <!-- This modal provides detailed information about the Tableau Dashboard Optimization project.
-      It includes the goal, technologies, tools, and an architecture diagram. -->
-    <div id="tableauModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Tableau Dashboard Optimization</h2>
-            <p><strong>Goal:</strong> To streamline the data refreshing process for Tableau Dashboards, significantly reducing the time required for data analysis and improving the efficiency of reporting.</p>
-            <p><strong>Technologies</strong>: Tableau</p>
-            <p><strong>Tools:</strong> Tableau Desktop, Tableau Server/Cloud, SQL, Data Connectors</p>
-            <p>Streamlined dashboard refreshing process, reducing data analysis time by 50% and creating visually appealing dashboards for cross-functional teams.</p>
-            <h6>Architecture Diagram</h6>
-            <p>This diagram illustrates the optimized data flow for Tableau Dashboards, emphasizing efficiency in data sourcing and analysis.</p>
-            <pre class="mermaid">
- graph TD
-    A[Various Data Sources] --> B(Optimized Data Extraction);
-    B --> C(Data Transformation & Preparation);
-    C --> D[Tableau Server/Cloud];
-    D --> E(Scheduled Refreshes);
-    E --> F[Interactive Dashboards];
-    F --> G[Data Analysis & Decision Making];
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style G fill:#eef,stroke:#333,stroke-width:2px
-            </pre>
-        </div>
-    </div>
-
-    <!-- Alteryx to Dataiku Migration Modal -->
- <!-- This modal provides detailed information about the Alteryx to Dataiku Migration project.
-      It includes the goal, technologies, tools, and an architecture diagram. -->
-    <div id="alteryxDataikuModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Alteryx to Dataiku Migration</h2>
-            <p><strong>Goal:</strong> To migrate existing data workflows from Alteryx to Dataiku DSS, aiming to improve workflow efficiency, scalability, and collaboration within the data team.</p>
-            <p><strong>Technologies</strong>: Alteryx, Dataiku DSS</p>
-            <p><strong>Tools:</strong> Alteryx Designer, Dataiku DSS, Data Connectors</p>
-            <p>Migrated Alteryx workflows to Dataiku DSS, improving workflow efficiency by 70% and optimizing data processing pipelines.</p>
-            <h6>Architecture Diagram</h6>
-            <p>This diagram depicts the process of migrating workflows from Alteryx to Dataiku DSS, highlighting the transition and the resulting efficiency gains.</p>
-            <pre class="mermaid">
- graph TD
-    A[Existing Alteryx Workflows] --> B(Analysis & Planning);
-    B --> C(Replication & Development in Dataiku);
-    C --> D(Testing & Validation);
-    D --> E[Production Deployment - Dataiku DSS];
-    E --> F[Improved Workflow Efficiency (70%+)];
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style F fill:#9f9,stroke:#333,stroke-width:2px
-            </pre>
-        </div>
-    </div>
-
-    <!-- Predictive Models for Retention Modal -->
- <!-- This modal provides detailed information about the Predictive Models for Retention project.
-      It includes the goal, technologies, tools, and an architecture diagram. -->
-    <div id="predictiveModelsModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Predictive Models for Retention</h2>
-            <p><strong>Goal:</strong> To develop and deploy predictive models that accurately forecast customer retention, leading to targeted interventions and a measurable increase in retention rates (20% achieved).</p>
-            <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
-            <p><strong>Tools:</strong> Dataiku DSS, Python Libraries (e.g., Scikit-learn, TensorFlow, PyTorch), Database Connectors, Deployment APIs</p>
-            <p>Developed and deployed predictive models, resulting in a 20% increase in customer retention rates for Novartis.</p>
-            <h6>Architecture Diagram</h6>
-            <p>This diagram outlines the architecture for developing and deploying predictive models focused on customer retention within Dataiku DSS.</p>
-            <pre class="mermaid">
- graph TD
-    A[Customer Data Sources] --> B(Data Ingestion & Preparation);
-    B --> C(Feature Engineering & Selection);
-    C --> D(Model Development & Training);
-    D --> E(Model Evaluation & Validation);
-    E --> F[Model Deployment - Dataiku DSS];
-    F --> G[Predictive Insights & Actions];
-    G --> H[Increased Customer Retention (20%)];
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style H fill:#9f9,stroke:#333,stroke-width:2px
-            </pre>
-        </div>
-    </div>
-
-    <!-- Data Pipeline for a Marketing Campaign Modal -->
- <!-- This modal provides detailed information about the Data Pipeline for a Marketing Campaign project.
-      It includes the goal, technologies, tools, and an architecture diagram. -->
-    <div id="dataPipelineModal" class="modal">
-            <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Optimized Data Pipeline for Marketing Campaigns</h2>
-            <p><strong>Goal:</strong> To establish a robust and efficient data pipeline that automates the flow of data from various marketing sources, enabling timely analysis and reporting for campaign optimization.</p>
-            <p><strong>Technologies:</strong> ETL Tools (e.g., Dataiku, Alteryx, or custom scripts), Data Warehouse (e.g., Snowflake, Redshift, BigQuery), BI Tools (e.g., Tableau, Looker, Power BI), Data Connectors.</p>
-            <p>This diagram illustrates a comprehensive data pipeline designed to support the data needs of a marketing campaign, from raw data ingestion to actionable insights.</p>
-            <pre class="mermaid">
-                graph TD
-                    A[Marketing Platforms (Ads, Social, CRM, etc.)] --> B(Data Extraction via APIs/Connectors);
-                    B --> C(Data Ingestion into Staging Area);
-                    C --> D(Data Cleaning & Validation);
-                    D --> E(Data Transformation & Modeling);
-                    E --> F[Data Warehouse/Lake];
-                    F --> G(Data Aggregation & Mart Creation);
-                    G --> H[Business Intelligence Tools];
-                    H --> I[Interactive Marketing Dashboards];
-                    I --> A;
-                    I --> J[Analysis & Reporting];
-                    J --> K[Campaign Optimization Decisions];
-
- subgraph Data Source & Extraction
-    A
-    B
- end
-
- subgraph ETL Process
-    C
-    D
-    E
- end
-
- subgraph Data Storage & BI
-    F
-    G
-    H
-    I
-    J
-    K
- end
-
-                    style A fill:#f9f,stroke:#333,stroke-width:2px
-                    style B fill:#ccf,stroke:#333,stroke-width:2px
-                    style C fill:#9cf,stroke:#333,stroke-width:2px
-                    style D fill:#9cf,stroke:#333,stroke-width:2px
-                    style E fill:#9cf,stroke:#333,stroke-width:2px
-                    style F fill:#ff9,stroke:#333,stroke-width:2px
-                    style G fill:#9f9,stroke:#333,stroke-width:2px
-                    style H fill:#aff,stroke:#333,stroke-width:2px
-                    style H fill:#9f9,stroke:#333,stroke-width:2px
-                    style I fill:#fff,stroke:#333,stroke-width:2px
-                    style J fill:#ddd,stroke:#333,stroke-width:2px
-                    style K fill:#eef,stroke:#333,stroke-width:2px
-
-                    style Data_Source_&_Extraction fill:#f0f0f0
-                    style ETL_Process fill:#f9f9f9
-                    style Data_Storage_&_BI fill:#e9e9e9
-            </pre>
-        </div>
-    </div>
-
+    <!-- Bootstrap JS Bundle -->
+    <!-- This script tag includes the Bootstrap JavaScript bundle for interactive components. -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-    <script defer>
-        // Error Handling Suggestions:
-        //
-        // 1. Contact Form:
-        //    - Implement client-side form validation (e.g., check required fields, email format) before submission.
-        //    - Add a server-side validation check on the form submission endpoint (Formspree handles basic validation, but for more complex logic or custom responses, a server-side script is needed).
-        //    - Provide clear user feedback on submission success or failure (e.g., "Message sent successfully!" or "There was an error sending your message. Please try again.").
-        //    - Display specific error messages for invalid input fields.
-        //    - Consider using a "loading" state for the submit button to indicate processing.
-        
-        // 2. Modals:
-        //    - If content is loaded dynamically, display a loading indicator while fetching data.
-        //    - Handle errors gracefully if dynamic content fails to load.
-        
-        //    - Ensure smooth opening and closing of modals.
-        //    - Handle cases where content fails to load (though in this static example, content is present). In dynamic scenarios, display a loading indicator or an error message if content retrieval fails.
-        //    - Ensure modals are accessible (e.g., can be closed with the Escape key, focus management).
-        //    - If modal content is loaded dynamically, implement error handling for the data fetching process.
-        
-        // Automation Suggestions:
-        // Consider automating repetitive tasks in your workflow to save time and reduce errors.
-        // Examples include:
-        // - Building and compiling code (e.g., using Webpack or Parcel for JavaScript, Sass for CSS)
-        // - Running tests (unit tests, integration tests)
-        // - Deployment to a server (using scripts, CI/CD pipelines like GitHub Actions, GitLab CI, Jenkins)
-        // - Code formatting and linting (using tools like Prettier, ESLint) 
-        // - Image optimization (using tools like ImageMagick or online services)
-        // How to use: You could set up scripts to automate the build and deployment of this portfolio whenever you push changes to your repository.
-        
-        
-        // Clean Code Suggestions:
-        // - Write code that is easy to read, understand, and maintain.
-        // - Use meaningful names for variables, functions, and classes.
-        // - Keep functions and methods short and focused on a single task.
-        // - Use comments to explain complex logic, but prefer self-explanatory code.
-        // - Be consistent with code style (indentation, naming conventions, etc.).
-        // - Avoid unnecessary complexity and remove dead code. 
-        // - Use indentation to improve code readability.
-        // - How to improve the current code: Review existing JavaScript functions and variables for clarity and conciseness. Refactor repetitive code into reusable functions. Ensure consistent formatting.
-        
-        // 3. General JavaScript Errors:
-        //    - Use `try...catch` blocks for potentially problematic code.
-        
- const darkModeToggle = document.getElementById('darkModeToggle');
- const backToTopBtn = document.getElementById('backToTopBtn');
- backToTopBtn.classList.add('hidden'); // Initially hide the button
-
-
-        // This function checks if an element is in the viewport
-
-        // Serverless Computing Suggestion:
-        //
-        // Serverless computing is a cloud computing execution model where the cloud provider dynamically manages
-        // the allocation of computing resources. You are only billed for the resources you consume, not for
- // idle time. This can significantly optimize resource utilization and reduce costs.
-        //
-        // How to apply this to a website:
-        // - Serving static files (e.g., using services like AWS S3 with CloudFront, Netlify, Vercel).
-        //   This eliminates the need for a traditional web server for static content.
-        // - Handling form submissions (e.g., using serverless functions like AWS Lambda, Azure Functions,
-        //   or Google Cloud Functions). Instead of a full backend server, a function handles the form data.
-        // - Running background tasks (e.g., sending emails, processing data after a form submission).
-        //   Serverless functions can be triggered by events.
-        //
-        // GraphQL Suggestion:
-        //
-        // GraphQL is a query language for APIs that allows clients to request exactly the data they need,
-        // reducing over-fetching compared to traditional REST APIs.
-        // With GraphQL, clients can specify the exact data they want to retrieve in a single request,
-        // whereas with REST, you often get a fixed set of data from an endpoint, even if you only need
-        // a small portion of it. This can reduce the number of requests needed and improve performance,
-        // especially on mobile devices or networks with limited bandwidth.
-        //
-        // When to use GraphQL:
-        // - When you have multiple data sources that need to be aggregated.
-        // - When you need flexible data fetching for different clients (web, mobile).
-        // - When you want to reduce the number of API calls.
-        // - For simple applications, like this portfolio, GraphQL might be overkill.
-        //
-        // Examples of GraphQL clients:
-        // - Apollo Client
-        //
-        // Examples of services that provide serverless computing:
-        
-        // - AWS Lambda
- window.addEventListener('scroll', () => {
- if (window.scrollY > 300) {
- backToTopBtn.classList.remove('hidden');
- backToTopBtn.classList.add('fade-in');
-            } else {
- backToTopBtn.classList.add('hidden');
- backToTopBtn.classList.remove('fade-in');
-            }
-        });
-
- backToTopBtn.addEventListener('click', () => {
- backToTopBtn.classList.add('rotate');
- setTimeout(() => {
- backToTopBtn.classList.remove('rotate');
-            }, 500); // Adjust timeout to match animation duration
-        });
-
-        const sections = document.querySelectorAll('.section-container');
- const observer = new IntersectionObserver(entries => {
- entries.forEach(entry => {
- if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target); // Stop observing once animated
- }
-            });
-        }, {
- threshold: 0.1 // Percentage of the element that must be visible to trigger
- });
-
-        sections.forEach(section => {
- // Check if the section is already in the viewport
- const rect = section.getBoundingClientRect();
- if (rect.top < window.innerHeight && rect.bottom >= 0) {
- section.classList.add('animate'); // Add the animate class immediately
-            } else {
-                 observer.observe(section);
-            }
- });
-
-
-    </script>
+    <!-- AOS Animation Library -->
+    <!-- This script tag includes the AOS library for scroll animations. -->
+    <!-- Script to load the modal web component -->
+    <!-- This script tag loads the custom modal web component. -->
+    <script src="modal.js" defer></script>
+    <!-- It is now lazy-loaded by script.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <!-- This script tag includes the custom JavaScript file for website functionalities. -->
+    <!-- Script to load the AI Feedback web component -->
+ <script src="ai-feedback.js" defer></script>
     <script src="script.js"></script>
-
  <!-- Script Section -->
+    <!-- Script to load the counter web component -->
+ <script src="counter.js" defer></script>
  <!-- This section contains JavaScript code for various functionalities of the website. -->
  <!-- It is divided into different parts for clarity and organization. -->
 

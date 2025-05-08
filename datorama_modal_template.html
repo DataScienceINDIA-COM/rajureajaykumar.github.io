@@ -1,0 +1,62 @@
+<span class="close">&times;</span>
+<h2>Datorama Reporting Ecosystem</h2>
+<p><strong>Goal:</strong> To create a centralized, automated, and scalable reporting platform for over 800 marketing campaigns, enabling real-time insights and reducing manual reporting effort.</p>
+<p><strong>Technologies</strong>: Datorama, Google Ads, Meta, The Trade Desk, Double Verify, IAS, Pinterest, Bing Ads, Walmart</p>
+<p>Architected real-time reporting for 800+ campaigns, integrating multiple platforms and reducing report turnaround time by 70%. Standardized data with Harmonization Center and designed dynamic dashboards for stakeholders.</p>
+<h6>Architecture Diagram</h6>
+<pre class="mermaid">
+ graph TD
+ A[Google Ads] --> B(Datorama);
+ C[Meta] --> B;
+ D[The Trade Desk] --> B(Datorama Marketing Cloud);
+ E[Double Verify] --> B;
+ F[IAS] --> B;
+ G[Pinterest] --> B;
+ H[Bing Ads] --> B;
+ I[Walmart] --> B;
+ B --> J{Harmonization Center};
+ J --> K[Data Model & Analysis];
+ K --> L[Dynamic Dashboards];
+ L --> M[Stakeholders (Media Planning, Client Services, Strategy)];
+
+ subgraph Data Sources
+    A
+    C
+    D
+    E
+    F
+    G
+    H
+    I
+ end
+
+ subgraph Datorama Processing
+    B
+    J
+    K
+ end
+
+ subgraph Reporting & Insights
+    L
+    M
+ end
+
+ style A fill:#f9f,stroke:#333,stroke-width:2px
+ style C fill:#ccf,stroke:#333,stroke-width:2px
+ style D fill:#9cf,stroke:#333,stroke-width:2px
+ style E fill:#9cf,stroke:#333,stroke-width:2px
+ style F fill:#9cf,stroke:#333,stroke-width:2px
+ style G fill:#9cf,stroke:#333,stroke-width:2px
+ style H fill:#9cf,stroke:#333,stroke-width:2px
+ style I fill:#9cf,stroke:#333,stroke-width:2px
+ style B fill:#ff9,stroke:#333,stroke-width:2px
+ style J fill:#ffa,stroke:#333,stroke-width:2px
+ style K fill:#ffc,stroke:#333,stroke-width:2px
+ style L fill:#9f9,stroke:#333,stroke-width:2px
+ style L fill:#fff,stroke:#333,stroke-width:2px
+ style M fill:#eef,stroke:#333,stroke-width:2px
+
+ style Data_Sources fill:#f0f0f0
+ style Datorama_Processing fill:#f9f9f9
+ style Reporting_&_Insights fill:#e9e9e9
+</pre>

@@ -53,3 +53,37 @@ If you want to run the project locally, follow these steps:
 
 1.  Clone the repository:
 
+
+## Cloud Deployment
+
+To deploy the application to the cloud, follow these steps:
+
+1. Set up a serverless environment on Google Cloud Run, AWS Lambda, or Heroku.
+2. Configure the environment with the necessary dependencies and settings.
+3. Deploy the app.py file to the cloud.
+
+To set up Firebase for the database:
+
+1. Create a Firebase project.
+2. Enable Firebase Authentication.
+3. Set up a Firestore or Realtime Database.
+4. Add Firebase credentials to your cloud environment.
+
+## API Usage
+
+API endpoints will be detailed here once they are available.
+
+## CI/CD
+
+This project utilizes GitHub Actions to automate the build, test, and deployment process.
+
+**Workflow:**
+
+1.  **Trigger:** The CI/CD pipeline is triggered on every push to the main branch.
+2.  **Build:** The application dependencies are installed.
+3.  **Test:** Unit tests (e.g., using `test_code_sense.py`) are executed to ensure code quality.
+4.  **Deploy:** If tests pass, the application (`app.py`) is automatically deployed to the configured cloud environment (Google Cloud Run, AWS Lambda, or Heroku).
+
+**Setup:**
+
+To set up the CI/CD pipeline, you will need to configure GitHub Actions in your repository and provide the necessary credentials for your cloud deployment environment.
