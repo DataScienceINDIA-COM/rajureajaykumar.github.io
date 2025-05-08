@@ -25,12 +25,53 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     const email = document.querySelector('input[name="email"]').value;
     const message = document.querySelector('textarea[name="message"]').value;
 
-    if (name && email && message) {
-        alert('Form submitted successfully!');
-        this.submit(); // Submit to Formspree
-    } else {
-        alert('Please fill out all fields.');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const feedbackElement = document.createElement('div');
+    feedbackElement.classList.add('mt-3', 'text-center');
+
+    // Remove any existing feedback messages
+    const existingFeedback = this.querySelector('.mt-3.text-center');
+    if (existingFeedback) {
+        existingFeedback.remove();
     }
+
+    if (!name || !email || !message) {
+        feedbackElement.classList.add('text-danger');
+        feedbackElement.innerText = 'Please fill out all fields.';
+    } else if (!emailRegex.test(email)) {
+        feedbackElement.classList.add('text-danger');
+        feedbackElement.innerText = 'Please enter a valid email address.';
+    } else {
+        // Use fetch to submit the form data
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                feedbackElement.classList.add('text-success');
+                feedbackElement.innerText = 'Thank you! Your message has been sent.';
+                this.reset(); // Clear form fields
+            } else {
+                response.json().then(data => {
+                    if (Object.hasOwnProperty.call(data, 'errors')) {
+                        feedbackElement.classList.add('text-danger');
+                        feedbackElement.innerText = data["errors"].map(error => error["message"]).join(", ");
+                    } else {
+                        feedbackElement.classList.add('text-danger');
+                        feedbackElement.innerText = 'Oops! Something went wrong. Please try again later.';
+                    }
+                })
+            }
+        }).catch(error => {
+            feedbackElement.classList.add('text-danger');
+            feedbackElement.innerText = 'Oops! Something went wrong. Please try again later.';
+        });
+    }
+
+    this.appendChild(feedbackElement);
 });
 
 // Animated Counters
