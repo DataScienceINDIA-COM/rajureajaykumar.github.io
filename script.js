@@ -32,3 +32,20 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         alert('Please fill out all fields.');
     }
 });
+
+// Animated Counters
+document.querySelectorAll('.counter').forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    let count = 0;
+    const increment = target / 100;
+    const updateCounter = () => {
+        if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCounter, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+    updateCounter();
+});
