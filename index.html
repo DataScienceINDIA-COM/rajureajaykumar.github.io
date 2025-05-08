@@ -118,19 +118,28 @@
                                         <li>Created advanced calculated fields and enabling granular performance breakdowns by channel, geography, product line, and audience segments.</li>
                                     </ul>
                                     <div class="mermaid">
-                                        graph TD
-                                            A[RawData] -->|Map| B[Harmonization]
-                                            B -->|Unify| C[KPIs]
-                                            C -->|Analyze| D[Fields]
-                                            D --> E[Breakdowns]
-                                            E --> F[Channel]
-                                            E --> G[Geography]
-                                            E --> H[Product]
-                                            E --> I[Audience]
-                                            classDef source fill:#3b82f6,color:#fff
-                                            classDef process fill:#10b981,color:#fff
-                                            class A,C,D,E,F,G,H,I source
-                                            class B process
+                                        ---
+                                        title: "TCP Packet"
+                                        ---
+packet-beta
+  0-15: "Source Port"
+  16-31: "Destination Port"
+  32-63: "Sequence Number"
+  64-95: "Acknowledgment Number"
+  96-99: "Data Offset"
+  100-105: "Reserved"
+  106: "URG"
+  107: "ACK"
+  108: "PSH"
+  109: "RST"
+  110: "SYN"
+  111: "FIN"
+  112-127: "Window"
+  128-143: "Checksum"
+  144-159: "Urgent Pointer"
+  160-191: "(Options and Padding)"
+  192-255: "Data (variable length)"
+
                                     </div>
                                 </div>
                             </div>
