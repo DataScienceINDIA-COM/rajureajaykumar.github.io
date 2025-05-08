@@ -1,6 +1,11 @@
+/*-----------------------------------*/
+/* General Styles                   */
+/*-----------------------------------*/
+
 body {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
+ overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5 {
@@ -12,6 +17,11 @@ h1, h2, h3, h4, h5 {
     height: 100vh;
     padding: 0;
 }
+
+/*-----------------------------------*/
+/* Header styles                     */
+/*-----------------------------------*/
+
 
 .hero h1 {
     font-size: 3.5rem;
@@ -25,6 +35,10 @@ h1, h2, h3, h4, h5 {
 .hero p {
     font-size: 1.25rem;
 }
+/*-----------------------------------*/
+/* About me                         */
+/*-----------------------------------*/
+
 
 .timeline {
     position: relative;
@@ -47,6 +61,11 @@ h1, h2, h3, h4, h5 {
     font-weight: 600;
 }
 
+/*-----------------------------------*/
+/* Skill Section                    */
+/*-----------------------------------*/
+
+
 .skills-filter .btn {
     margin: 0 5px;
 }
@@ -56,6 +75,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .progress {
+/*-----------------------------------*/
+/* Progress Bar                     */
+/*-----------------------------------*/
+
+ height: 20px;
     height: 20px;
     background: #e9ecef;
 }
@@ -63,6 +87,11 @@ h1, h2, h3, h4, h5 {
 .progress-bar {
     background: #10b981;
 }
+
+/*-----------------------------------*/
+/* Projects                         */
+/*-----------------------------------*/
+
 
 .project-card .card {
     transition: transform 0.3s;
@@ -72,6 +101,11 @@ h1, h2, h3, h4, h5 {
     transform: translateY(-10px);
 }
 
+/*-----------------------------------*/
+/* Contact Form                     */
+/*-----------------------------------*/
+
+
 #contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -80,6 +114,11 @@ h1, h2, h3, h4, h5 {
 [data-aos] {
     transition-duration: 1s;
 }
+
+/*-----------------------------------*/
+/* Buttons                          */
+/*-----------------------------------*/
+
 
 .btn-primary {
     background-color: #3b82f6;
@@ -92,6 +131,11 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Mermaid Diagram Styling */
+
+/*-----------------------------------*/
+/* Mermaid Diagram Styling          */
+/*-----------------------------------*/
+
 .mermaid {
     margin-top: 20px;
     text-align: center;
@@ -102,9 +146,140 @@ h1, h2, h3, h4, h5 {
     
 }
 
+/*-----------------------------------*/
+/* Counter Styling                  */
+/*-----------------------------------*/
+
 /* Counter Styling */
 .counter {
     font-size: 1.5rem;
     font-weight: 700;
     color: #3b82f6;
+}
+
+#about-me {
+
+/*-----------------------------------*/
+/* About me                         */
+/*-----------------------------------*/
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+}
+
+#about-me h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#about-me p {
+    line-height: 1.6;
+    color: #555;
+}
+
+#skills {
+
+/*-----------------------------------*/
+/* Skills Section                   */
+/*-----------------------------------*/
+    padding: 40px 20px;
+    background-color: #e8e8e8;
+}
+
+#skills h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#skills li {
+    background-color: #ddd;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#achievements {
+
+/*-----------------------------------*/
+/* Achievements                     */
+/*-----------------------------------*/
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+}
+
+#achievements h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#achievements ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+#achievements li {
+
+/*-----------------------------------*/
+/* Timeline                         */
+/*-----------------------------------*/
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+/*-----------------------------------*/
+/* Media Queries                    */
+/*-----------------------------------*/
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+ .container {
+        width: 95%;
+    }
+
+    /* Adjust other elements as needed for smaller screens */
+    #skills ul{
+
+/*-----------------------------------*/
+/* Footer                           */
+/*-----------------------------------*/
+
+        display: block;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/*-----------------------------------*/
+/* Buttons                          */
+/*-----------------------------------*/
+
+#dataPipelineBtn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
 }
