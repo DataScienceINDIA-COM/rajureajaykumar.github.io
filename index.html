@@ -772,6 +772,24 @@
         // - Running background tasks (e.g., sending emails, processing data after a form submission).
         //   Serverless functions can be triggered by events.
         //
+        // GraphQL Suggestion:
+        //
+        // GraphQL is a query language for APIs that allows clients to request exactly the data they need,
+        // reducing over-fetching compared to traditional REST APIs.
+        // With GraphQL, clients can specify the exact data they want to retrieve in a single request,
+        // whereas with REST, you often get a fixed set of data from an endpoint, even if you only need
+        // a small portion of it. This can reduce the number of requests needed and improve performance,
+        // especially on mobile devices or networks with limited bandwidth.
+        //
+        // When to use GraphQL:
+        // - When you have multiple data sources that need to be aggregated.
+        // - When you need flexible data fetching for different clients (web, mobile).
+        // - When you want to reduce the number of API calls.
+        // - For simple applications, like this portfolio, GraphQL might be overkill.
+        //
+        // Examples of GraphQL clients:
+        // - Apollo Client
+        //
         // Examples of services that provide serverless computing:
         // - AWS Lambda
         // - Azure Functions
