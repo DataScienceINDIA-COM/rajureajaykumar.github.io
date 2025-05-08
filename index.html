@@ -21,7 +21,7 @@
     <!-- Hero Section -->
     <header class="hero text-center text-white d-flex align-items-center">
         <div class="container" data-aos="fade-up">
-            <img src="assets/image1.jpeg" alt="Profile" class="rounded-circle mb-3" style="width: 150px;">
+            <img src="assets/image1.jpeg" alt="" class="rounded-circle mb-3" style="width: 150px;">
             <h1>Rajure Ajay Kumar</h1>
             <h3>Marketing Science & Data Professional</h3>
             <p>Building Automated Data Ecosystems for Strategic Marketing Insights</p>
@@ -85,34 +85,7 @@
                                         <li>Walmart: Incorporated retail media data for targeted shopper campaigns.</li>
                                         <li>Double Verify and Integral Ad Science (IAS): Ensured viewability and fraud protection, enhancing trust in media investments.</li>
                                     </ul>
-                                    <div class="mermaid">
-                                        zenuml
-    title Order Service
-    @Actor Client #FFEBE6
-    @Boundary OrderController #0747A6
-    @EC2 <<BFF>> OrderService #E3FCEF
-    group BusinessService {
-      @Lambda PurchaseService
-      @AzureFunction InvoiceService
-    }
-
-    @Starter(Client)
-    // `POST /orders`
-    OrderController.post(payload) {
-      OrderService.create(payload) {
-        order = new Order(payload)
-        if(order != null) {
-          par {
-            PurchaseService.createPO(order)
-            InvoiceService.createInvoice(order)      
-          }      
-        }
-      }
-    }
-    
-                                            
-
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -129,30 +102,7 @@
                                         <li>Standardized data with Harmonization Center, building custom mapping logic to unify disparate campaign naming conventions, dimensions, and KPI structures across brands.</li>
                                         <li>Created advanced calculated fields and enabling granular performance breakdowns by channel, geography, product line, and audience segments.</li>
                                     </ul>
-                                    <div class="mermaid">
-                                        ---
-                                        title: "TCP Packet"
-                                        ---
-                                        packet-beta
-                                          0-15: "Source Port"
-                                          16-31: "Destination Port"
-                                          32-63: "Sequence Number"
-                                          64-95: "Acknowledgment Number"
-                                          96-99: "Data Offset"
-                                          100-105: "Reserved"
-                                          106: "URG"
-                                          107: "ACK"
-                                          108: "PSH"
-                                          109: "RST"
-                                          110: "SYN"
-                                          111: "FIN"
-                                          112-127: "Window"
-                                          128-143: "Checksum"
-                                          144-159: "Urgent Pointer"
-                                          160-191: "(Options and Padding)"
-                                          192-255: "Data (variable length)"
-
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -402,26 +352,7 @@
                     <p><strong>Technologies</strong>: Datorama, Google Ads, Meta, The Trade Desk, Double Verify, IAS, Pinterest, Bing Ads, Walmart</p>
                     <p>Architected real-time reporting for 800+ campaigns, integrating multiple platforms and reducing report turnaround time by 70%. Standardized data with Harmonization Center and designed dynamic dashboards for stakeholders.</p>
                     <h6>Architecture Diagram</h6>
-                    <div class="mermaid">
-                        graph TD
-                            A[GoogleAds] -->|API| B[Harmonization]
-                            C[Meta] -->|API| B
-                            D[TradeDesk] -->|API| B
-                            E[Pinterest] -->|API| B
-                            F[BingAds] -->|API| B
-                            G[Walmart] -->|API| B
-                            H[DoubleVerify] -->|API| B
-                            I[IAS] -->|API| B
-                            B -->|Standardize| J[Fields]
-                            J -->|Process| K[Dashboards]
-                            K --> L[Planning]
-                            K --> M[Services]
-                            K --> N[Strategy]
-                            classDef source fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,D,E,F,G,H,I source
-                            class B,J,K process
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -437,19 +368,7 @@
                     <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
                     <p>Implemented machine learning models in production for business insights, conducting POCs and ensuring data quality for reliable outcomes.</p>
                     <h6>Architecture Diagram</h6>
-                    <div class="mermaid">
-                        graph TD
-                            A[RawData] -->|Ingest| B[Dataiku]
-                            B -->|Clean| C[Data]
-                            C -->|Features| D[FeatureSet]
-                            D -->|Train| E[Model]
-                            E -->|Deploy| F[Production]
-                            F --> G[Insights]
-                            classDef source fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,D,F,G source
-                            class B,E process
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -465,17 +384,7 @@
                     <p><strong>Technologies</strong>: Tableau</p>
                     <p>Streamlined dashboard refreshing process, reducing data analysis time by 50% and creating visually appealing dashboards for cross-functional teams.</p>
                     <h6>Architecture Diagram</h6>
-                    <div class="mermaid">
-                        graph TD
-                            A[Sources] -->|Connect| B[Tableau]
-                            B -->|Process| C[Data]
-                            C -->|Refresh| D[Dashboards]
-                            D --> E[Teams]
-                            classDef source fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,D,E source
-                            class B process
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -491,17 +400,7 @@
                     <p><strong>Technologies</strong>: Alteryx, Dataiku DSS</p>
                     <p>Migrated Alteryx workflows to Dataiku DSS, improving workflow efficiency by 70% and optimizing data processing pipelines.</p>
                     <h6>Architecture Diagram</h6>
-                    <div class="mermaid">
-                        graph TD
-                            A[Alteryx] -->|Export| B[Map]
-                            B -->|Recipes| C[Dataiku]
-                            C -->|Validate| D[Pipelines]
-                            D --> E[Production]
-                            classDef source fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,D,E source
-                            class B,C process
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -517,18 +416,7 @@
                     <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
                     <p>Developed and deployed predictive models, resulting in a 20% increase in customer retention rates for Novartis.</p>
                     <h6>Architecture Diagram</h6>
-                    <div class="mermaid">
-                        graph TD
-                            A[CustomerData] -->|Ingest| B[Dataiku]
-                            B -->|Features| C[FeatureSet]
-                            C -->|Train| D[Model]
-                            D -->|Deploy| E[Metrics]
-                            E --> F[Impact]
-                            classDef source fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,E,F source
-                            class B,D process
-                    </div>
+                    
                 </div>
             </div>
         </div>
