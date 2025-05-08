@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
 </head>
 <body>
     <!-- Hero Section -->
     <header class="hero text-center text-white d-flex align-items-center">
         <div class="container" data-aos="fade-up">
+            <img src="assets/image1.jpeg" alt="Profile" class="rounded-circle mb-3" style="width: 150px;">
             <h1>Rajure Ajay Kumar</h1>
             <h3>Marketing Science & Data Professional</h3>
             <p>Building Automated Data Ecosystems for Strategic Marketing Insights</p>
@@ -25,7 +28,7 @@
     <section id="about" class="py-5">
         <div class="container" data-aos="fade-up">
             <h2 class="text-center">About Me</h2>
-            <p class="lead text-center">With 6 years of experience as a Marketing Science and Data professional, I specialize in creating workflows for Data-Ops using tools like Salesforce Datorama, Dataiku DSS, and advanced Excel VBA macros. I excel at optimizing data pipelines, enhancing campaign performance, and enabling data-driven decisions for cross-functional marketing teams. My work bridges data engineering and strategic marketing execution, delivering real-time insights and operational efficiency.</p>
+            <p class="lead text-center">Marketing science and Data professional with 6 years of experience, specializing in workflow creation for Data-Ops. Proficient in Datorama and advanced Excel VBA macros to build automated reporting systems and streamline marketing data operations. Skilled at optimizing data pipelines, enhancing campaign performance, and enabling data-driven decisions across cross-functional marketing teams. Known for bridging the gap between data engineering and strategic marketing execution.</p>
         </div>
     </section>
 
@@ -38,48 +41,55 @@
                     <h4>Senior Analyst, Omnicom Media Group India PVT Ltd</h4>
                     <p>Hyderabad | Sep 2023 – Feb 2025</p>
                     <ul>
-                        <li>Architected enterprise-grade reporting ecosystems using Salesforce Datorama, supporting real-time insights for 800+ marketing campaigns.</li>
-                        <li>Led full implementation cycle of Datorama solutions, reducing report turnaround time by 70%.</li>
-                        <li>Orchestrated tracking and development of data streams from platforms like Google Ads (CM360, DV360), The Trade Desk, Meta, Pinterest, Bing Ads, Walmart, Double Verify, and IAS.</li>
-                        <li>Standardized data with Harmonization Center, unifying campaign naming conventions and KPIs.</li>
-                        <li>Created advanced calculated fields for granular performance breakdowns by channel, geography, product line, and audience segments.</li>
-                        <li>Designed dynamic dashboards tailored to media planning, client services, and strategy teams.</li>
-                        <li>Trained junior analysts on Datorama configuration and KPI governance.</li>
-                        <li>Scaled reporting templates globally with local customization.</li>
-                        <li>Contributed to innovation projects with custom scripts, webhook automations, and API enrichment.</li>
-                        <li>Improved efficiency through periodic audits of data pipelines and harmonization logic.</li>
+                        <li>Architected and maintained enterprise-grade reporting ecosystems using Salesforce Datorama, supporting real-time insights for over 800 marketing campaigns.</li>
+                        <li>Led the full implementation cycle of Datorama solutions — from initial data source mapping to final dashboard delivery — significantly reducing report turnaround time by 70%.</li>
+                        <li>Orchestrated tracking and development of incoming data streams, seamlessly integrating and quality-assuring (QA) data from diverse paid media platforms: The Trade Desk (TTD), Double Verify, and IAS.</li>
+                        <li>Google Ads (CM360, DV360): Unified programmatic display and audio data, addressing gaps like incomplete Privacy Sandbox integration and no interactive audio ad support.</li>
+                        <li>Programmatic (The Trade Desk - TTD): Captured real-time bidding insights for precise budget allocation.</li>
+                        <li>Meta (Facebook, Instagram): Integrated social ad performance for cross-channel synergy.</li>
+                        <li>Pinterest and Bing Ads: Expanded reach to niche audiences.</li>
+                        <li>Walmart: Incorporated retail media data for targeted shopper campaigns.</li>
+                        <li>Double Verify and Integral Ad Science (IAS): Ensured viewability and fraud protection, enhancing trust in media investments.</li>
+                        <li>Standardized data with Harmonization Center, building custom mapping logic to unify disparate campaign naming conventions, dimensions, and KPI structures across brands.</li>
+                        <li>Created advanced calculated fields and enabling granular performance breakdowns by channel, geography, product line, and audience segments.</li>
+                        <li>Designed dynamic dashboards for stakeholders across media planning, client services, and strategy teams, tailoring views to suit each department’s KPIs.</li>
+                        <li>Trained and mentored junior analysts on best practices for Datorama configuration, data architecture planning, and KPI governance. Facilitated internal documentation sessions.</li>
+                        <li>Partnered with global teams to scale reporting templates across multiple regions, ensuring global alignment while allowing for local customization.</li>
+                        <li>Contributed to innovation projects involving custom scripts, webhook automations, and external API enrichment, pushing the boundaries of Datorama’s native capabilities.</li>
+                        <li>Continuously improved operational efficiency by conducting periodic audits of data pipelines, user roles, token health, and harmonization logic.</li>
                     </ul>
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <h4>Freelance Data Analyst, Various Clients</h4>
                     <p>Hyderabad | Oct 2022 – Jul 2023</p>
                     <ul>
-                        <li>Installed and maintained Dataiku DSS in VM, handling admin responsibilities.</li>
-                        <li>Streamlined Tableau Dashboard refreshing process, reducing analysis time by 50%.</li>
-                        <li>Executed Machine Learning POCs for improved business insights.</li>
-                        <li>Implemented ML models in production using Dataiku DSS.</li>
-                        <li>Conducted data quality assessments and cleansing, improving analysis accuracy.</li>
+                        <li>Installed and maintained standalone application of Dataiku DSS in VM, handling various admin responsibilities.</li>
+                        <li>Streamlined Tableau Dashboard refreshing process, reducing data analysis time by 50%.</li>
+                        <li>Executed multiple Machine Learning proof-of-concepts (POCs) resulting in improved business insights.</li>
+                        <li>Implemented machine learning models in production using Dataiku DSS.</li>
+                        <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
                     </ul>
                 </div>
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Software Engineer, Technvision Ventures Limited</h4>
                     <p>Hyderabad | Jun 2022 – Sep 2022</p>
                     <ul>
-                        <li>Streamlined Tableau Dashboard refreshing process, reducing analysis time by 50%.</li>
-                        <li>Executed Machine Learning POCs for improved business insights.</li>
-                        <li>Implemented ML models in production using Dataiku DSS.</li>
-                        <li>Collaborated to create visually appealing Tableau Dashboards.</li>
-                        <li>Conducted data quality assessments and cleansing for reliable analysis.</li>
+                        <li>Streamlined Tableau Dashboard refreshing process, reducing data analysis time by 50%.</li>
+                        <li>Executed multiple Machine Learning proof-of-concepts (POCs) resulting in improved business insights.</li>
+                        <li>Implemented machine learning models in production using Dataiku DSS.</li>
+                        <li>Collaborated cross-functionally to identify and translate business requirements into visually appealing Tableau Dashboards.</li>
+                        <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
                     </ul>
                 </div>
                 <div class="timeline-item" data-aos="fade-left">
                     <h4>Data Scientist, Team Lease Pvt. Ltd. (Client: Novartis)</h4>
                     <p>Hyderabad | May 2021 – May 2022</p>
                     <ul>
-                        <li>Migrated Alteryx workflows to Dataiku DSS, improving efficiency by 70%.</li>
-                        <li>Managed metrics reports for three brands.</li>
-                        <li>Developed and deployed predictive models, increasing customer retention by 20%.</li>
-                        <li>Optimized data storage and retrieval with data engineering teams.</li>
+                        <li>Migrated Alteryx workflows to Dataiku DSS, improving workflow efficiency by 70%.</li>
+                        <li>Managed planning and development of metrics reports for three brands.</li>
+                        <li>Explored, developed, deployed, and evaluated customer-centric digital innovation solutions.</li>
+                        <li>Developed and deployed predictive models, resulting in a 20% increase in customer retention rates.</li>
+                        <li>Collaborated with data engineering teams to optimize data storage and retrieval processes.</li>
                     </ul>
                 </div>
                 <div class="timeline-item" data-aos="fade-right">
@@ -87,11 +97,12 @@
                     <p>Hyderabad | Sep 2018 – Mar 2021</p>
                     <ul>
                         <li>Created analytical reports using Alteryx DSS, improving data accuracy by 25%.</li>
-                        <li>Optimized data collection, reducing report generation time by 20%.</li>
-                        <li>Evaluated customer/products/forecast data for actionable insights.</li>
-                        <li>Conducted in-depth data profiling and exploratory analysis.</li>
-                        <li>Created custom SQL queries for data integrity.</li>
-                        <li>Delivered customized reports and ad-hoc analyses.</li>
+                        <li>Optimized data collection procedures, reducing report generation time by 20%.</li>
+                        <li>Evaluated Customer/products/forecast data for actionable insights.</li>
+                        <li>Collaborated with cross-functional teams to address business needs.</li>
+                        <li>Conducted in-depth data profiling and exploratory data analysis, enabling proactive decision-making.</li>
+                        <li>Created custom SQL queries and scripts to ensure data integrity and accuracy.</li>
+                        <li>Delivered customized reports and ad-hoc analyses, enhancing data-driven decision-making.</li>
                     </ul>
                 </div>
             </div>
@@ -107,68 +118,31 @@
                 <button class="btn btn-outline-primary" data-filter="data-tools">Data Tools</button>
                 <button class="btn btn-outline-primary" data-filter="programming">Programming</button>
                 <button class="btn btn-outline-primary" data-filter="marketing">Marketing Platforms</button>
+                <button class="btn btn-outline-primary" data-filter="data-ops">Data-Ops</button>
             </div>
             <div class="row skills-list">
-                <div class="col-md-4 skill-item" data-category="data-tools">
-                    <p>Salesforce Datorama</p>
-                    <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="data-tools">
-                    <p>Dataiku DSS</p>
-                    <div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="data-tools">
-                    <p>Tableau</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="data-tools">
-                    <p>Alteryx Studio</p>
-                    <div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="programming">
-                    <p>Python</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="programming">
-                    <p>SQL</p>
-                    <div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="programming">
-                    <p>Excel VBA</p>
-                    <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="programming">
-                    <p>R</p>
-                    <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="marketing">
-                    <p>Google Ads (CM360, DV360)</p>
-                    <div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="marketing">
-                    <p>The Trade Desk</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="marketing">
-                    <p>Meta (Facebook, Instagram)</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="marketing">
-                    <p>Pinterest</p>
-                    <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="marketing">
-                    <p>Bing Ads</p>
-                    <div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="marketing">
-                    <p>Walmart</p>
-                    <div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div>
-                </div>
-                <div class="col-md-4 skill-item" data-category="marketing">
-                    <p>Double Verify, IAS</p>
-                    <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
-                </div>
+                <div class="col-md-4 skill-item" data-category="data-tools"><p>Salesforce Datorama</p><div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-tools"><p>Dataiku DSS</p><div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-tools"><p>Tableau</p><div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-tools"><p>Alteryx Studio</p><div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-tools"><p>Snowflake</p><div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="programming"><p>Python</p><div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="programming"><p>SQL</p><div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="programming"><p>Excel VBA</p><div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="programming"><p>R</p><div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>Google Ads (CM360, DV360)</p><div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>The Trade Desk</p><div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>Meta (Facebook, Instagram)</p><div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>Pinterest</p><div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>Bing Ads</p><div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>Walmart</p><div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>Double Verify, IAS</p><div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="marketing"><p>Amazon DSP</p><div class="progress"><div class="progress-bar" style="width: 75%;">75%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-ops"><p>Data Ingestion (API, Cloud)</p><div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-ops"><p>Data Harmonization</p><div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-ops"><p>Workflow Automation</p><div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-ops"><p>Data Governance</p><div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div></div>
+                <div class="col-md-4 skill-item" data-category="data-ops"><p>Geospatial Analytics</p><div class="progress"><div class="progress-bar" style="width: 70%;">70%</div></div></div>
             </div>
         </div>
     </section>
@@ -272,23 +246,40 @@
         </div>
     </section>
 
-    <!-- Project Modals -->
+    <!-- Project Modals with Mermaid Diagrams -->
     <div class="modal fade" id="projectModal1" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Datorama Reporting Ecosystem</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Technologies</strong>: Datorama, Google Ads, Meta, The Trade Desk, Double Verify, IAS</p>
+                    <p><strong>Technologies</strong>: Datorama, Google Ads, Meta, The Trade Desk, Double Verify, IAS, Pinterest, Bing Ads, Walmart</p>
                     <p>Architected real-time reporting for 800+ campaigns, integrating multiple platforms and reducing report turnaround time by 70%. Standardized data with Harmonization Center and designed dynamic dashboards for stakeholders.</p>
+                    <h6>Architecture Diagram</h6>
+                    <div class="mermaid">
+                        graph TD
+                            A[Google Ads] -->|API| B[Harmonization Center]
+                            C[Meta] -->|API| B
+                            D[The Trade Desk] -->|API| B
+                            E[Double Verify] -->|API| B
+                            F[IAS] -->|API| B
+                            G[Pinterest] -->|API| B
+                            H[Bing Ads] -->|API| B
+                            I[Walmart] -->|API| B
+                            B -->|Standardized Data| J[Calculated Fields]
+                            J -->|Processed Data| K[Datorama Dashboards]
+                            K --> L[Media Planning]
+                            K --> M[Client Services]
+                            K --> N[Strategy Teams]
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="projectModal2" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Dataiku ML Model Deployment</h5>
@@ -297,12 +288,22 @@
                 <div class="modal-body">
                     <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
                     <p>Implemented machine learning models in production for business insights, conducting POCs and ensuring data quality for reliable outcomes.</p>
+                    <h6>Architecture Diagram</h6>
+                    <div class="mermaid">
+                        graph TD
+                            A[Raw Data] -->|Ingestion| B[Dataiku DSS]
+                            B -->|Clean Recipe| C[Cleaned Data]
+                            C -->|Python Recipe| D[Feature Engineering]
+                            D -->|Auto-ML Recipe| E[ML Model]
+                            E -->|Deployment| F[Production Endpoint]
+                            F --> G[Business Insights]
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="projectModal3" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Tableau Dashboard Optimization</h5>
@@ -311,12 +312,20 @@
                 <div class="modal-body">
                     <p><strong>Technologies</strong>: Tableau</p>
                     <p>Streamlined dashboard refreshing process, reducing data analysis time by 50% and creating visually appealing dashboards for cross-functional teams.</p>
+                    <h6>Architecture Diagram</h6>
+                    <div class="mermaid">
+                        graph TD
+                            A[Data Sources] -->|Connectors| B[Tableau Server]
+                            B -->|ETL| C[Processed Data]
+                            C -->|Refresh Schedule| D[Tableau Dashboards]
+                            D --> E[Cross-Functional Teams]
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="projectModal4" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Alteryx to Dataiku Migration</h5>
@@ -325,12 +334,20 @@
                 <div class="modal-body">
                     <p><strong>Technologies</strong>: Alteryx, Dataiku DSS</p>
                     <p>Migrated Alteryx workflows to Dataiku DSS, improving workflow efficiency by 70% and optimizing data processing pipelines.</p>
+                    <h6>Architecture Diagram</h6>
+                    <div class="mermaid">
+                        graph TD
+                            A[Alteryx Workflows] -->|Export| B[Workflow Mapping]
+                            B -->|Visual Recipes| C[Dataiku DSS]
+                            C -->|Validation| D[Optimized Pipelines]
+                            D --> E[Production]
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="modal fade" id="projectModal5" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Predictive Models for Retention</h5>
@@ -339,6 +356,15 @@
                 <div class="modal-body">
                     <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
                     <p>Developed and deployed predictive models, resulting in a 20% increase in customer retention rates for Novartis.</p>
+                    <h6>Architecture Diagram</h6>
+                    <div class="mermaid">
+                        graph TD
+                            A[Customer Data] -->|Ingestion| B[Dataiku DSS]
+                            B -->|Feature Engineering| C[Features]
+                            C -->|Prediction Recipe| D[Predictive Model]
+                            D -->|Deployment| E[Retention Metrics]
+                            E --> F[Business Impact]
+                    </div>
                 </div>
             </div>
         </div>
