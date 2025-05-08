@@ -1,16 +1,5 @@
-// Initialize AOS (Animate On Scroll Library)
+// Initialize AOS
 AOS.init();
-
-// Initialize Mermaid.js (Diagramming Library)
-if (typeof mermaid !== 'undefined') {
-    mermaid.initialize({
-        startOnLoad: true, // Ensures Mermaid diagrams render on page load
-        theme: 'default', // Default theme
-        flowchart: { curve: 'basis' } // Smooth curve for flowcharts
-    });
-} else {
-    console.error('Mermaid.js library is not loaded. Please check your script inclusion.');
-}
 
 // Skills Filter
 document.querySelectorAll('.skills-filter .btn').forEach(button => {
@@ -49,7 +38,6 @@ document.querySelectorAll('.counter').forEach(counter => {
     const target = +counter.getAttribute('data-target');
     let count = 0;
     const increment = target / 100;
-
     const updateCounter = () => {
         if (count < target) {
             count += increment;
@@ -59,6 +47,5 @@ document.querySelectorAll('.counter').forEach(counter => {
             counter.innerText = target;
         }
     };
-
     updateCounter();
 });
