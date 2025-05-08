@@ -1,57 +1,108 @@
 /*-----------------------------------*/
 /* General Styles                   */
 /*-----------------------------------*/
-
 body {
+	--background-color: #fff;
+	--text-color: #333;
+	--link-color: inherit;
+	--secondary-text-color: #555;
+	--primary-color: #3b82f6;
+    --secondary-color: #e8e8e8;
+	--background-image: none; /* Default background image */
+ --card-color: #fff;
+ --accent-color: #4CAF50;
+ --section-background-color: #f8f8f8;
+ --navbar-height: 60px; /* Bootstrap default navbar height */
     font-family: 'Inter', sans-serif;
-    scroll-behavior: smooth;
- overflow-x: hidden;
+    color: var(--text-color);
+	background-color: var(--background-color);
+    transition: background-color 0.5s ease, color 0.5s ease;
+	cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="%233b82f6"/></svg>') 8 8, auto;
 }
-
-h1, h2, h3, h4, h5 {
-    font-family: 'Poppins', sans-serif;
-}
-
-.hero {
-    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-    height: 100vh;
-    padding: 0;
-}
-
 /*-----------------------------------*/
+/* Headings                     */
+/*-----------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Poppins', sans-serif;
+}
+
+h1 { /* Adjusted font size for h1 */
+    font-size: 4rem; /* Increased base font size for h1 */
+}
+
+h2 { /* Adjusted font size for h2 */
+    font-size: 3rem; /* Adjusted font size for h2 */
+	margin: 40px 0 20px 0; /* Added margin top and bottom */
+}
+
+h3 { /* Adjusted font size for h3 */
+    font-size: 2rem;
+	margin: 20px 0 15px 0;
+}
+
+h4 { /* Adjusted font size for h4 */
+    font-size: 1.75rem;
+	margin: 15px 0 10px 0;
+}
+
+h5 {
+ font-size: 1.5rem;
+ margin: 10px 0 8px 0;
+}
+
+h6 {
+	font-size: 1rem;
+	margin: 8px 0 5px 0;
+}
+/*-----------------------------------*/
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+ background-image: var(--background-image); /* Use the variable for the background image */
+ background-size: cover;
+    height: calc(100vh - var(--navbar-height)); /* Adjust height to accommodate fixed navbar */
+ padding: 40px 20px;
+ display: flex;
+ flex-direction: column;
+    overflow: hidden; /* Hide overflow for animations */
+ justify-content: center;
+    padding-top: var(--navbar-height); /* Add padding to push content below navbar and add some space */
+ align-items: center;
+}
+
+/* Section Container */
+.section-container {
+ padding: 80px 20px; /* Increased padding for more space */
+	background-color: var(--section-background-color);
+}
 /* Header styles                     */
 /*-----------------------------------*/
-
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-}
-
-.hero h3 {
-    font-size: 1.75rem;
-}
 
 .hero p {
     font-size: 1.25rem;
 }
-/*-----------------------------------*/
-/* About me                         */
-/*-----------------------------------*/
 
-
-.timeline {
-    position: relative;
-    padding: 20px 0;
+/* Dark Mode                         */
+/*-----------------------------------*/
+.dark-mode {
+	--background-color: #121212;
+	--text-color: #f5f5f5;
+	--secondary-text-color: #d4d4d4;
+	--primary-color: #0077cc;
+	--secondary-color:#242424;
+	--card-color: #242424;
+	--link-color: #0077cc;
+	--accent-color: #00c2cb;
+	--section-background-color: #333;
+ /* Dark mode background image if needed */
+ --background-image: none;
 }
 
-.timeline-item {
-    background: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+
+/*-----------------------------------*/
+/* Experience Section                   */
+/*-----------------------------------*/
+.experience {
+	padding: 40px 20px;
+	background: var(--card-color);
 
 .timeline-item ul {
     margin-top: 10px;
@@ -61,161 +112,150 @@ h1, h2, h3, h4, h5 {
     font-weight: 600;
 }
 
-/*-----------------------------------*/
-/* Skill Section                    */
-/*-----------------------------------*/
-
-
-.skills-filter .btn {
     margin: 0 5px;
 }
-
-.skill-item {
+/*-----------------------------------*/
+/* Progress Bar                     */
+/*-----------------------------------*/ /* Skill Item */
+ .skill-item {
     margin-bottom: 20px;
 }
 
-.progress {
-/*-----------------------------------*/
-/* Progress Bar                     */
-/*-----------------------------------*/
-
- height: 20px;
+/* Progress Bar */
+ .progress {
     height: 20px;
-    background: #e9ecef;
+ background-color: var(--secondary-color); /* Use secondary color for progress bar background */
 }
 
 .progress-bar {
-    background: #10b981;
+    background: var(--accent-color);
 }
 
 /*-----------------------------------*/
-/* Projects                         */
+/* Project Card                     */
 /*-----------------------------------*/
 
-
+/* Project Card */
 .project-card .card {
-    transition: transform 0.3s;
+	padding: 20px;
+	background-color: var(--card-color); /* Use card-color for background */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
+	color: var(--text-color); /* Use text-color for text */
+ /* Smooth transition for transform, box-shadow, and background-color */
+ transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.project-card .card:hover {
-    transform: translateY(-10px);
-}
 
 /*-----------------------------------*/
 /* Contact Form                     */
 /*-----------------------------------*/
+ .contact-form-container {
+	 padding: 40px 20px;
 
 
-#contact form {
+/* Contact Section */ #contact form {
     max-width: 600px;
-    margin: 0 auto;
+}
+
+#contact form input,
+#contact form textarea {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    border-color: var(--secondary-text-color);
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+    color: var(--secondary-text-color);
 }
 
 [data-aos] {
-    transition-duration: 1s;
+	transition-duration: 1s; /* Duration for AOS animations */
 }
 
-/*-----------------------------------*/
-/* Buttons                          */
-/*-----------------------------------*/
+a {
+    color: var(--link-color); /* Use link-color variable */
+    text-decoration: none;
+	transition: color 0.3s ease, text-decoration 0.3s ease;
+}
 
+a:hover, button:hover, .btn:hover {
+ cursor: pointer; /* Change cursor to pointer on hover */
+}
 
+/* Primary Button */
 .btn-primary {
-    background-color: #3b82f6;
-    border-color: #3b82f6;
+	border-color: var(--primary-color);
+	color: white; /* Ensure text color is white on primary buttons */
+	background-color: var(--primary-color);
+	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+ font-size: 1.1rem; /* Increased font size */
+ padding: 12px 24px; /* Increased padding */
 }
 
-.btn-primary:hover {
-    background-color: #1e3a8a;
-    border-color: #1e3a8a;
+.btn-primary:hover { /* Primary Button Hover */
+    background-color: var(--primary-color); /* Darker border on hover */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Mermaid Diagram Styling */
+.btn-outline-light {
+ border-color: var(--text-color); /* Add border to outline button */
+}
 
 /*-----------------------------------*/
 /* Mermaid Diagram Styling          */
 /*-----------------------------------*/
 
 .mermaid {
-    margin-top: 20px;
-    text-align: center;
+	margin-top: 20px;
 }
-
+/* Mermaid SVG */
 .mermaid svg {
     max-width: 100%;
-    
 }
 
 /*-----------------------------------*/
 /* Counter Styling                  */
 /*-----------------------------------*/
-
 /* Counter Styling */
-.counter {
-    font-size: 1.5rem;
+ .counter {
     font-weight: 700;
-    color: #3b82f6;
+    color: var(--accent-color); /* Use accent color for counters */
 }
 
-#about-me {
 
-/*-----------------------------------*/
-/* About me                         */
-/*-----------------------------------*/
-    padding: 40px 20px;
-    background-color: #f8f8f8;
+
+ /*-----------------------------------*/
 }
-
-#about-me h2 {
-    margin-bottom: 20px;
-    color: #333;
-}
-
-#about-me p {
-    line-height: 1.6;
-    color: #555;
-}
-
-#skills {
-
-/*-----------------------------------*/
-/* Skills Section                   */
-/*-----------------------------------*/
-    padding: 40px 20px;
-    background-color: #e8e8e8;
-}
-
-#skills h2 {
-    margin-bottom: 20px;
-    color: #333;
 }
 
 #skills ul {
     list-style: none;
     padding: 0;
-    display: flex;
+	display: flex;
     flex-wrap: wrap;
+ justify-content: center; /* Center skill items */
 }
 
+/* Skill Item */
 #skills li {
-    background-color: #ddd;
-    padding: 5px 10px;
-    margin: 5px;
+    background-color: var(--secondary-color);
+    padding: 8px 12px; /* Adjusted padding for skill items */
+	margin: 5px; /* Add margin around each skill item */
     border-radius: 5px;
 }
 
 #achievements {
-
-/*-----------------------------------*/
-/* Achievements                     */
-/*-----------------------------------*/
-    padding: 40px 20px;
-    background-color: #f8f8f8;
+    /* Achievements Section             */
+ /*-----------------------------------*/
 }
 
 #achievements h2 {
     margin-bottom: 20px;
-    color: #333;
+	color: var(--text-color);
 }
 
 #achievements ul {
@@ -224,54 +264,56 @@ h1, h2, h3, h4, h5 {
 }
 
 #achievements li {
-
-/*-----------------------------------*/
-/* Timeline                         */
-/*-----------------------------------*/
     margin-bottom: 10px;
-    color: #555;
+	color: var(--secondary-text-color);
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .container {
-/*-----------------------------------*/
-/* Media Queries                    */
-/*-----------------------------------*/
 
 /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
- .container {
-        width: 95%;
+
+ /* Adjust font sizes for smaller screens */
+ h1 {
+        font-size: 2rem;
     }
 
-    /* Adjust other elements as needed for smaller screens */
-    #skills ul{
+ h2 {
+        font-size: 1.75rem;
+    }
 
-/*-----------------------------------*/
-/* Footer                           */
-/*-----------------------------------*/
+ h3 {
+        font-size: 1.5rem;
+    }
 
-        display: block;
+ .hero h1 { /* Adjusted hero heading font size */
+        font-size: 2.5rem;
+    }
+
+ .hero h3 { /* Adjusted hero subheading font size */
+        font-size: 1.25rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    /* Adjust timeline text size for readability */
+ .timeline-item p,
+ .timeline-item li {
+        font-size: 1rem;
     }
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
+footer { /* Footer */
+    background-color: var(--background-color);
+    color: var(--text-color);
     text-align: center;
     padding: 20px;
-    position: relative;
+	position: relative;
     bottom: 0;
     width: 100%;
 }
-
-/*-----------------------------------*/
-/* Buttons                          */
-/*-----------------------------------*/
-
 #dataPipelineBtn {
-    background-color: #4CAF50; /* Green */
+	/* Data Pipeline Button */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -279,7 +321,251 @@ footer {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+ margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#dataPipelineBtn:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*-----------------------------------*/
+/* Navigation Bar                   */
+/*-----------------------------------*/
+.navbar {
+	position: fixed;
+    top: 0;
+    left: 0;
+	width: 100%;
+    background-color: var(--card-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ z-index: 1000; /* Ensure navbar is on top */
+}
+
+.navbar-nav .nav-link {
+ color: var(--link-color); /* Use link-color for links */
+	margin: 0 10px; /* Add margin between links */
+ transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+ /* text-decoration: underline; *//* Inherited from general link styles */
+}
+
+/*-----------------------------------*/
+/* Back to Top Button               */
+/*-----------------------------------*/
+.back-to-top {
+	position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Hidden by default */
+    background-color: var(--primary-color);
+    color: white;
+	border: none;
+	border-radius: 50%; /* Circle shape */
+	width: 40px;
+	height: 40px;
+	font-size: 30px; /* Increased font size for the icon */
+	text-align: center;
+	cursor: pointer;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 999; /* Below navbar */
+    display: flex; /* Use flexbox for centering */
+ justify-content: center; /* Center horizontally */
+ align-items: center; /* Center vertically */
+}
+
+/* Add a slight hover effect to the back-to-top button */
+.back-to-top:hover {
+    background-color: var(--primary-color); /* Keep primary color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.back-to-top:active {
+    transform: scale(0.95); /* Slightly shrink the button when clicked */
+    transition: transform 0.1s ease;
+}
+
+.back-to-top.hidden {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.section-container:not(.animate) { /* Sections initial state */
+	opacity: 0;
+ transform: translateY(20px) scale(0.95);
+} /* Hero Image Animation */
+/* Animations */
+
+
+
+@keyframes fade-in { /* Fade-in animation */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotate { /* Rotate animation */
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce { /* Bounce animation */
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slide-up { /* Slide-up animation */
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flip { /* Flip animation */
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Keyframes for fade-in-delayed animation */ /* Fade-in with delay */
+@keyframes fade-in-delayed {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for zoom-in animation */ /* Zoom-in animation */
+@keyframes zoom-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95); /* Start slightly smaller */
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Animation for sections when they are in viewport */
+ .section-container.animate { /* Animate sections in viewport */
+	animation: fade-in 1s ease-out forwards;
+	opacity: 1; /* Ensure final state is visible */
+	transform: translateY(0) scale(1); /* Ensure final state is correct */
+}
+
+/* Add transition to sections for smooth animation */
+.section-container {
+	transition: opacity 1s ease-out, transform 1s ease-out;
+} /* Hero Image Animation */
+/* Hero Image Animation */
+.hero img {
+    animation: bounce 2s infinite;
+}
+.hero h1, .hero h3, .hero p, .hero a { /* Apply slide-up animation to hero text elements */
+    animation: slide-up 1s ease-out forwards;
+} /* Project Card Hover Animation */
+/* Project Card Hover Animation */
+.project-card .card:hover {
+ /* animation: flip 0.5s ease; *//* Removed flip animation on hover */
+    transform: translateY(-10px) scale(1.05); /* Added subtle move up and scale on hover */
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Apply fade-in-delayed animation to specific hero elements */
+.hero h1 {
+    animation: fade-in-delayed 1.5s ease-out forwards;
+	opacity: 0; /* Start invisible */
+}
+
+.hero h3 {
+    animation: fade-in-delayed 1.7s ease-out forwards;
+	opacity: 0; /* Start invisible */
+}
+
+.hero p, .hero a {
+    animation: fade-in-delayed 1.9s ease-out forwards;
+	opacity: 0; /* Start invisible */
+}
+
+/* Animation for back-to-top button (fade-in) */
+.back-to-top {
+	animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Animation for project cards when they are in viewport */
+.project-card .card.animate {
+	animation: zoom-in 0.8s ease-out forwards;
+	opacity: 1; /* Ensure final state is visible */
+	transform: scale(1); /* Ensure final state is correct */
+}
+
+/* Initial state for project cards before animation */
+.project-card .card:not(.animate) {
+ opacity: 0;
+ transform: scale(0.9);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust other elements as needed for smaller screens */
+ .skills-list { /* Responsive Skills List */
+        display: block; /* Stack skills vertically on small screens */
+ text-align: center; /* Center skill items within the block */
+ }
+
+ /* Adjust font sizes for smaller screens */
+ h1 {
+        font-size: 2rem;
+    }
+
+ h2 {
+        font-size: 1.75rem;
+    }
+
+ h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust timeline text size for readability */
+ .timeline-item p,
+ .timeline-item li {
+        font-size: 1rem;
+    }
 }

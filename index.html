@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
-    <script>
+    <script defer>
         mermaid.initialize({
             startOnLoad: true,
             theme: 'default',
@@ -21,31 +21,68 @@
     </script>
 </head>
 <body>
+ <!-- A/B Test Toggle Placeholder --> 
+ <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+ <div class="container">
+ <a class="navbar-brand" href="#">Rajure Ajay Kumar</a>
+ <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+ <span class="navbar-toggler-icon"></span>
+ </button>
+ <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+ <ul class="navbar-nav" role="navigation" aria-label="Main Navigation">
+ <li class="nav-item"><a class="nav-link" href="#about-me" aria-current="page">About</a></li>
+ <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+ <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+ <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+ <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+ </ul>
+ </div>
+ </div>
+ </nav>
+
+ <div class="back-to-top" id="backToTopBtn">
+ <a href="#top">&#8679;</a>
+ </div> 
+
+
+
+
+
+
+
+
+
+
     <!-- Hero Section -->
-    <header class="hero text-center text-white d-flex align-items-center">
-        <div class="container" data-aos="fade-up">
-            <img href="https://drive.google.com/file/d/12pIaklSuRZPvkqldavJZLFi8netHFm-Z/view?usp=sharing" alt="" class="rounded-circle mb-3" style="width: 150px;">
+ <header class="hero text-center text-white d-flex align-items-center section-container">
+ <!-- A/B Test: Hero Section Layout, Image, Title, Text, Buttons -->
+ <div class="container-section" data-aos="fade-up">
+ <!-- A/B Test: Profile Image -->
+ <img src="profile.webp" alt="Rajure Ajay Kumar's Profile Picture" class="rounded-circle mb-3 bounce" style="width: 150px;" data-aos="zoom-in">
+ <!-- A/B Test: Main Title -->
             <h1>Rajure Ajay Kumar</h1>
+ <!-- A/B Test: Subtitle -->
             <h3>Marketing Science & Data Professional</h3>
+ <!-- A/B Test: Hero Text Content -->
             <p>Building Automated Data Ecosystems for Strategic Marketing Insights</p>
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-outline-light">Contact Me</a>
-        </div>
+        </div> 
+ <button id="darkModeToggle" class="btn btn-secondary position-absolute top-0 end-0 m-3">Toggle Dark Mode</button>
     </header>
 
     <!-- About me Section -->
- <section id="about-me">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center">About Me</h2>
+ <!-- A/B Test: About Me Section Content and Layout -->
+ <section id="about-me" data-aos="fade-up">
+        <div class="container-section" data-aos="fade-up">
+            <h2 class="text-center" id="about-me">About Me</h2>
             <p>I am a highly motivated Marketing Science & Data professional with a passion for leveraging data to drive strategic marketing decisions. My expertise lies in building automated data ecosystems, executing machine learning proof-of-concepts, and implementing robust reporting solutions. With a strong foundation in data analysis, machine learning, and a wide array of technologies, I am dedicated to turning complex data into actionable insights.</p>
         </div>
  </section>
 
     <!-- Skills Section -->
  <section id="skills">
-        <div class="container" data-aos="fade-up">
+        <div class="container-section" data-aos="fade-up">
             <h2 class="text-center">Skills</h2>
-            <ul>
+ <ul class="skills-list">
  <li>Datorama</li>
                 <li>Dataiku DSS</li>
                 <li>Tableau</li>
@@ -64,9 +101,9 @@
  </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-5 bg-light">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center">Experience</h2>
+ <section id="experience">
+        <div class="container-section" data-aos="fade-up">
+            <h2 class="text-center" id="experience">Experience</h2>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Senior Analyst, Omnicom Media Group India PVT Ltd</h4>
@@ -230,8 +267,8 @@
 
     <!-- Achievements Section -->
  <section id="achievements">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center">Achievements</h2>
+        <div class="container-section" data-aos="fade-up">
+            <h2 class="text-center" id="achievements">Achievements</h2>
             <ul>
                 <li>Architected a real-time reporting system for over 800 marketing campaigns using Datorama.</li>
                 <li>Reduced report turnaround time by 70%.</li>
@@ -244,38 +281,39 @@
  </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center">Projects</h2>
+ <section id="projects">
+ <!-- A/B Test: Number and Content of Project Cards -->
+        <div class="container-section" data-aos="fade-up">
+            <h2 class="text-center" id="projects">Projects</h2>
             <div class="row">
-                <div class="col-md-4 project-card" data-aos="zoom-in">
+ <div class="col-md-4 project-card">
                     <div class="card">
                         <div class="card-body">
                             <h5>Datorama Reporting Ecosystem</h5>
                             <p>Architected real-time reporting for 800+ campaigns, integrating multiple platforms.</p>
-                            <button id="datoramaBtn" class="btn btn-primary">Details</button>
+ <button id="datoramaBtn" class="btn btn-primary">Details</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 project-card" data-aos="zoom-in">
+ <div class="col-md-4 project-card">
                     <div class="card">
                         <div class="card-body">
                             <h5>Dataiku ML Model Deployment</h5>
                             <p>Implemented machine learning models in production for business insights.</p>
-                            <button id="dataikuMlBtn" class="btn btn-primary">Details</button>
+ <button id="dataikuMlBtn" class="btn btn-primary">Details</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 project-card" data-aos="zoom-in">
+ <div class="col-md-4 project-card">
                     <div class="card">
                         <div class="card-body">
                             <h5>Tableau Dashboard Optimization</h5>
                             <p>Streamlined dashboard refreshing, reducing analysis time by 50%.</p>
-                            <button id="tableauBtn" class="btn btn-primary">Details</button>
+ <button id="tableauBtn" class="btn btn-primary">Details</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 project-card" data-aos="zoom-in">
+ <div class="col-md-4 project-card">
                     <div class="card">
                         <div class="card-body">
                             <h5>Alteryx to Dataiku Migration</h5>
@@ -284,21 +322,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 project-card" data-aos="zoom-in">
+ <div class="col-md-4 project-card">
                     <div class="card">
                         <div class="card-body">
                             <h5>Predictive Models for Retention</h5>
                             <p>Deployed models increasing customer retention by 20%.</p>
-                            <button id="predictiveModelsBtn" class="btn btn-primary">Details</button>
+ <button id="predictiveModelsBtn" class="btn btn-primary">Details</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 project-card" data-aos="zoom-in">
+ <div class="col-md-4 project-card">
                     <div class="card">
                         <div class="card-body">
                             <h5>Data Pipeline for a Marketing Campaign</h5>
                             <p>This project describes the workflow for handling data in a marketing campaign.</p>
-                            <button id="dataPipelineBtn" class="btn btn-primary">Details</button>
+ <button id="dataPipelineBtn" class="btn btn-primary">Details</button>
                         </div>
                     </div>
                 </div>
@@ -307,9 +345,9 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-5">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center">Education</h2>
+ <section id="education">
+        <div class="container-section" data-aos="fade-up">
+ <h2 class="text-center" id="education">Education</h2>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Bachelor of Technology, Information Technology</h4>
@@ -328,9 +366,10 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center">Contact Me</h2>
+ <section id="contact">
+ <!-- A/B Test: Contact Form Layout and Inputs -->
+        <div class="container-section" data-aos="fade-up">
+            <h2 class="text-center" id="contact">Contact Me</h2>
             <form id="contact-form" action="https://formspree.io/f/myzwjbgd" method="POST">
                 <div class="mb-3">
                     <input type="text" class="form-control" name="name" placeholder="Name" required>
@@ -341,6 +380,10 @@
                 <div class="mb-3">
                     <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                 </div>
+ <div class="mb-3">
+ <label for="feedback" class="form-label">Feedback</label>
+ <input type="text" class="form-control" id="feedback" name="feedback" placeholder="Your feedback">
+ </div>
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
             <p class="text-center mt-3">
@@ -356,6 +399,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Datorama Reporting Ecosystem</h2>
+            <p><strong>Goal:</strong> To create a centralized, automated, and scalable reporting platform for over 800 marketing campaigns, enabling real-time insights and reducing manual reporting effort.</p>
             <p><strong>Technologies</strong>: Datorama, Google Ads, Meta, The Trade Desk, Double Verify, IAS, Pinterest, Bing Ads, Walmart</p>
             <p>Architected real-time reporting for 800+ campaigns, integrating multiple platforms and reducing report turnaround time by 70%. Standardized data with Harmonization Center and designed dynamic dashboards for stakeholders.</p>
             <h6>Architecture Diagram</h6>
@@ -363,15 +407,39 @@
  graph TD
  A[Google Ads] --> B(Datorama);
  C[Meta] --> B;
- D[The Trade Desk] --> B;
+ D[The Trade Desk] --> B(Datorama Marketing Cloud);
  E[Double Verify] --> B;
  F[IAS] --> B;
  G[Pinterest] --> B;
  H[Bing Ads] --> B;
  I[Walmart] --> B;
  B --> J{Harmonization Center};
- J --> K[Dynamic Dashboards];
- K --> L[Stakeholders];
+ J --> K[Data Model & Analysis];
+ K --> L[Dynamic Dashboards];
+ L --> M[Stakeholders (Media Planning, Client Services, Strategy)];
+
+ subgraph Data Sources
+    A
+    C
+    D
+    E
+    F
+    G
+    H
+    I
+ end
+
+ subgraph Datorama Processing
+    B
+    J
+    K
+ end
+
+ subgraph Reporting & Insights
+    L
+    M
+ end
+
  style A fill:#f9f,stroke:#333,stroke-width:2px
  style C fill:#ccf,stroke:#333,stroke-width:2px
  style D fill:#9cf,stroke:#333,stroke-width:2px
@@ -381,9 +449,15 @@
  style H fill:#9cf,stroke:#333,stroke-width:2px
  style I fill:#9cf,stroke:#333,stroke-width:2px
  style B fill:#ff9,stroke:#333,stroke-width:2px
- style J fill:#9f9,stroke:#333,stroke-width:2px
- style K fill:#9f9,stroke:#333,stroke-width:2px
+ style J fill:#ffa,stroke:#333,stroke-width:2px
+ style K fill:#ffc,stroke:#333,stroke-width:2px
+ style L fill:#9f9,stroke:#333,stroke-width:2px
  style L fill:#fff,stroke:#333,stroke-width:2px
+ style M fill:#eef,stroke:#333,stroke-width:2px
+
+ style Data_Sources fill:#f0f0f0
+ style Datorama_Processing fill:#f9f9f9
+ style Reporting_&_Insights fill:#e9e9e9
             </pre>
         </div>
     </div>
@@ -393,13 +467,22 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Dataiku ML Model Deployment</h2>
+            <p><strong>Goal:</strong> To develop and deploy machine learning models within a production environment using Dataiku DSS to generate actionable business insights.</p>
             <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
+            <p><strong>Tools:</strong> Dataiku DSS, Python Libraries (Scikit-learn, Pandas, NumPy)</p>
             <p>Implemented machine learning models in production for business insights, conducting POCs and ensuring data quality for reliable outcomes.</p>
             <h6>Architecture Diagram</h6>
             <pre class="mermaid">
  graph TD
- A[Dataiku DSS] --> B{Machine Learning Models};
- B --> C[Business Insights];
+    A[Raw Data] --> B(Data Cleaning & Preprocessing);
+    B --> C(Feature Engineering);
+    C --> D{Model Training & Evaluation};
+    D --> E(Model Deployment - Dataiku DSS);
+    E --> F[Predictions & Insights];
+    F --> G[Business Stakeholders];
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#eef,stroke:#333,stroke-width:2px
             </pre>
         </div>
     </div>
@@ -409,14 +492,23 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Tableau Dashboard Optimization</h2>
+            <p><strong>Goal:</strong> To streamline the data refreshing process for Tableau Dashboards, significantly reducing the time required for data analysis and improving the efficiency of reporting.</p>
             <p><strong>Technologies</strong>: Tableau</p>
+            <p><strong>Tools:</strong> Tableau Desktop, Tableau Server/Cloud, SQL, Data Connectors</p>
             <p>Streamlined dashboard refreshing process, reducing data analysis time by 50% and creating visually appealing dashboards for cross-functional teams.</p>
             <h6>Architecture Diagram</h6>
+            <p>This diagram illustrates the optimized data flow for Tableau Dashboards, emphasizing efficiency in data sourcing and analysis.</p>
             <pre class="mermaid">
  graph TD
- A[Data Sources] --> B(Tableau);
- B --> C{Dashboard};
- C --> D[Data Analysis];
+    A[Various Data Sources] --> B(Optimized Data Extraction);
+    B --> C(Data Transformation & Preparation);
+    C --> D[Tableau Server/Cloud];
+    D --> E(Scheduled Refreshes);
+    E --> F[Interactive Dashboards];
+    F --> G[Data Analysis & Decision Making];
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#eef,stroke:#333,stroke-width:2px
             </pre>
         </div>
     </div>
@@ -426,13 +518,22 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Alteryx to Dataiku Migration</h2>
+            <p><strong>Goal:</strong> To migrate existing data workflows from Alteryx to Dataiku DSS, aiming to improve workflow efficiency, scalability, and collaboration within the data team.</p>
             <p><strong>Technologies</strong>: Alteryx, Dataiku DSS</p>
+            <p><strong>Tools:</strong> Alteryx Designer, Dataiku DSS, Data Connectors</p>
             <p>Migrated Alteryx workflows to Dataiku DSS, improving workflow efficiency by 70% and optimizing data processing pipelines.</p>
             <h6>Architecture Diagram</h6>
+            <p>This diagram depicts the process of migrating workflows from Alteryx to Dataiku DSS, highlighting the transition and the resulting efficiency gains.</p>
             <pre class="mermaid">
  graph TD
- A[Alteryx Workflows] --> B{Dataiku DSS};
- B --> C[Improved Efficiency];
+    A[Existing Alteryx Workflows] --> B(Analysis & Planning);
+    B --> C(Replication & Development in Dataiku);
+    C --> D(Testing & Validation);
+    D --> E[Production Deployment - Dataiku DSS];
+    E --> F[Improved Workflow Efficiency (70%+)];
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#9f9,stroke:#333,stroke-width:2px
             </pre>
         </div>
     </div>
@@ -442,14 +543,25 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Predictive Models for Retention</h2>
+            <p><strong>Goal:</strong> To develop and deploy predictive models that accurately forecast customer retention, leading to targeted interventions and a measurable increase in retention rates (20% achieved).</p>
             <p><strong>Technologies</strong>: Dataiku DSS, Python</p>
+            <p><strong>Tools:</strong> Dataiku DSS, Python Libraries (e.g., Scikit-learn, TensorFlow, PyTorch), Database Connectors, Deployment APIs</p>
             <p>Developed and deployed predictive models, resulting in a 20% increase in customer retention rates for Novartis.</p>
             <h6>Architecture Diagram</h6>
+            <p>This diagram outlines the architecture for developing and deploying predictive models focused on customer retention within Dataiku DSS.</p>
             <pre class="mermaid">
  graph TD
- A[Data Sources] --> B(Dataiku DSS);
- B --> C{Predictive Models};
- C --> D[Customer Retention};</pre>
+    A[Customer Data Sources] --> B(Data Ingestion & Preparation);
+    B --> C(Feature Engineering & Selection);
+    C --> D(Model Development & Training);
+    D --> E(Model Evaluation & Validation);
+    E --> F[Model Deployment - Dataiku DSS];
+    F --> G[Predictive Insights & Actions];
+    G --> H[Increased Customer Retention (20%)];
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style H fill:#9f9,stroke:#333,stroke-width:2px
+            </pre>
         </div>
     </div>
 
@@ -457,19 +569,44 @@
     <div id="dataPipelineModal" class="modal">
             <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Data Pipeline for a Marketing Campaign</h2>
-            <p>This project describes the workflow for handling data in a marketing campaign.</p>
+            <h2>Optimized Data Pipeline for Marketing Campaigns</h2>
+            <p><strong>Goal:</strong> To establish a robust and efficient data pipeline that automates the flow of data from various marketing sources, enabling timely analysis and reporting for campaign optimization.</p>
+            <p><strong>Technologies:</strong> ETL Tools (e.g., Dataiku, Alteryx, or custom scripts), Data Warehouse (e.g., Snowflake, Redshift, BigQuery), BI Tools (e.g., Tableau, Looker, Power BI), Data Connectors.</p>
+            <p>This diagram illustrates a comprehensive data pipeline designed to support the data needs of a marketing campaign, from raw data ingestion to actionable insights.</p>
             <pre class="mermaid">
                 graph TD
-                    A[Campaign Goals & KPIs] --> B{Data Sources};
-                    B --> C(Data Extraction);
-                    C --> D(Data Transformation);
-                    D --> E(Data Loading);
-                    E --> F[Data Warehouse];
-                    F --> G{BI Tool};
-                    G --> H[Marketing Dashboards];
-                    H --> I[Campaign Optimization];
+                    A[Marketing Platforms (Ads, Social, CRM, etc.)] --> B(Data Extraction via APIs/Connectors);
+                    B --> C(Data Ingestion into Staging Area);
+                    C --> D(Data Cleaning & Validation);
+                    D --> E(Data Transformation & Modeling);
+                    E --> F[Data Warehouse/Lake];
+                    F --> G(Data Aggregation & Mart Creation);
+                    G --> H[Business Intelligence Tools];
+                    H --> I[Interactive Marketing Dashboards];
                     I --> A;
+                    I --> J[Analysis & Reporting];
+                    J --> K[Campaign Optimization Decisions];
+
+ subgraph Data Source & Extraction
+    A
+    B
+ end
+
+ subgraph ETL Process
+    C
+    D
+    E
+ end
+
+ subgraph Data Storage & BI
+    F
+    G
+    H
+    I
+    J
+    K
+ end
+
                     style A fill:#f9f,stroke:#333,stroke-width:2px
                     style B fill:#ccf,stroke:#333,stroke-width:2px
                     style C fill:#9cf,stroke:#333,stroke-width:2px
@@ -477,18 +614,111 @@
                     style E fill:#9cf,stroke:#333,stroke-width:2px
                     style F fill:#ff9,stroke:#333,stroke-width:2px
                     style G fill:#9f9,stroke:#333,stroke-width:2px
+                    style H fill:#aff,stroke:#333,stroke-width:2px
                     style H fill:#9f9,stroke:#333,stroke-width:2px
                     style I fill:#fff,stroke:#333,stroke-width:2px
+                    style J fill:#ddd,stroke:#333,stroke-width:2px
+                    style K fill:#eef,stroke:#333,stroke-width:2px
+
+                    style Data_Source_&_Extraction fill:#f0f0f0
+                    style ETL_Process fill:#f9f9f9
+                    style Data_Storage_&_BI fill:#e9e9e9
             </pre>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+    <script defer>
+        // Error Handling Suggestions:
+        //
+        // 1. Contact Form:
+        //    - Implement client-side form validation (e.g., check required fields, email format) before submission.
+        //    - Add a server-side validation check on the form submission endpoint (Formspree handles basic validation, but for more complex logic or custom responses, a server-side script is needed).
+        //    - Provide clear user feedback on submission success or failure (e.g., "Message sent successfully!" or "There was an error sending your message. Please try again.").
+        //    - Display specific error messages for invalid input fields.
+        //    - Consider using a "loading" state for the submit button to indicate processing.
+        //
+        // 2. Modals:
+        //    - If content is loaded dynamically, display a loading indicator while fetching data.
+        //    - Handle errors gracefully if dynamic content fails to load.
+        //
+        //    - Ensure smooth opening and closing of modals.
+        //    - Handle cases where content fails to load (though in this static example, content is present). In dynamic scenarios, display a loading indicator or an error message if content retrieval fails.
+        //    - Ensure modals are accessible (e.g., can be closed with the Escape key, focus management).
+        //    - If modal content is loaded dynamically, implement error handling for the data fetching process.
+        //
+        // 3. General JavaScript Errors:
+        //    - Use `try...catch` blocks for potentially problematic code.
+        //    - Use `console.error()` or logging to track JavaScript errors during development.
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        // Loading Animation Suggestions:
+        // - Implement a loading spinner or animation for sections that might take time to load data (e.g., if projects were fetched dynamically).
+        // - Show a loading indicator when the page initially loads, especially if there are large assets.
+        // - For form submissions, display a loading state on the button.
+        darkModeToggle.addEventListener('click', () => {
+ // UI Kits Suggestion:
+        // Consider using pre-built UI component libraries (like Bootstrap, Materialize, Tailwind UI)
+        // or creating your own UI kit. This can significantly speed up development and ensure consistency
+        // in design elements across your website.
+        // Modern Frameworks Suggestion:
+        // For larger or more complex projects, consider using modern JavaScript frameworks like React,
+        // Vue, or Angular. They provide structure, component-based architecture, and state management,
+        // which can greatly improve development efficiency and maintainability.
+            document.body.classList.toggle('dark-mode');
+            // You might want to save the user's preference in localStorage
+            if (document.body.classList.contains('dark-mode')) {
+ localStorage.setItem('theme', 'dark');
+            } else {
+ localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Design Inspiration Suggestion:
+        // Remember to regularly look at other websites and design portfolios for inspiration.
+        // Explore platforms like Dribbble, Behance, and Awwwards to see what's trending and get new ideas for layout, animations, and visual styles.
+ const backToTopBtn = document.getElementById('backToTopBtn');
+ backToTopBtn.classList.add('hidden'); // Initially hide the button
+
+ window.addEventListener('scroll', () => {
+ if (window.scrollY > 300) {
+ backToTopBtn.classList.remove('hidden');
+ backToTopBtn.classList.add('fade-in');
+            } else {
+ backToTopBtn.classList.add('hidden');
+ backToTopBtn.classList.remove('fade-in');
+            }
+        });
+
+ backToTopBtn.addEventListener('click', () => {
+ backToTopBtn.classList.add('rotate');
+ setTimeout(() => {
+ backToTopBtn.classList.remove('rotate');
+            }, 500); // Adjust timeout to match animation duration
+        });
+
+ const sections = document.querySelectorAll('.section-container');
+ const observer = new IntersectionObserver(entries => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); // Stop observing once animated
+ }
+            });
+        }, {
+ threshold: 0.1 // Percentage of the element that must be visible to trigger
+ });
+
+ sections.forEach(section => {
+        observer.observe(section);
+ });
+
+
+    </script>
     <script src="script.js"></script>
 
     <!-- Footer -->
-    <footer>
+    <footer aria-label="footer">
         <div class="container">
             <p>&copy; 2024 Rajure Ajay Kumar. All rights reserved.</p>
         </div>
