@@ -86,3 +86,13 @@ h1, h2, h3, h4, h5 {
     background-color: #1e3a8a;
     border-color: #1e3a8a;
 }
+
+/* Mermaid Diagram Styling */
+.mermaid {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mermaid svg {
+    max-width: 100%;
+}
