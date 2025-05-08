@@ -86,19 +86,13 @@
                                         <li>Double Verify and Integral Ad Science (IAS): Ensured viewability and fraud protection, enhancing trust in media investments.</li>
                                     </ul>
                                     <div class="mermaid">
-                                        graph TD
-                                            A[RawData] -->|Map| B[Harmonization]
-                                            B -->|Unify| C[KPIs]
-                                            C -->|Analyze| D[Fields]
-                                            D --> E[Breakdowns]
-                                            E --> F[Channel]
-                                            E --> G[Geography]
-                                            E --> H[Product]
-                                            E --> I[Audience]
-                                            classDef source fill:#3b82f6,color:#fff
-                                            classDef process fill:#10b981,color:#fff
-                                            class A,C,D,E,F,G,H,I source
-                                            class B process
+                                        stateDiagram-v2
+    [*] --> Still
+    Still --> [*]
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]
                                     </div>
                                 </div>
                             </div>
