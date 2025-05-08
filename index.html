@@ -707,27 +707,18 @@
         // 3. General JavaScript Errors:
         //    - Use `try...catch` blocks for potentially problematic code.
         
-        const darkModeToggle = document.getElementById('darkModeToggle');
+ const darkModeToggle = document.getElementById('darkModeToggle');
  const backToTopBtn = document.getElementById('backToTopBtn');
  backToTopBtn.classList.add('hidden'); // Initially hide the button
 
 
         // This function checks if an element is in the viewport
-        function isElementInViewport(el) {
-            const rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
 
         // Serverless Computing Suggestion:
         //
         // Serverless computing is a cloud computing execution model where the cloud provider dynamically manages
         // the allocation of computing resources. You are only billed for the resources you consume, not for
-        // idle time. This can significantly optimize resource utilization and reduce costs.
+ // idle time. This can significantly optimize resource utilization and reduce costs.
         //
         // How to apply this to a website:
         // - Serving static files (e.g., using services like AWS S3 with CloudFront, Netlify, Vercel).
@@ -788,8 +779,13 @@
  });
 
         sections.forEach(section => {
-        observer.observe(section);
-
+ // Check if the section is already in the viewport
+ const rect = section.getBoundingClientRect();
+ if (rect.top < window.innerHeight && rect.bottom >= 0) {
+ section.classList.add('animate'); // Add the animate class immediately
+            } else {
+                 observer.observe(section);
+            }
  });
 
 
