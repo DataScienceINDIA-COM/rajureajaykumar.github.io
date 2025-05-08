@@ -98,8 +98,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .mermaid svg {
-    max-width: auto;
-    height: auto;
+    max-width: 100%;
+    
 }
 
 /* Counter Styling */
