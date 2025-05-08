@@ -87,20 +87,19 @@
                                     </ul>
                                     <div class="mermaid mt-3" data-aos="fade-up">
                                         graph TD
-                                            A[Google_Ads] --> B[Data_Pipeline]
-                                            C[Meta] --> B
-                                            D[The_Trade_Desk] --> B
-                                            E[Pinterest] --> B
-                                            F[Bing_Ads] --> B
-                                            G[Walmart] --> B
-                                            H[Double_Verify] --> B
-                                            I[IAS] --> B
-                                            B --> J[QA_Process]
-                                            J --> K[Integrated_Data]
-                                        classDef source fill:#3b82f6,color:#fff
-                                        classDef process fill:#10b981,color:#fff
-                                        class A,C,D,E,F,G,H,I source
-                                        class B,J process
+                                            A[GoogleAds] -->|API| B[DataPipeline]
+                                            C[Meta] -->|API| B
+                                            D[TheTradeDesk] -->|API| B
+                                            E[Pinterest] -->|API| B
+                                            F[BingAds] -->|API| B
+                                            G[Walmart] -->|API| B
+                                            H[DoubleVerify] -->|API| B
+                                            I[IAS] -->|API| B
+                                            B -->|QA| J[IntegratedData]
+                                            classDef source fill:#3b82f6,color:#fff;
+                                            classDef process fill:#10b981,color:#fff;
+                                            class A,C,D,E,F,G,H,I source;
+                                            class B,J process;
                                     </div>
                                 </div>
                             </div>
@@ -120,18 +119,18 @@
                                     </ul>
                                     <div class="mermaid mt-3" data-aos="fade-up">
                                         graph TD
-                                            A[Raw_Data] --> B[Harmonization_Center]
-                                            B -->|Mapping_Logic| C[Unified_KPIs]
-                                            C --> D[Calculated_Fields]
+                                            A[RawData] -->|Mapping| B[HarmonizationCenter]
+                                            B -->|Unified| C[KPIs]
+                                            C -->|Analysis| D[CalculatedFields]
                                             D --> E[Breakdowns]
                                             E --> F[Channel]
                                             E --> G[Geography]
-                                            E --> H[Product_Line]
+                                            E --> H[ProductLine]
                                             E --> I[Audience]
-                                        classDef data fill:#3b82f6,color:#fff
-                                        classDef process fill:#10b981,color:#fff
-                                        class A,C,D,E data
-                                        class B process
+                                            classDef data fill:#3b82f6,color:#fff;
+                                            classDef process fill:#10b981,color:#fff;
+                                            class A,C,D,E,F,G,H,I data;
+                                            class B process;
                                     </div>
                                 </div>
                             </div>
@@ -182,7 +181,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Other Roles (Unchanged) -->
+                <!-- Other Roles -->
                 <div class="timeline-item" data-aos="fade-left">
                     <h4>Freelance Data Analyst, Various Clients</h4>
                     <p>Hyderabad | Oct 2022 – Jul 2023</p>
@@ -384,23 +383,23 @@
                     <h6>Architecture Diagram</h6>
                     <div class="mermaid">
                         graph TD
-                            A[Google_Ads] -->|API| B[Harmonization_Center]
+                            A[GoogleAds] -->|API| B[HarmonizationCenter]
                             C[Meta] -->|API| B
-                            D[The_Trade_Desk] -->|API| B
+                            D[TheTradeDesk] -->|API| B
                             E[Pinterest] -->|API| B
-                            F[Bing_Ads] -->|API| B
+                            F[BingAds] -->|API| B
                             G[Walmart] -->|API| B
-                            H[Double_Verify] -->|API| B
+                            H[DoubleVerify] -->|API| B
                             I[IAS] -->|API| B
-                            B -->|Standardized_Data| J[Calculated_Fields]
-                            J -->|Processed_Data| K[Datorama_Dashboards]
-                            K --> L[Media_Planning]
-                            K --> M[Client_Services]
-                            K --> N[Strategy_Teams]
-                            classDef source fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,D,E,F,G,H,I source
-                            class B,J,K process
+                            B -->|Standardized| J[CalculatedFields]
+                            J -->|Processed| K[DatoramaDashboards]
+                            K --> L[MediaPlanning]
+                            K --> M[ClientServices]
+                            K --> N[StrategyTeams]
+                            classDef source fill:#3b82f6,color:#fff;
+                            classDef process fill:#10b981,color:#fff;
+                            class A,C,D,E,F,G,H,I source;
+                            class B,J,K process;
                     </div>
                 </div>
             </div>
@@ -419,16 +418,16 @@
                     <h6>Architecture Diagram</h6>
                     <div class="mermaid">
                         graph TD
-                            A[Raw_Data] -->|Ingestion| B[Dataiku_DSS]
-                            B -->|Clean_Recipe| C[Cleaned_Data]
-                            C -->|Python_Recipe| D[Feature_Engineering]
-                            D -->|Auto_ML_Recipe| E[ML_Model]
-                            E -->|Deployment| F[Production_Endpoint]
-                            F --> G[Business_Insights]
-                            classDef data fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,D,F,G data
-                            class B,E process
+                            A[RawData] -->|Ingestion| B[DataikuDSS]
+                            B -->|Cleaning| C[CleanedData]
+                            C -->|FeatureEng| D[Features]
+                            D -->|Training| E[MLModel]
+                            E -->|Deployment| F[Production]
+                            F --> G[Insights]
+                            classDef data fill:#3b82f6,color:#fff;
+                            classDef process fill:#10b981,color:#fff;
+                            class A,C,D,F,G data;
+                            class B,E process;
                     </div>
                 </div>
             </div>
@@ -447,14 +446,14 @@
                     <h6>Architecture Diagram</h6>
                     <div class="mermaid">
                         graph TD
-                            A[Data_Sources] -->|Connectors| B[Tableau_Server]
-                            B -->|ETL| C[Processed_Data]
-                            C -->|Refresh_Schedule| D[Tableau_Dashboards]
-                            D --> E[Cross_Functional_Teams]
-                            classDef data fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,D,E data
-                            class B process
+                            A[DataSources] -->|Connectors| B[TableauServer]
+                            B -->|ETL| C[ProcessedData]
+                            C -->|Refresh| D[TableauDashboards]
+                            D --> E[Teams]
+                            classDef data fill:#3b82f6,color:#fff;
+                            classDef process fill:#10b981,color:#fff;
+                            class A,C,D,E data;
+                            class B process;
                     </div>
                 </div>
             </div>
@@ -473,14 +472,14 @@
                     <h6>Architecture Diagram</h6>
                     <div class="mermaid">
                         graph TD
-                            A[Alteryx_Workflows] -->|Export| B[Workflow_Mapping]
-                            B -->|Visual_Recipes| C[Dataiku_DSS]
-                            C -->|Validation| D[Optimized_Pipelines]
+                            A[AlteryxWorkflows] -->|Export| B[Mapping]
+                            B -->|Recipes| C[DataikuDSS]
+                            C -->|Validation| D[OptimizedPipelines]
                             D --> E[Production]
-                            classDef data fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,D,E data
-                            class B,C process
+                            classDef data fill:#3b82f6,color:#fff;
+                            classDef process fill:#10b981,color:#fff;
+                            class A,D,E data;
+                            class B,C process;
                     </div>
                 </div>
             </div>
@@ -499,15 +498,15 @@
                     <h6>Architecture Diagram</h6>
                     <div class="mermaid">
                         graph TD
-                            A[Customer_Data] -->|Ingestion| B[Dataiku_DSS]
-                            B -->|Feature_Engineering| C[Features]
-                            C -->|Prediction_Recipe| D[Predictive_Model]
-                            D -->|Deployment| E[Retention_Metrics]
-                            E --> F[Business_Impact]
-                            classDef data fill:#3b82f6,color:#fff
-                            classDef process fill:#10b981,color:#fff
-                            class A,C,E,F data
-                            class B,D process
+                            A[CustomerData] -->|Ingestion| B[DataikuDSS]
+                            B -->|Features| C[FeatureSet]
+                            C -->|Training| D[PredictiveModel]
+                            D -->|Deployment| E[RetentionMetrics]
+                            E --> F[BusinessImpact]
+                            classDef data fill:#3b82f6,color:#fff;
+                            classDef process fill:#10b981,color:#fff;
+                            class A,C,E,F data;
+                            class B,D process;
                     </div>
                 </div>
             </div>
