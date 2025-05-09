@@ -34,7 +34,7 @@ class CodeBaseAnalyzer:
             tree = ast.parse(file_content["result"])
         except (FileNotFoundError, SyntaxError, UnicodeDecodeError, ValueError) as e:
             print(f"Error analyzing file {file_path}: {e}")
-            return None
+            raise e
 
         classes = []
         functions = []

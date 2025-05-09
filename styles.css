@@ -55,19 +55,20 @@ h6 {
 	margin: 8px 0 5px 0;
 }
 /*-----------------------------------*/
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+/* Hero Section */
+.hero {
+ background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
  background-image: var(--background-image); /* Use the variable for the background image */
  background-size: cover;
-    height: calc(100vh - var(--navbar-height)); /* Adjust height to accommodate fixed navbar */
+ height: calc(100vh - var(--navbar-height)); /* Adjust height to accommodate fixed navbar */
  padding: 40px 20px;
  display: flex;
  flex-direction: column;
-    overflow: hidden; /* Hide overflow for animations */
+ overflow: hidden; /* Hide overflow for animations */
  justify-content: center;
-    padding-top: var(--navbar-height); /* Add padding to push content below navbar and add some space */
+ padding-top: var(--navbar-height); /* Add padding to push content below navbar and add some space */
  align-items: center;
 }
-
 /* Section Container */
 .section-container {
  padding: 80px 20px; /* Increased padding for more space */
@@ -93,17 +94,70 @@ h6 {
 	--accent-color: #00c2cb;
 	--section-background-color: #333;
  /* Dark mode background image if needed */
+	background-color: var(--background-color);
+	color: var(--text-color);
  --background-image: none;
 }
+.dark-mode .navbar {
+ background-color: var(--card-color);
+}
+.dark-mode .hero {
+ background-color: var(--secondary-color);
+}
+.dark-mode h1 {
+	color: var(--text-color);
+}
+.dark-mode h2 {
+	color: var(--text-color);
+}
+.dark-mode h3 {
+	color: var(--text-color);
+}
+.dark-mode h4 {
+	color: var(--text-color);
+}
+.dark-mode h5 {
+	color: var(--text-color);
+}
+.dark-mode h6 {
+	color: var(--text-color);
+}
+.dark-mode a {
+	color: var(--link-color);
+}
 
+.dark-mode #skills ul {
+ display: block;
+ text-align: center;
+}
 
+.dark-mode #skills li {
+ background-color: #444;
+ color: var(--text-color);
+ padding: 8px 12px;
+ margin: 5px;
+}
+
+.dark-mode .timeline-item {
+ background-color: var(--card-color);
+ padding: 20px;
+ margin-bottom: 20px;
+ border-radius: 10px;
+}
+
+.dark-mode .progress {
+ background-color: #555;
+}
+.dark-mode .progress-bar {
+ background: var(--accent-color);
+}
 /*-----------------------------------*/
 /* Experience Section                   */
 /*-----------------------------------*/
 .experience {
 	padding: 40px 20px;
 	background: var(--card-color);
-
+}
 .timeline-item ul {
     margin-top: 10px;
 }
@@ -112,11 +166,8 @@ h6 {
     font-weight: 600;
 }
 
-    margin: 0 5px;
-}
 /*-----------------------------------*/
-/* Progress Bar                     */
-/*-----------------------------------*/ /* Skill Item */
+/* Skill and Progress Bar */
  .skill-item {
     margin-bottom: 20px;
 }
@@ -131,6 +182,20 @@ h6 {
     background: var(--accent-color);
 }
 
+.dark-mode .project-card .card {
+ background-color: var(--card-color);
+}
+.dark-mode .project-card .card:hover {
+ box-shadow: none;
+}
+.dark-mode #contact form input,
+.dark-mode #contact form textarea {
+ background-color: #242424;
+ box-shadow: none;
+}
+.dark-mode .back-to-top {
+ background-color: var(--accent-color);
+}
 /*-----------------------------------*/
 /* Project Card                     */
 /*-----------------------------------*/
@@ -144,10 +209,11 @@ h6 {
  /* Smooth transition for transform, box-shadow, and background-color */
  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
-    transform: translateY(-10px);
+.project-card .card:hover {
+ transform: translateY(-10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
+/* Remove extra closing curly braces */
 
 /*-----------------------------------*/
 /* Contact Form                     */
@@ -155,7 +221,7 @@ h6 {
  .contact-form-container {
 	 padding: 40px 20px;
 
-
+}
 /* Contact Section */ #contact form {
     max-width: 600px;
 }
@@ -228,10 +294,9 @@ a:hover, button:hover, .btn:hover {
 
 
 
- /*-----------------------------------*/
-}
-}
-
+/*-----------------------------------*/
+/* Skills Section                   */
+/*-----------------------------------*/
 #skills ul {
     list-style: none;
     padding: 0;
@@ -248,9 +313,9 @@ a:hover, button:hover, .btn:hover {
     border-radius: 5px;
 }
 
+/*-----------------------------------*/
+/* Achievements Section             */
 #achievements {
-    /* Achievements Section             */
- /*-----------------------------------*/
 }
 
 #achievements h2 {
@@ -268,36 +333,33 @@ a:hover, button:hover, .btn:hover {
 	color: var(--secondary-text-color);
 }
 
-
 /* Media Queries for Responsive Design */
-
- /* Adjust font sizes for smaller screens */
- h1 {
+@media (max-width: 768px) {
+    /* Adjust font sizes for smaller screens */
+    h1 {
         font-size: 2rem;
     }
 
- h2 {
+    h2 {
         font-size: 1.75rem;
     }
 
- h3 {
+    h3 {
         font-size: 1.5rem;
     }
 
- .hero h1 { /* Adjusted hero heading font size */
+    .hero h1 { /* Adjusted hero heading font size */
         font-size: 2.5rem;
     }
 
- .hero h3 { /* Adjusted hero subheading font size */
+    .hero h3 { /* Adjusted hero subheading font size */
         font-size: 1.25rem;
     }
 
     .hero p {
         font-size: 1rem;
     }
-
     /* Adjust timeline text size for readability */
- .timeline-item p,
  .timeline-item li {
         font-size: 1rem;
     }
@@ -394,12 +456,14 @@ footer { /* Footer */
     opacity: 0;
     transform: translateY(100%);
 }
-
+/* Initial state for sections before animation */
 .section-container:not(.animate) { /* Sections initial state */
 	opacity: 0;
  transform: translateY(20px) scale(0.95);
-} /* Hero Image Animation */
+}
 /* Animations */
+
+/* Hero Image Animation */
 
 
 
@@ -481,7 +545,7 @@ footer { /* Footer */
     to {
         transform: scale(1);
     }
-}
+} /* Hero Image Animation */
 
 /* Animation for sections when they are in viewport */
  .section-container.animate { /* Animate sections in viewport */
@@ -493,7 +557,7 @@ footer { /* Footer */
 /* Add transition to sections for smooth animation */
 .section-container {
 	transition: opacity 1s ease-out, transform 1s ease-out;
-} /* Hero Image Animation */
+}
 /* Hero Image Animation */
 .hero img {
     animation: bounce 2s infinite;
@@ -501,7 +565,7 @@ footer { /* Footer */
 .hero h1, .hero h3, .hero p, .hero a { /* Apply slide-up animation to hero text elements */
     animation: slide-up 1s ease-out forwards;
 } /* Project Card Hover Animation */
-/* Project Card Hover Animation */
+/* Project Card Hover Animation */ /* Project Card Hover Animation */
 .project-card .card:hover {
  /* animation: flip 0.5s ease; *//* Removed flip animation on hover */
     transform: translateY(-10px) scale(1.05); /* Added subtle move up and scale on hover */

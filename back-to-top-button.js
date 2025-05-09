@@ -9,16 +9,6 @@ class BackToTopButton extends HTMLElement {
     this.button = document.createElement('button');
     this.button.id = 'backToTopBtn';
     this.button.textContent = 'Top';
-    this.button.style.display = 'none'; // Hide the button initially
-    this.button.style.position = 'fixed';
-    this.button.style.bottom = '20px'; // Position it 20px from the bottom
-    this.button.style.right = '20px'; // Position it 20px from the right
-    this.button.style.padding = '10px';
-    this.button.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    this.button.style.color = 'white';
-    this.button.style.border = 'none';
-    this.button.style.borderRadius = '5px';
-    this.button.style.cursor = 'pointer';
 
     // Add styles to the shadow root
     const style = document.createElement('style');

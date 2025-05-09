@@ -8,14 +8,8 @@ const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/style.css',
-  '/script.js',
   '/back-to-top-button.js',
-  '/datorama_modal_template.html',
-  '/dataiku_modal_template.html',
-  '/tableau_modal_template.html',
-  '/alteryx_modal_template.html',
-  '/predictive_modal_template.html',
-  '/pipeline_modal_template.html',
+  '/script.js'
 ];
 
 // Install event: Cache static assets

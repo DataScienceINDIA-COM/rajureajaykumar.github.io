@@ -55,14 +55,6 @@ connectWebSocket(); // Connect to the WebSocket server on page load
 const darkModeToggle = document.getElementById('darkModeToggle');
 const currentTheme = localStorage.getItem('theme');
 
-// Function to smoothly scroll the window to the top of the page
-// This function is called when the back-to-top button is clicked.
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth' // Smooth scrolling animation
-    });
-}
 // Contact Form Validation using Fetch API
 // Event listener for contact form submission
 document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -74,8 +66,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     const message = document.querySelector('textarea[name="message"]').value;
     const feedback = document.querySelector('input[name="feedback"]').value;
 
-    // Log the form submission and the values captured from the form.
- console.log('Form submitted. Values:', { name, email, message, feedback });
+    // Log the form values for debugging purposes.
+    console.log('Form submitted. Values:', { name, email, message, feedback });
 
     // Regular expression for basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -92,60 +84,38 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         existingFeedback.remove();
     }
 
-    // Validate the form fields. If any required field is empty or the email is invalid,
-    // display an error message.
-    // Validate form fields
     // Validate form fields
     if (!name || !email || !message) {
+        console.log('Validation failed: Missing required fields.'); // Log validation failure
         feedbackElement.classList.add('text-danger');
         feedbackElement.innerText = 'Please fill out all fields.';
     } else if (!emailRegex.test(email)) {
         feedbackElement.classList.add('text-danger');
         feedbackElement.innerText = 'Please enter a valid email address.';
     } else {
-        // If form validation passes, simulate an AI analysis of the feedback provided by the user.
-        // Simulate AI analysis of the feedback
- console.log('Calling simulate AI analysis for feedback...');
-        const aiSuggestion = callFunction('analyzeFeedback', feedback); // Call the simulated AI function using the simulator
-        // Display the AI feedback suggestion to the user before attempting to send the form data.
-        // Display the AI feedback suggestion
-        feedbackElement.innerHTML = `${aiSuggestion}`; // Display the suggestion before fetch
-
-        // Prepare the data from the form to be saved. This simulates a new description entry
-        // that would typically be sent to a backend or database like Firestore.
-        // Prepare data to be saved (simulating a new description entry)
-        const newDescription = {
- name: name,
- email: email,
- message: message,
- feedback: feedback
-        // Log the description data being prepared for saving.
-        };
- console.log('Saving description data:', newDescription);
-        saveData('descriptions', newDescription); // Save the description data using the simulator
         // Use the Fetch API to actually submit the form data to the specified action URL.
 
         // Use fetch to submit the form data (for actual form submission if needed)
         fetch(this.action, {
  console.log('Sending fetch request to:', this.action);
  }
-        }).then(response => {
+        }).then(response => { // Handle the response from the fetch request
             if (response.ok) {
                 // If the fetch request is successful (response status is OK),
                 // display a success message and reset the form.
+                console.log('Form submission successful.'); // Log successful submission
                 feedbackElement.classList.add('text-success');
                 feedbackElement.innerText = 'Thank you! Your message has been sent.';
                 this.reset(); // Reset the form after successful submission
-                // Append the AI suggestion to the success message.
-                // Add AI suggestion after success message
-                feedbackElement.innerHTML += `<br>${aiSuggestion}`; // Add AI suggestion after success message
             } else {
                 response.json().then(data => {
                     // Handle errors from the server
+                    console.error('Form submission failed. Server response:', data); // Log server errors
                     if (Object.hasOwnProperty.call(data, 'errors')) {
                         feedbackElement.classList.add('text-danger');
                         feedbackElement.innerText = data["errors"].map(error => error["message"]).join(", ");
                     } else {
+                        console.error('Form submission failed with unknown error format.'); // Log unknown error format
                         feedbackElement.classList.add('text-danger');
                         feedbackElement.innerText = 'Oops! Something went wrong. Please try again later.';
                     }
@@ -156,13 +126,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
             // If there is a network error or other issues with the fetch request,
             // log the error and display an error message to the user.
             console.error('Error submitting form:', error);
-            feedbackElement.classList.add('text-danger');
+            feedbackElement.classList.add('text-danger'); // Display a generic error message
             feedbackElement.innerText = 'Oops! Something went wrong. Please try again later.';
-            feedbackElement.innerHTML += `<br>${aiSuggestion}`; // Add AI suggestion even on error
-        });
-        // Append the feedback element (containing either success or error message and AI suggestion)
-        // to the form to display it to the user.
-    }
 
     // Append the feedback element to the form to display validation or submission status.
     this.appendChild(feedbackElement); // Append the feedback element to the form
@@ -213,27 +178,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Back-to-Top Button Logic
-const backToTopBtn = document.getElementById('backToTopBtn'); // Get the back-to-top button element
-backToTopBtn.classList.add('hidden'); // Initially hide the button
-
-// Add a scroll event listener to show/hide the back-to-top button
-// This event listener is triggered every time the user scrolls
-window.addEventListener('scroll', () => {
-    // Show the button when scrolling down more than a certain amount
-    const scrollThreshold = 400; // Adjust this value as needed to control when the button appears
-    if (window.scrollY > scrollThreshold) {
-        backToTopBtn.classList.remove('hidden'); // Show the button
-    } else {
-        backToTopBtn.classList.add('hidden'); // Hide the button
-    }
-});
-
-// Add a click event listener to the back-to-top button for smooth scrolling
-// This listens for clicks on the back-to-top button
-backToTopBtn.addEventListener('click', scrollToTop);
-
-// Function to simulate AI text analysis and provide feedback suggestions
 // Animated Counters
 const counterObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -307,116 +251,6 @@ document.querySelectorAll('.section-container').forEach(section => {
 
 
 // Function to smoothly scroll the window to the top of the page
-function scrollToTop() {
- // This function is now part of the back-to-top-button.js web component
-}
-
-
-// Function to create and display a modal by fetching content from an HTML template.
-// Takes the modal ID and the path to the template file as arguments.
-async function createModal(modalId, templatePath) {
-    // Fetch the modal content from the HTML template
-    try {
- // Log the start of the modal template fetching process.
- console.log('Fetching modal template from:', templatePath);
-        const response = await fetch(templatePath);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
- // Log an error if the HTTP response is not OK.
-        }
-        const modalContentHtml = await response.text();
-
-        // Create the modal element
-        const response = await fetch(templatePath);
-
-        const modalElement = document.createElement('div');
-        modalElement.id = modalId;
-        modalElement.classList.add('modal');
-        // Insert the fetched modal content into the modal structure
-        modalElement.innerHTML = `
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                ${modalContentHtml}
-            </div>
-        `;
-
-        // Append the modal to the body
-        document.body.appendChild(modalElement);
-
-        // Get modal elements
-        // Get the newly created modal element and the close button within it.
-        const modal = document.getElementById(modalId);
-        const closeBtn = modal.querySelector('.close');
-        // Event listeners to close the modal
-        // Add an event listener to the close button to remove the modal when clicked.
-        closeBtn.addEventListener('click', () => {
-            modal.remove();
-        });
-        // Close the modal on outside click
-        // Add an event listener to the window to close the modal if the user clicks outside the modal content.
-        // Close the modal when clicking outside of the modal content
-        window.addEventListener('click', event => {
-            if (event.target === modal) {
-                modal.remove(); // Remove the modal element from the DOM
-            }
-        });
-        // Close the modal when pressing the Escape key
-        // Add an event listener to the window to close the modal when the Escape key is pressed.
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                modal.remove();
-            }
-        });
-
-        // If there is a mermaid diagram in the modal, initialize it
-        // Check if the modal content contains a pre element with the class 'mermaid',
-        // indicating a Mermaid diagram that needs to be initialized.
-        const mermaidPre = modal.querySelector('pre.mermaid');
-        if (mermaidPre) {
-            // Delay the initialization slightly to ensure the modal is fully rendered
-            mermaid.init(undefined, mermaidPre);
-        }
-
-    } catch (error) {
-        console.error('Error loading modal template:', error);
-        // If an error occurs during fetching or processing the modal template,
-        // log the error and display an error modal to the user.
-        // Display an error modal if the template fails to load
-        // Optionally, display an error message to the user
-        const errorModal = document.createElement('div');
-        errorModal.classList.add('modal', 'error-modal');
-        errorModal.innerHTML = `
-            <div class="modal-content">
-                // Structure of the error modal, including a close button and an error message.
-                // Get the close button within the error modal.
-                <span class="close">&times;</span>
-                <h2>Error</h2>
-                <p>Could not load the modal content. Please try again later.</p>
-            </div>
-        `;
-        document.body.appendChild(errorModal);
-        const closeErrorBtn = errorModal.querySelector('.close');
-        // Add an event listener to the error modal's close button to remove the modal when clicked.
-        // Event listener to close the error modal
-        closeErrorBtn.addEventListener('click', () => errorModal.remove());
-        // Add an event listener to the window to close the error modal if the user clicks outside the modal content.
-        // Close the error modal when clicking outside
-        window.addEventListener('click', (event) => {
-            if (event.target === errorModal) {
-                errorModal.remove();
-            }
-        });
-        // The line below was likely a remnant from previous code and can be removed.
-        // Display the modal
- // modal.style.display = 'block'; // This is handled by CSS now
-        // Add an event listener to the window to close the error modal when the Escape key is pressed.
-        // Close on Escape key
-        }); // Corrected closing parenthesis for keydown event listener
- // Close the createModal function.
-    }
-}; // Close createModal function
-
 // Mapping of button IDs to their corresponding modal template paths
 const modalTemplates = {
     datoramaBtn: 'datorama_modal_template.html',
@@ -439,7 +273,7 @@ document.querySelectorAll('.project-card button').forEach(button => {
             if (existingModal) {
                 existingModal.remove();
             }
-            createModal(`modal-${buttonId}`, templatePath);
+            // createModal(`modal-${buttonId}`, templatePath); // Replaced by web component
         });
     }
 });
