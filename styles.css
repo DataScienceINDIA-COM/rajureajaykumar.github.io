@@ -2,28 +2,37 @@
 /* General Styles                   */
 /*-----------------------------------*/
 body {
-	--background-color: #ecf0f1; /* Light Gray */
-	--text-color: #333333; /* Dark Gray */
+	--primary-color: #003366; /* Deep Tech Blue */
+	--secondary-color: #0077CC; /* Modern Accent Blue */
+	--tertiary-color: #66B2FF; /* Subtle Highlight */
+	--background-color: #F5F5F5; /* Very Light Gray */
+	--text-color: #333333;
+	/* Dark Gray */
+	--border-color: #DDDDDD; /* Light Gray for borders */
+	--error-color: #CC3300; /* Muted Red for errors */
 	--link-color: inherit;
-	--secondary-text-color: #555;
-	--primary-color: #2c3e50; /* Dark Blue */
-    --secondary-color: #e8e8e8;
+	--secondary-text-color: #555; /* Keep existing secondary text color */
 	--background-image: none; /* Default background image */
  --card-color: #fff;
  --accent-color: #4CAF50;
  --section-background-color: #f8f8f8;
 	--navbar-height: 60px; /* Bootstrap default navbar height */
-    font-family: 'Inter', sans-serif;
     color: var(--text-color);
 	background-color: var(--background-color);
     transition: background-color 0.5s ease, color 0.5s ease;
 	cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6" fill="%233b82f6"/></svg>') 8 8, auto;
 }
 /*-----------------------------------*/
-/* Typography                   */
+/* Typography */
 /*-----------------------------------*/
-h1, h2, h3 {
- font-family: 'Poppins', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Roboto Slab', serif;
+}
+
+
+
+body {
+ font-family: 'Open Sans', sans-serif;
 }
 
 h1 { /* Adjusted font size for h1 */
@@ -60,17 +69,27 @@ p {
 	font-size: 16px;
 	line-height: 1.6;
 }
-body {
-	padding: 20px;
+/* SAAS Section */
+#saas { /* Target the section containing the SAAS details */
+    padding-top: 60px; /* Add top padding */
+    padding-bottom: 60px; /* Add bottom padding */
 }
 
+/* Skills Section */
+#skills {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
 /*-----------------------------------*/
 /* Hero Section */
 .hero {
- background: linear-gradient(to bottom, #2c3e50, #3498db); /* Dark Blue to Bright Blue Gradient */
-	background-image: var(--background-image); /* Use the variable for the background image */
- background-size: cover;
- height: calc(100vh - var(--navbar-height)); /* Adjust height to accommodate fixed navbar */
+ background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Subtle linear gradient */ /* Corrected gradient property */
+ background-image: var(--background-image),
+ url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><line x1="0" y1="100" x2="100" y2="0" stroke="%2366B2FF55" stroke-width="1"/></svg>'); /* Subtle diagonal line pattern */
+ background-size: cover, 10px 10px; /* Cover the background gradient, and set pattern size */
+ background-position: center, 0 0; /* Center the gradient, start pattern from top-left */
+
+ height: calc(100vh - var(--navbar-height)); /* Adjust height to accommodate fixed navbar */ /* Keep original height calculation */
  padding: 40px 20px;
  display: flex;
  flex-direction: column;
@@ -78,13 +97,11 @@ body {
  justify-content: center;
  padding-top: var(--navbar-height); /* Add padding to push content below navbar and add some space */
 	align-items: center;
-}
-
 /* Style for the buttons inside the hero section */
 .hero button {
  position: absolute;
- bottom: 10px; /* Adjust as needed */
- right: 10px; /* Adjust as needed */
+ bottom: 30px; /* Adjusted position for better spacing */
+ right: 30px; /* Adjusted position for better spacing */
 }
 
 /* Section Container */
@@ -92,13 +109,40 @@ body {
  padding: 80px 20px; /* Increased padding for more space */
 	background-color: var(--section-background-color);
 }
+
+/* About Me Section */
+#about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+#about h2 {
+    margin-bottom: 30px;
+}
+#skills h2 {
+    margin-bottom: 30px;
+}
+
+/* Education Section */
+#education {
+    padding-top: 60px; /* Add top padding */
+    padding-bottom: 60px; /* Add bottom padding */
+}
+
+#education h2 {
+    margin-bottom: 30px; /* Adjust margin for the heading */
+}
+
+/* Assuming .education-item class for individual entries */
+
 /* Header styles                     */
 /*-----------------------------------*/
 
-.hero p {
-    font-size: 1.25rem;
+/* About Me Section */
+#about h2 {
+    margin-bottom: 30px;
 }
 
+.hero p {
 /* Dark Mode                         */
 /*-----------------------------------*/
 .dark-mode {
@@ -169,19 +213,24 @@ body {
 .dark-mode .progress-bar {
  background: var(--accent-color);
 }
+
 /*-----------------------------------*/
-/* Experience Section                   */
+/* Experience Section */
 /*-----------------------------------*/
-.experience {
-	padding: 40px 20px;
+	padding-top: 60px; /* Add top padding */
+	padding-bottom: 60px; /* Add bottom padding */
 	background: var(--card-color);
 }
 .timeline-item ul {
     margin-top: 10px;
 }
 
-.accordion-button {
-    font-weight: 600;
+.experience h2 { /* Adjust margin for the heading within the section */
+    margin-bottom: 30px;
+}
+
+.timeline-item { /* Add margin to individual timeline items */
+    margin-bottom: 25px;
 }
 
 /*-----------------------------------*/
@@ -218,10 +267,23 @@ body {
 /* Project Card                     */
 /*-----------------------------------*/
 
+/* Projects Section */
+#projects {
+    padding-top: 60px; /* Add top padding */
+    padding-bottom: 60px; /* Add bottom padding */
+}
+#projects h2 {
+    margin-bottom: 30px; /* Adjust margin for the heading */
+}
+
+/* SAAS Section */
+#saas h2 { /* Adjust margin for the heading */
+    margin-bottom: 30px;
+}
 /* Project Card */
 .project-card .card {
 	padding: 20px;
- background-color: var(--card-color);
+	background-color: var(--card-color);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add box shadow */
  color: var(--text-color);
  /* Use card-color for background */ /* Use text-color for text */
@@ -232,16 +294,31 @@ body {
  transform: translateY(-10px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-/* Remove extra closing curly braces */
 
-/*-----------------------------------*/
+/* Container holding project cards (e.g., Bootstrap row) */
+.row { /* Assuming Bootstrap grid is used with class 'row' */
+    margin-left: -15px; /* Adjust to compensate for column padding */
+    margin-right: -15px; /* Adjust to compensate for column padding */
+}
+
+/* SAAS Item (assuming a class like .saas-item or a list item) */
+#saas .saas-item, /* Target individual SAAS items */
+#saas li { /* Or if it's a list item */
+    margin: 15px; /* Ensure a consistent margin around each item */
+    /* Add styling for icon/logo alignment if needed */
+    display: inline-block; /* Example: Display as inline-block for horizontal layout */
+    vertical-align: top; /* Example: Align to top if using inline-block */
+}
+
+/* Individual project card within the grid */
+.col-md-4 { /* Assuming Bootstrap columns are used with class 'col-md-4' */
+    margin-bottom: 30px; /* Add margin bottom for spacing between cards */
+
+
+/*-----------------------------------*/ /* This curly brace seems misplaced */
 /* Contact Form                     */
 /*-----------------------------------*/
  .contact-form-container {
-	 padding: 40px 20px;
-
-}
-/* Contact Section */ #contact form {
     max-width: 600px;
 }
 
@@ -263,7 +340,7 @@ body {
 
 a {
     color: var(--link-color); /* Use link-color variable */
-    text-decoration: none;
+	text-decoration: none;
 	transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
@@ -275,7 +352,7 @@ a:hover, button:hover, .btn:hover {
 .btn-primary {
 	border-color: var(--primary-color);
 	color: white; /* Ensure text color is white on primary buttons */
-	background-color: var(--primary-color);
+ background-color: var(--primary-color);
 	transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
  font-size: 1.1rem; /* Increased font size */
  padding: 12px 24px; /* Increased padding */
@@ -283,14 +360,13 @@ a:hover, button:hover, .btn:hover {
 
 .btn-primary:hover { /* Primary Button Hover */
     background-color: var(--primary-color); /* Darker border on hover */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline-light {
  border-color: var(--text-color); /* Add border to outline button */
 }
 
-/*-----------------------------------*/
 /* Mermaid Diagram Styling          */
 /*-----------------------------------*/
 
@@ -302,7 +378,6 @@ a:hover, button:hover, .btn:hover {
     max-width: 100%;
 }
 
-/*-----------------------------------*/
 /* Counter Styling                  */
 /*-----------------------------------*/
 /* Counter Styling */
@@ -312,12 +387,11 @@ a:hover, button:hover, .btn:hover {
 }
 
 
-
 /*-----------------------------------*/
 /* Skills Section                   */
 /*-----------------------------------*/
 #skills ul {
-    list-style: none;
+    list-style: none; /* Remove default list styling */
     padding: 0;
 	display: flex;
     flex-wrap: wrap;
@@ -332,7 +406,6 @@ a:hover, button:hover, .btn:hover {
     border-radius: 5px;
 }
 
-/*-----------------------------------*/
 /* Achievements Section             */
 #achievements {
 }
@@ -345,6 +418,10 @@ a:hover, button:hover, .btn:hover {
 #achievements ul {
     list-style: disc;
     padding-left: 20px;
+}
+/* SAAS Section */
+#saas h2 {
+    margin-bottom: 30px;
 }
 
 #achievements li {
@@ -382,7 +459,52 @@ a:hover, button:hover, .btn:hover {
  .timeline-item li {
         font-size: 1rem;
     }
+
+    /* Hero Section adjustments for smaller screens */
+    .hero {
+        padding-top: 80px; /* Reduced top padding for mobile */
+        padding-bottom: 80px; /* Reduced bottom padding for mobile */
+        /* Remove height calculation to allow content to dictate height */
+        height: auto; 
+    }
+
+    /* Adjust button position in hero for smaller screens */
+    .hero button {
+        position: static; /* Remove absolute positioning */
+        margin: 15px auto; /* Center buttons and add vertical margin */
+        display: block; /* Make buttons block level for better stacking */
+        text-align: center; /* Center text within the button */
+    }
+
+    /* About Me Section adjustments for smaller screens */
+    #about-me p {
+        margin-bottom: 20px; /* Increase margin bottom to visually break up text */
+        animation: fade-in 0.8s ease-out forwards; /* Apply subtle fade-in animation */
+    }
+
+  .timeline {
+ border-left: 2px solid #ccc;
+ padding-left: 20px;
+  }
+
+  .timeline-item {
+ margin-bottom: 20px;
+ padding: 10px;
+  }
+
+  .timeline-item:first-child {
+ background-color: #e0f2f7; /* Light blue background */
+  }
 }
+
+  .project-card {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .project-card .btn {
+    padding: 10px 20px;
+  }
 
 footer { /* Footer */
     background-color: var(--background-color);
@@ -412,7 +534,6 @@ footer { /* Footer */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/*-----------------------------------*/
 /* Navigation Bar                   */
 /*-----------------------------------*/
 .navbar {
@@ -435,7 +556,6 @@ footer { /* Footer */
  /* text-decoration: underline; *//* Inherited from general link styles */
 }
 
-/*-----------------------------------*/
 /* Back to Top Button               */
 /*-----------------------------------*/
 .back-to-top {
@@ -475,6 +595,15 @@ footer { /* Footer */
 .back-to-top.hidden {
     opacity: 0;
     transform: translateY(100%);
+}
+
+/* Education Section */
+#education .education-item { /* Assuming .education-item class for individual entries */
+    margin-bottom: 20px; /* Add margin for separation */
+}
+
+#education .education-item h3, #education .education-item p { /* Adjust internal spacing */
+    margin-bottom: 8px;
 }
 /* Initial state for sections before animation */
 .section-container:not(.animate) { /* Sections initial state */
@@ -636,11 +765,11 @@ footer { /* Footer */
 
  /* Adjust font sizes for smaller screens */
  h1 {
-        font-size: 2rem;
-    }
+ font-size: 2rem;
+ }
 
  h2 {
-        font-size: 1.75rem;
+ font-size: 1.75rem;
     }
 
  h3 {
@@ -651,5 +780,37 @@ footer { /* Footer */
  .timeline-item p,
  .timeline-item li {
         font-size: 1rem;
-    }
 }
+
+  #education .timeline {
+ border-left: 2px solid #ccc;
+ padding-left: 20px;
+  }
+
+  #education .timeline-item {
+ margin-bottom: 20px;
+ padding: 10px;
+  }
+
+ #contact-form .form-control {
+  margin-bottom: 15px;
+ }
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+ #contact p a {
+  font-size: 1.1rem;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 10px;
+ }
+
+ #contact-form .btn-primary {
+  width: 100%;
+  display: block;
+ }
+
+  #education .timeline-item:first-child {
+ background-color: transparent; /* Remove highlight for the first item */
+ padding: 10px; /* Reset padding */
+  }
