@@ -6,50 +6,14 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
             // Registration was successful
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            // console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
             // registration failed :(
-            console.log('ServiceWorker registration failed: ', err);
+            // console.log('ServiceWorker registration failed: ', err);
         });
     });
 }
 let aosLoaded = false;
-
-// Basic WebSocket implementation (simulated)
-// This is a placeholder for future real-time features.
-let websocket;
-
-// Function to connect to the WebSocket server
-function connectWebSocket() {
-    // Replace 'ws://your-websocket-server-url' with your actual WebSocket server URL
-    console.log('Attempting to connect to WebSocket...');
-    websocket = new WebSocket('ws://localhost:8080');
-
-    // Event handler for when the WebSocket connection is opened
-    websocket.onopen = () => {
-        console.log('WebSocket connection established');
-        // Send a message to the server (simulated)
- console.log('Sending test message via WebSocket');
-        websocket.send('Hello from the client!');
-    };
-
-    // Event handler for receiving messages from the server
-    websocket.onmessage = (event) => {
-        console.log('Message from server:', event.data);
-    };
-
-    // Event handler for WebSocket errors
-    websocket.onerror = (error) => {
- console.error('WebSocket error:', error);
-    };
-
-    // Event handler for when the WebSocket connection is closed
-    websocket.onclose = (event) => {
- console.log('WebSocket connection closed:', event.code, event.reason);
-    };
-}
-
-connectWebSocket(); // Connect to the WebSocket server on page load
 
 // Dark Mode Implementation with Local Storage
 const darkModeToggle = document.getElementById('darkModeToggle');
@@ -67,7 +31,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     const feedback = document.querySelector('input[name="feedback"]').value;
 
     // Log the form values for debugging purposes.
-    console.log('Form submitted. Values:', { name, email, message, feedback });
+    // console.log('Form submitted. Values:', { name, email, message, feedback });
 
     // Regular expression for basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -86,7 +50,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
     // Validate form fields
     if (!name || !email || !message) {
-        console.log('Validation failed: Missing required fields.'); // Log validation failure
+        // console.log('Validation failed: Missing required fields.'); // Log validation failure
         feedbackElement.classList.add('text-danger');
         feedbackElement.innerText = 'Please fill out all fields.';
     } else if (!emailRegex.test(email)) {
@@ -97,25 +61,28 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
         // Use fetch to submit the form data (for actual form submission if needed)
         fetch(this.action, {
- console.log('Sending fetch request to:', this.action);
- }
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
         }).then(response => { // Handle the response from the fetch request
             if (response.ok) {
                 // If the fetch request is successful (response status is OK),
                 // display a success message and reset the form.
-                console.log('Form submission successful.'); // Log successful submission
+                // console.log('Form submission successful.'); // Log successful submission
                 feedbackElement.classList.add('text-success');
                 feedbackElement.innerText = 'Thank you! Your message has been sent.';
                 this.reset(); // Reset the form after successful submission
             } else {
                 response.json().then(data => {
                     // Handle errors from the server
-                    console.error('Form submission failed. Server response:', data); // Log server errors
+                    // console.error('Form submission failed. Server response:', data); // Log server errors
                     if (Object.hasOwnProperty.call(data, 'errors')) {
                         feedbackElement.classList.add('text-danger');
                         feedbackElement.innerText = data["errors"].map(error => error["message"]).join(", ");
                     } else {
-                        console.error('Form submission failed with unknown error format.'); // Log unknown error format
+                        // console.error('Form submission failed with unknown error format.'); // Log unknown error format
                         feedbackElement.classList.add('text-danger');
                         feedbackElement.innerText = 'Oops! Something went wrong. Please try again later.';
                     }
@@ -125,12 +92,14 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
             // Handle network or other errors
             // If there is a network error or other issues with the fetch request,
             // log the error and display an error message to the user.
-            console.error('Error submitting form:', error);
+            // console.error('Error submitting form:', error);
             feedbackElement.classList.add('text-danger'); // Display a generic error message
             feedbackElement.innerText = 'Oops! Something went wrong. Please try again later.';
+        });
 
     // Append the feedback element to the form to display validation or submission status.
     this.appendChild(feedbackElement); // Append the feedback element to the form
+    } // This closes the main else block for form validation
 });
 
 
@@ -244,9 +213,6 @@ document.querySelectorAll('.section-container').forEach(section => {
     observerAos.observe(section); // Observe each section container
 });
 
-
-
-
 // Back-to-Top Button visibility
 
 
@@ -267,13 +233,40 @@ document.querySelectorAll('.project-card button').forEach(button => {
     const templatePath = modalTemplates[buttonId];
     if (templatePath) {
         button.addEventListener('click', () => {
- console.log(`Project button clicked: ${buttonId}. Creating modal from: ${templatePath}`);
             // Remove any existing modal before creating a new one
-            const existingModal = document.querySelector('.modal');
+            const existingModal = document.querySelector('custom-modal'); // Query for custom-modal
             if (existingModal) {
                 existingModal.remove();
             }
-            // createModal(`modal-${buttonId}`, templatePath); // Replaced by web component
+
+            // Create and configure the custom-modal element
+            const newModal = document.createElement('custom-modal');
+            newModal.setAttribute('template-path', templatePath);
+            
+            // Get project title from the card
+            const cardBody = button.closest('.card-body');
+            const projectTitle = cardBody ? cardBody.querySelector('h5')?.textContent : 'Project Details';
+            newModal.setAttribute('modal-title', projectTitle);
+            
+            document.body.appendChild(newModal);
+            // The modal should show itself once content is loaded or an attribute changes triggering a load.
+            // If direct show is needed: 
+            // setTimeout(() => newModal.showModal(), 0); // Ensure it's in DOM and processed
+            // However, showModal is already called in loadTemplateContent if successful
+            // and attributeChangedCallback calls loadTemplateContent.
+            // So, explicitly calling showModal here might be redundant if loadTemplateContent shows it.
+            // For safety, let's ensure it shows after attributes are set.
+            // The component itself should handle showing when ready. 
+            // Let's rely on connectedCallback and attributeChangedCallback to trigger rendering and loading.
+            // If the modal isn't showing, then newModal.showModal() would be needed here.
+            // The current modal.js shows the modal after content load.
+
+            // The modal's connectedCallback and attributeChangedCallback will handle rendering and loading.
+            // loadTemplateContent in modal.js does not automatically call showModal.
+            // Let's explicitly call showModal after appending and setting attributes.
+            // We might need a slight delay for the component to initialize if showModal depends on internal state set by callbacks.
+            // However, the showModal method just changes display style, so it should be fine.
+            newModal.showModal();
         });
     }
 });
@@ -328,5 +321,135 @@ window.addEventListener('scroll', () => {
     if (activeLink) {
         activeLink.classList.add('active');
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projectModal = document.getElementById('projectDetailModal');
+
+    const projectDetailsContent = {
+        datorama: {
+            title: 'Datorama Reporting Ecosystem - Details',
+            html: `
+                <div class="project-modal-content">
+                    <!-- This h3 is part of the content, the modal itself has a title -->
+                    <p>Detailed information about the Datorama Reporting Ecosystem project will go here.</p>
+                    <ul>
+                        <li>Architected a real-time reporting system for over 800 marketing campaigns using Datorama.</li>
+                        <li>Integrated multiple platforms (Google Ads, Meta, The Trade Desk, Double Verify, IAS, Pinterest, Bing Ads, Walmart).</li>
+                        <li>Reduced report turnaround time by 70%.</li>
+                        <li>Standardized data using Datorama's Harmonization Center.</li>
+                        <li>Designed dynamic dashboards for stakeholders.</li>
+                    </ul>
+                    <p><em>More content, images, or links can be added.</em></p>
+                </div>
+            `
+        },
+        dataikuMl: {
+            title: 'Dataiku ML Model Deployment - Details',
+            html: `
+                <div class="project-modal-content">
+                    <p>Detailed information about the Dataiku ML Model Deployment project.</p>
+                    <ul>
+                        <li>Implemented machine learning models in production using Dataiku DSS.</li>
+                        <li>Focused on leveraging ML for actionable business insights.</li>
+                        <li>Ensured model scalability and maintainability.</li>
+                    </ul>
+                    <p><em>Further details on model types, performance metrics, etc.</em></p>
+                </div>
+            `
+        },
+        tableau: {
+            title: 'Tableau Dashboard Optimization - Details',
+            html: `
+                <div class="project-modal-content">
+                    <p>Detailed information about Tableau Dashboard Optimization.</p>
+                    <ul>
+                        <li>Streamlined Tableau Dashboard refreshing process.</li>
+                        <li>Reduced data analysis time by 50% through optimization.</li>
+                        <li>Improved dashboard interactivity and user experience.</li>
+                    </ul>
+                    <p><em>Specific optimization techniques can be detailed here.</em></p>
+                </div>
+            `
+        },
+        alteryxDataiku: {
+            title: 'Alteryx to Dataiku Migration - Details',
+            html: `
+                <div class="project-modal-content">
+                    <p>Details on the Alteryx to Dataiku Migration project.</p>
+                    <ul>
+                        <li>Successfully migrated complex Alteryx workflows to Dataiku DSS.</li>
+                        <li>Improved workflow efficiency by 70%.</li>
+                        <li>Retrained teams and documented new Dataiku processes.</li>
+                    </ul>
+                    <p><em>Challenges and solutions during migration can be added.</em></p>
+                </div>
+            `
+        },
+        predictiveModels: {
+            title: 'Predictive Models for Customer Retention - Details',
+            html: `
+                <div class="project-modal-content">
+                    <p>Information about Predictive Models for Customer Retention.</p>
+                    <ul>
+                        <li>Developed and deployed predictive models.</li>
+                        <li>Achieved a 20% increase in customer retention rates.</li>
+                        <li>Utilized customer data to identify at-risk segments.</li>
+                    </ul>
+                    <p><em>More on model validation and impact.</em></p>
+                </div>
+            `
+        },
+        dataPipeline: {
+            title: 'Data Pipeline for a Marketing Campaign - Details',
+            html: `
+                <div class="project-modal-content">
+                    <p>This project describes the end-to-end workflow for handling data in a marketing campaign.</p>
+                    <ul>
+                        <li>Data Ingestion from multiple sources.</li>
+                        <li>Data Cleaning and Transformation.</li>
+                        <li>Data Storage and Warehousing.</li>
+                        <li>Automation scripts for the pipeline.</li>
+                        <li>Reporting and Visualization outputs.</li>
+                    </ul>
+                    <p><em>Include diagrams or specific technologies used if available.</em></p>
+                </div>
+            `
+        }
+    };
+
+    // Function to open modal with specific project content
+    function openProjectModal(projectKey) {
+        if (projectModal && projectDetailsContent[projectKey]) {
+            const content = projectDetailsContent[projectKey];
+            projectModal.setBodyContent(content.title, content.html);
+            projectModal.showModal();
+        }
+    }
+
+    // Add event listeners to project buttons
+    document.getElementById('datoramaBtn')?.addEventListener('click', () => openProjectModal('datorama'));
+    document.getElementById('dataikuMlBtn')?.addEventListener('click', () => openProjectModal('dataikuMl'));
+    document.getElementById('tableauBtn')?.addEventListener('click', () => openProjectModal('tableau'));
+    document.getElementById('alteryxDataikuBtn')?.addEventListener('click', () => openProjectModal('alteryxDataiku'));
+    document.getElementById('predictiveModelsBtn')?.addEventListener('click', () => openProjectModal('predictiveModels'));
+    document.getElementById('dataPipelineBtn')?.addEventListener('click', () => openProjectModal('dataPipeline'));
+
+    // Dark Mode Toggle Logic (if not already present or to ensure it's correctly placed)
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const body = document.body;
+    // Check for saved dark mode preference
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+    }
+    darkModeToggle?.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.removeItem('theme');
+        }
+    });
+
 });
 

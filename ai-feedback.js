@@ -4,7 +4,6 @@ class AiFeedback extends HTMLElement {
   // Constructor for the AiFeedback class.
   constructor() {
     super();
-    console.log('AiFeedback component constructor called');
     // Create a shadow root
     // The shadow DOM provides encapsulation for the component's styles and structure.
     this.attachShadow({ mode: 'open' });
@@ -52,7 +51,6 @@ class AiFeedback extends HTMLElement {
 
   // Called when the element is inserted into a document.
   connectedCallback() {
-    console.log('AiFeedback component connected to DOM');
     // Hide the suggestion initially when the component is added to the DOM.
     this.hideSuggestion();
   }
@@ -68,7 +66,6 @@ class AiFeedback extends HTMLElement {
   // Method to set the suggestion text and show the suggestion
   // @param {string} suggestion - The AI-generated feedback text to display.
   setSuggestion(suggestion) {
-    console.log('Setting feedback suggestion:', suggestion);
     this.contentElement.textContent = suggestion;
     this.suggestionElement.classList.add('show');
   }

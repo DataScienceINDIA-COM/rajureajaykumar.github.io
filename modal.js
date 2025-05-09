@@ -2,154 +2,167 @@ class CustomModal extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
- console.log('CustomModal constructor called'); // Log when the constructor is called
-    this.modalContent = null;
-    this.templatePath = '';
+    this._modalVisible = false; // Internal state for visibility
   }
 
   connectedCallback() {
     this.render();
-    this.loadTemplateContent();
- console.log('CustomModal connectedCallback called'); // Log when the component is connected to the DOM
+    // loadTemplateContent will no longer be primary way to load content
   }
 
   static get observedAttributes() {
-    return ['template-path', 'modal-title'];
+    // return ['template-path', 'modal-title']; // template-path no longer needed
+    return ['modal-title']; // Only observe modal-title if set directly, or handle via new method
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name === 'template-path') {
- console.log(`Attribute changed: ${name} from ${oldValue} to ${newValue}`); // Log attribute changes
-      this.templatePath = newValue;
-      this.loadTemplateContent();
-    }
- console.log(`Attribute changed: ${name} from ${oldValue} to ${newValue}`); // Log attribute changes
+    if (oldValue === newValue) return;
+
+    // if (name === 'template-path') { // No longer needed
+    //   this.templatePath = newValue;
+    //   this.loadTemplateContent();
+    // }
     if (name === 'modal-title') {
       this.updateModalTitle(newValue);
     }
   }
 
   updateModalTitle(title) {
-    if (this.modalContent) {
-      const modalTitleElement = this.modalContent.querySelector('.modal-title');
+    if (this.shadowRoot) {
+      const modalTitleElement = this.shadowRoot.querySelector('.modal-title');
       if (modalTitleElement) {
- console.log(`Updating modal title to: ${title}`); // Log modal title update
-        modalTitleElement.textContent = title;
+        modalTitleElement.textContent = title || ''; // Set to empty if no title
       }
     }
   }
 
+  // New method to set title and body content directly
+  setBodyContent(title, htmlContent) {
+    this.updateModalTitle(title);
+    if (this.modalBody) {
+        this.modalBody.innerHTML = htmlContent;
+    }
+  }
+
   render() {
-    // Define the template for the modal
     const template = document.createElement('template');
     template.innerHTML = `
       <style>
-        /* Modal styles */
+        :host {
+            /* Assuming these CSS variables are defined globally and accessible */
+            --modal-bg-color: var(--card-color, #fefefe);
+            --modal-text-color: var(--text-color, #333);
+            --modal-border-color: var(--border-color, #888);
+            --modal-close-color: var(--secondary-text-color, #aaa);
+            --modal-close-hover-color: var(--text-color, #000);
+        }
         .modal {
-          display: none; /* Hidden by default */
-          position: fixed; /* Stay in place */
-          z-index: 1000; /* Sit on top */
+          /* display: none; Will be handled by opacity and pointer-events for transitions */
+          opacity: 0;
+          transform: scale(0.95);
+          pointer-events: none;
+          position: fixed;
+          z-index: 1000;
           left: 0;
           top: 0;
-          width: 100%; /* Full width */
-          height: 100%; /* Full height */
-          overflow: auto; /* Enable scroll if needed */
-          background-color: rgb(0,0,0); /* Fallback color */
-          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0,0,0,0.6); /* Darker, sleeker overlay */
+          transition: opacity 0.3s ease, transform 0.3s ease;
+          display: flex; /* Use flex to center content */
+          align-items: center;
+          justify-content: center;
         }
-
-        /* Modal Content */
+        .modal.modal-visible {
+          opacity: 1;
+          transform: scale(1);
+          pointer-events: auto;
+        }
         .modal-content {
-          background-color: #fefefe;
-          margin: 15% auto; /* 15% from the top and centered */
-          padding: 20px;
-          border: 1px solid #888;
-          width: 80%; /* Could be more or less, depending on screen size */
+          background-color: var(--modal-bg-color);
+          color: var(--modal-text-color);
+          margin: auto; /* Centered by flex on .modal */
+          padding: 25px;
+          border: 1px solid var(--modal-border-color);
+          width: 80%;
+          max-width: 700px; /* Max width for larger screens */
+          border-radius: 8px; /* Sleeker rounded corners */
+          box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+          position: relative; /* For positioning the close button */
+          transform: scale(0.95); /* Initial state for transition */
+          transition: transform 0.3s ease;
         }
-
-        /* Close Button */
+        .modal.modal-visible .modal-content {
+            transform: scale(1);
+        }
         .close {
-          color: #aaa;
-          float: right;
-          font-size: 28px;
+          color: var(--modal-close-color);
+          position: absolute; /* Position relative to modal-content */
+          top: 10px;
+          right: 15px;
+          font-size: 32px;
           font-weight: bold;
+          line-height: 1;
         }
-
         .close:hover,
         .close:focus {
-          color: black;
+          color: var(--modal-close-hover-color);
           text-decoration: none;
           cursor: pointer;
         }
-        </style>
-        <div class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 class="modal-title"></h2>
-            <div class="modal-body"></div>
-          </div>
-        </div>
-      `;
-
-    // Clone the template and append it to the shadow DOM
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
-
-  loadTemplateContent() {
-    if (!this.templatePath) return;
- console.log(`Loading template content from: ${this.templatePath}`); // Log template loading start
-
-    // Get modal elements
-    this.modalContent = this.shadowRoot.querySelector('.modal-content');
-    const modalBody = this.modalContent.querySelector('.modal-body');
-    const modal = this.shadowRoot.querySelector('.modal');
-    const closeButton = this.modalContent.querySelector('.close');
-
-    //Show loading message
-    modalBody.innerHTML = "<p>Loading...</p>";
- console.log('Displaying loading message.'); // Log display of loading message
-    
-    // Fetch the modal content template
-    fetch(this.templatePath)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+        .modal-title {
+            color: var(--modal-text-color); /* Use CSS variable */
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8rem; /* Slightly larger title */
         }
-        return response.text();
-      })
-      .then(html => {
-        // Insert the modal content into the modal body
- console.log('Modal content template fetched successfully.'); // Log successful fetch
-        modalBody.innerHTML = html;
-      })
-      .catch(error => {
-        // Handle errors
-        console.error('Error loading modal content:', error);
-        modalBody.innerHTML = "<p>Error loading content.</p>";
- console.log('Displaying error message.'); // Log display of error message
-      });
+        .modal-body {
+            /* Styles for modal body content can be added here if needed,
+               but primary content styling is via .project-modal-content in global CSS */
+        }
+        .modal-body p,
+        .modal-body ul {
+            color: var(--modal-text-color); /* Ensure text inside has right color */
+        }
+      </style>
+      <div class="modal" id="customModalInstance">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 class="modal-title"></h2>
+          <div class="modal-body">Loading...</div>
+        </div>
+      </div>
+    `;
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-    // Add event listener to close button
-    closeButton.addEventListener('click', () => {
-      modal.style.display = "none";
-    });
+    // Assign elements after render
+    this.modalElement = this.shadowRoot.querySelector('#customModalInstance');
+    this.modalContentElement = this.shadowRoot.querySelector('.modal-content'); // Renamed from this.modalContent to avoid confusion
+    this.closeButton = this.shadowRoot.querySelector('.close');
+    this.modalBody = this.shadowRoot.querySelector('.modal-body');
 
-    // Add event listener to close modal when clicking outside of it
-    modal.addEventListener('click', (event) => {
-      if (event.target === modal) {
-        modal.style.display = "none";
+    // Add event listeners
+    this.closeButton.addEventListener('click', () => this.hideModal());
+    this.modalElement.addEventListener('click', (event) => {
+      if (event.target === this.modalElement) {
+        this.hideModal();
       }
     });
   }
 
   showModal() {
- console.log('Showing modal.'); // Log showing modal
-    this.shadowRoot.querySelector('.modal').style.display = "block";
+    if (!this.modalElement) return;
+    // It might be good practice to ensure content is loaded before showing,
+    // but for now, we just make it visible. loadTemplateContent has its own placeholders.
+    this.modalElement.classList.add('modal-visible');
+    this._modalVisible = true;
   }
 
   hideModal() {
- console.log('Hiding modal.'); // Log hiding modal
-    this.shadowRoot.querySelector('.modal').style.display = "none";
+    if (!this.modalElement) return;
+    this.modalElement.classList.remove('modal-visible');
+    this._modalVisible = false;
   }
 }
 

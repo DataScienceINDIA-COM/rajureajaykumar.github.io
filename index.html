@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- A/B Test Toggle Placeholder -->
-    <!-- This is a placeholder comment for future A/B testing functionality.
-         Here you could add code to toggle different versions of the site or specific elements. -->
-    <!-- A/B Test Toggle Placeholder -->
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" aria-label="Main Navigation">
         <div class="container">
  <a class="navbar-brand" href="#">Rajure Ajay Kumar</a>
@@ -48,20 +44,12 @@
          It includes a profile picture, name, title, and a brief description. -->
     <!-- Added a background image to make the section more visually appealing. -->
     <!-- Added a dark overlay to improve text readability on the background image. Removed background image. Added a gradient. -->
-    <!-- A/B Test: Hero Section Layout, Image, Title, Text, Buttons -->
     <header id="hero" class="hero-section text-center text-white d-flex align-items-center section-container">
-        <!-- This is the main header section, designed to grab the user's attention.
-             It includes a profile picture, name, title, and a brief description. -->
-        <!-- A/B Test: Hero Section Layout, Image, Title, Text, Buttons -->
         <div class="overlay"></div> <!-- Dark overlay for text readability -->
         <div class="container-section" data-aos="fade-up">
-            <!-- A/B Test: Profile Image -->
-            <img src="profile.webp" alt="Rajure Ajay Kumar's Profile Picture" class="rounded-circle mb-3 bounce profile-image" data-aos="zoom-in">
-            <!-- A/B Test: Main Title -->
+            <img src="profile.webp" alt="Rajure Ajay Kumar's Profile Picture" class="rounded-circle mb-3 profile-image" data-aos="zoom-in">
             <h1 class="main-title">Rajure Ajay Kumar</h1>
-            <!-- A/B Test: Subtitle -->
             <h3>Marketing Science & Data Professional</h3>
- <!-- A/B Test: Hero Text Content -->
             <p>Building Automated Data Ecosystems for Strategic Marketing Insights</p>
         </div> 
         <button id="getDataBtn" class="btn btn-secondary position-absolute top-0 start-0 m-3">Get Data</button>
@@ -69,11 +57,8 @@
  </header>
 
     <!-- About me Section -->
- <!-- A/B Test: About Me Section Content and Layout -->
- <!-- This section provides a brief introduction to Rajure Ajay Kumar,
-      highlighting his profession and passion. Added a visual separation between sections. -->
  <hr class="section-divider"> <!-- Visual separation -->
- <section id="about-me" data-aos="fade-up">
+ <section id="about-me" data-aos="fade-up" class="section-common-padding">
         <div class="container-section" data-aos="fade-up">
             <h2 class="text-center" id="about-me">About Me</h2>
             <p>I am a highly motivated Marketing Science & Data professional with a passion for leveraging data to drive strategic marketing decisions. My expertise lies in building automated data ecosystems, executing machine learning proof-of-concepts, and implementing robust reporting solutions. With a strong foundation in data analysis, machine learning, and a wide array of technologies, I am dedicated to turning complex data into actionable insights.</p>
@@ -81,7 +66,7 @@
  </section>
 
     <!-- Skills Section -->
- <section id="skills">
+ <section id="skills" class="section-common-padding">
  <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section lists the technical skills and technologies that Rajure Ajay Kumar is proficient in. -->
  <!-- It uses a list format to display the different skills. -->
@@ -117,7 +102,7 @@
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-right">
                     <h4>Senior Analyst, Omnicom Media Group India PVT Ltd</h4>
-                    <p>Hyderabad | Sep 2023 – Feb 2025</p>
+                    <p>Hyderabad | Sep 2023 – Present</p>
                     <div class="accordion" id="omnicomAccordion">
                         <!-- Reporting Ecosystem -->
  <!-- Accordion item for the Reporting Ecosystem role. -->
@@ -133,7 +118,7 @@
                                     <ul>
                                         <li>Architected and maintained enterprise-grade reporting ecosystems using Salesforce Datorama, supporting real-time insights for over 800 marketing campaigns.</li>
                                         <li>Led the full implementation cycle of Datorama solutions — from initial data source mapping to final dashboard delivery — significantly reducing report turnaround time by 70%.</li>
-                                        <li>Designed dynamic dashboards for stakeholders across media planning, client services, and strategy teams, tailoring views to suit each department’s KPIs.</li>
+                                        <li>Designed dynamic dashboards for stakeholders across media planning, client services, and strategy teams, tailoring views to suit each department's KPIs.</li>
                                     </ul>
                                     <div class="progress mt-3" data-aos="fade-up">
                                         <div class="progress-bar bg-success" style="width: 70%;" aria-label="Turnaround Time Reduction">70% Reduction</div>
@@ -198,7 +183,7 @@
                                     <ul>
                                         <li>Trained and mentored junior analysts on best practices for Datorama configuration, data architecture planning, and KPI governance. Facilitated internal documentation sessions.</li>
                                         <li>Partnered with global teams to scale reporting templates across multiple regions, ensuring global alignment while allowing for local customization.</li>
-                                        <li>Contributed to innovation projects involving custom scripts, webhook automations, and external API enrichment, pushing the boundaries of Datorama’s native capabilities.</li>
+                                        <li>Contributed to innovation projects involving custom scripts, webhook automations, and external API enrichment, pushing the boundaries of Datorama's native capabilities.</li>
                                         <li>Continuously improved operational efficiency by conducting periodic audits of data pipelines, user roles, token health, and harmonization logic.</li>
                                     </ul>
                                     <div class="row mt-3" data-aos="fade-up">
@@ -313,7 +298,7 @@
  </section>
 
     <!-- Projects Section -->
- <section id="projects">
+ <section id="projects" class="section-common-padding">
  <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section showcases Rajure Ajay Kumar's projects,
       with each project presented as a card containing a brief description and a "Details" button. -->
@@ -380,7 +365,7 @@
     </section>
 
     <!-- Education Section -->
- <section id="education">
+ <section id="education" class="section-common-padding">
  <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section outlines Rajure Ajay Kumar's educational background,
       using a timeline format similar to the experience section. -->
@@ -435,11 +420,11 @@
                 <!-- AI Feedback Suggestion Web Component -->
  <!-- AI Description Suggestion Web Component -->
  <!-- This web component will display AI description suggestions based on user input. -->
- <ai-description></ai-description>
+ <!-- <ai-description></ai-description> -->
 
  <!-- AI Feedback Suggestion Web Component -->
  <!-- This web component will display AI feedback suggestions based on user input. -->
-                <ai-feedback></ai-feedback>
+                <!-- <ai-feedback></ai-feedback> -->
 
                 <button type="submit" class="btn btn-primary">Send</button>
             </form>
@@ -457,7 +442,7 @@
          Added visual separation between sections.
          Ensured consistent card design with other sections.
          Aligned text and increased title font size for better readability. -->
-    <section id="SAAS">
+    <section id="SAAS" class="section-common-padding">
  <hr class="section-divider"> <!-- Visual separation -->
  <!-- This section explains the SAAS nature of the services offered. -->
  <div class="container-section" data-aos="fade-up">
@@ -537,6 +522,8 @@
             <p>&copy; 2024 Rajure Ajay Kumar. All rights reserved.</p>
         </div>
     </footer>
+
+    <custom-modal id="projectDetailModal"></custom-modal>
 
 </body>
 </html>

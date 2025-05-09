@@ -9,10 +9,11 @@ class Counter extends HTMLElement {
     this.count = 0;
     this.increment = 0;
     this.intervalId = null;
+    this.animated = false;
   }
 
   connectedCallback() {
-    console.log('Counter component connected to the DOM.');
+    // console.log('Counter component connected to the DOM.');
     // Create the element that will display the count.
     this.counterElement = document.createElement('span');
     this.counterElement.textContent = '0';
@@ -38,9 +39,11 @@ class Counter extends HTMLElement {
   }
 
   disconnectedCallback() {
-    console.log('Counter component disconnected from the DOM.');
+    // console.log('Counter component disconnected from the DOM.');
     // Disconnect the observer when the component is removed from the DOM.
-    this.observer.disconnect();
+    if (this.observer) {
+      this.observer.disconnect();
+    }
     // Clear the interval if the component is removed from the DOM.
     if (this.intervalId) {
       clearInterval(this.intervalId);
@@ -49,9 +52,10 @@ class Counter extends HTMLElement {
 
   handleIntersection(entries) {
     entries.forEach(entry => {
-      console.log('Intersection Observer entry:', entry);
-      if (entry.isIntersecting) {
-        // Start the animation when the counter is visible.
+      // console.log('Intersection Observer entry:', entry);
+      if (entry.isIntersecting && !this.animated) {
+        // console.log('Starting counter animation.');
+        this.animated = true; // Mark as animated to prevent re-triggering.
         this.animateCounter();
         // Disconnect the observer, since we only need to animate the counter once.
         this.observer.unobserve(this);
@@ -60,7 +64,7 @@ class Counter extends HTMLElement {
   }
 
   animateCounter() {
-    console.log('Starting counter animation.');
+    // console.log('Starting counter animation.');
     // Calculate the increment value.
     this.increment = this.target / 200;
 
@@ -69,7 +73,7 @@ class Counter extends HTMLElement {
       // Update the counter value.
       this.count += this.increment;
 
-      console.log('Current count:', this.count);
+      // console.log('Current count:', this.count);
       // If the count is bigger than the target, set the count to the target.
       if (this.count >= this.target) {
         this.count = this.target;
@@ -80,7 +84,7 @@ class Counter extends HTMLElement {
 
       // If the counter has reached the target, stop the animation.
       if (this.count === this.target) {
-        console.log('Counter animation finished.');
+        // console.log('Counter animation finished.');
         clearInterval(this.intervalId);
       }
     }, 1);

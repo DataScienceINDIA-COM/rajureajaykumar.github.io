@@ -37,7 +37,7 @@ class AiDescription extends HTMLElement {
   // to be in the DOM, like adding event listeners or accessing its children.
   // Here, we append the template content to the shadow DOM.
   connectedCallback() {
-    console.log('ai-feedback connectedCallback');
+    // console.log('ai-feedback connectedCallback');
     // Clone the template and append it to the shadow root
     this.shadowRoot.appendChild(this.template.content.cloneNode(true));
     // Get the suggestion element
@@ -52,7 +52,7 @@ class AiDescription extends HTMLElement {
    * @param {string} suggestion - The suggestion to show.
    */
   showFeedback(suggestion) {
-    console.log('ai-feedback showFeedback', suggestion); // Log for debugging
+    // console.log('ai-feedback showFeedback', suggestion); // Log for debugging
     // Set the text of the suggestion
     // The textContent property sets the text inside the selected element.
     this.suggestionElement.textContent = suggestion;
@@ -65,7 +65,7 @@ class AiDescription extends HTMLElement {
   /**
    * Hides the feedback suggestion.
    */
-  hideFeedback() {    console.log('ai-feedback hideFeedback');
+  hideFeedback() {    // console.log('ai-feedback hideFeedback');
     // Hide the suggestion element
     this.suggestionElement.style.display = 'none';
   }

@@ -54,36 +54,22 @@ If you want to run the project locally, follow these steps:
 1.  Clone the repository:
 
 
-## Cloud Deployment
+## Deployment
 
-To deploy the application to the cloud, follow these steps:
+This website is a static site and is best deployed using GitHub Pages, especially given the repository name `rajureajaykumar.github.io`.
 
-1. Set up a serverless environment on Google Cloud Run, AWS Lambda, or Heroku.
-2. Configure the environment with the necessary dependencies and settings.
-3. Deploy the app.py file to the cloud.
+**Steps to Deploy/Update on GitHub Pages:**
 
-To set up Firebase for the database:
+1.  **Push Changes:** Ensure all your latest code (HTML, CSS, JavaScript files) is committed and pushed to the `main` branch of this repository.
+2.  **Configure GitHub Pages Settings (One-time setup):**
+    *   In your GitHub repository, go to `Settings` > `Pages`.
+    *   Under `Build and deployment`, for the `Source`, select `Deploy from a branch`.
+    *   Under `Branch`, select `main` (or your default branch) and the `/ (root)` folder.
+    *   Click `Save`.
+3.  **Access Your Site:** After a minute or two for GitHub Actions to build and deploy, your site will be live at `https://rajureajaykumar.github.io`.
 
-1. Create a Firebase project.
-2. Enable Firebase Authentication.
-3. Set up a Firestore or Realtime Database.
-4. Add Firebase credentials to your cloud environment.
+Any subsequent pushes to the `main` branch will automatically trigger a redeployment to GitHub Pages if configured as above.
 
 ## API Usage
 
 API endpoints will be detailed here once they are available.
-
-## CI/CD
-
-This project utilizes GitHub Actions to automate the build, test, and deployment process.
-
-**Workflow:**
-
-1.  **Trigger:** The CI/CD pipeline is triggered on every push to the main branch.
-2.  **Build:** The application dependencies are installed.
-3.  **Test:** Unit tests (e.g., using `test_code_sense.py`) are executed to ensure code quality.
-4.  **Deploy:** If tests pass, the application (`app.py`) is automatically deployed to the configured cloud environment (Google Cloud Run, AWS Lambda, or Heroku).
-
-**Setup:**
-
-To set up the CI/CD pipeline, you will need to configure GitHub Actions in your repository and provide the necessary credentials for your cloud deployment environment.

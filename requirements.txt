@@ -1,5 +1,0 @@
-astroid
-# app.py
-firebase_admin
-flask
-# app.py

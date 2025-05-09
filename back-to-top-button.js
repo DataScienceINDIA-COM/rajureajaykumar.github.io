@@ -2,7 +2,7 @@ class BackToTopButton extends HTMLElement {
   constructor() {
     super();
     // Create a shadow root
-    console.log('BackToTopButton: Constructor called');
+    // console.log('BackToTopButton: Constructor called');
     this.attachShadow({ mode: 'open' });
 
     // Create the button element
@@ -33,14 +33,14 @@ class BackToTopButton extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('BackToTopButton: connectedCallback called');
+    // console.log('BackToTopButton: connectedCallback called');
     // Add event listeners when the component is added to the DOM
     window.addEventListener('scroll', this.handleScroll);
     this.button.addEventListener('click', this.scrollToTop);
   }
 
   disconnectedCallback() {
-    console.log('BackToTopButton: disconnectedCallback called');
+    // console.log('BackToTopButton: disconnectedCallback called');
     // Remove event listeners when the component is removed from the DOM
     window.removeEventListener('scroll', this.handleScroll);
     this.button.removeEventListener('click', this.scrollToTop);
@@ -61,7 +61,7 @@ class BackToTopButton extends HTMLElement {
 
   scrollToTop() {
     // Function to scroll to the top of the page
-    console.log('BackToTopButton: scrollToTop called');
+    // console.log('BackToTopButton: scrollToTop called');
     window.scrollTo({
       top: 0,
       behavior: 'smooth' // Smooth scrolling

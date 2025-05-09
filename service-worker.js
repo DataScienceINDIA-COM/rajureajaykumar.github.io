@@ -18,7 +18,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('Opened cache');
+        // console.log('Opened cache');
         // Add all assets to cache
         return cache.addAll(ASSETS_TO_CACHE);
       })
@@ -54,7 +54,7 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
             if (cacheWhitelist.indexOf(cacheName) === -1) {
-              console.log('Deleting cache:', cacheName);
+              // console.log('Deleting cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
