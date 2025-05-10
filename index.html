@@ -7,13 +7,13 @@
     <meta name="author" content="Rajure Ajay Kumar">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajure Ajay Kumar - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" aria-label="Main Navigation">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" aria-label="Main Navigation" id="navbar">
         <div class="container">
  <a class="navbar-brand" href="#">Rajure Ajay Kumar</a>
  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,6 +33,7 @@
  <!-- Back-to-Top Button -->
  <back-to-top-button></back-to-top-button>
 
+ <main id="main-content">
  <!-- Main Sections -->
  <!-- This section contains the main content of the website, divided into different sections
       such as Hero, About Me, Skills, Experience, Education, Projects, and Contact. -->
@@ -44,451 +45,291 @@
          It includes a profile picture, name, title, and a brief description. -->
     <!-- Added a background image to make the section more visually appealing. -->
     <!-- Added a dark overlay to improve text readability on the background image. Removed background image. Added a gradient. -->
-    <header id="hero" class="hero-section text-center text-white d-flex align-items-center section-container">
-        <div class="overlay"></div> <!-- Dark overlay for text readability -->
-        <div class="container-section" data-aos="fade-up">
-            <img src="profile.webp" alt="Rajure Ajay Kumar's Profile Picture" class="rounded-circle mb-3 profile-image" data-aos="zoom-in">
-            <h1 class="main-title">Rajure Ajay Kumar</h1>
-            <h3>Marketing Science & Data Professional</h3>
-            <p>Building Automated Data Ecosystems for Strategic Marketing Insights</p>
-        </div> 
-        <button id="getDataBtn" class="btn btn-secondary position-absolute top-0 start-0 m-3">Get Data</button>
- <button id="darkModeToggle" class="btn btn-secondary position-absolute top-0 end-0 m-3">Toggle Dark Mode</button>
- </header>
+    <header id="hero" class="flex flex-col items-center justify-center min-h-screen text-center bg-gradient-to-br from-cyan-900 to-fuchsia-900 px-4 py-16">
+        <img src="profile.webp" alt="Rajure Ajay Kumar's Profile Picture" class="w-40 h-40 rounded-full border-4 border-cyan-400 shadow-lg mb-6">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-fuchsia-400 mb-2">Rajure Ajay Kumar</h1>
+        <h3 class="text-xl sm:text-2xl text-cyan-300 mb-4">Marketing Science & Data Professional</h3>
+        <p class="max-w-xl text-gray-200 mb-8">Building Automated Data Ecosystems for Strategic Marketing Insights</p>
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+            <button id="getDataBtn" class="px-6 py-2 rounded bg-cyan-500 text-white font-bold hover:bg-cyan-600 transition">Get Data</button>
+            <button id="darkModeToggle" class="px-6 py-2 rounded bg-fuchsia-500 text-white font-bold hover:bg-fuchsia-600 transition">Toggle Dark Mode</button>
+        </div>
+    </header>
 
     <!-- About me Section -->
  <hr class="section-divider"> <!-- Visual separation -->
- <section id="about-me" data-aos="fade-up" class="section-common-padding">
-        <div class="container-section" data-aos="fade-up">
-            <h2 class="text-center" id="about-me">About Me</h2>
-            <p>I am a highly motivated Marketing Science & Data professional with a passion for leveraging data to drive strategic marketing decisions. My expertise lies in building automated data ecosystems, executing machine learning proof-of-concepts, and implementing robust reporting solutions. With a strong foundation in data analysis, machine learning, and a wide array of technologies, I am dedicated to turning complex data into actionable insights.</p>
-        </div>
+ <section id="about-me" class="py-16 px-4 sm:px-8 lg:px-24 bg-gray-900">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400 text-center">About Me</h2>
+  <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
+    <p class="text-gray-700 text-lg leading-relaxed text-center">
+      I am a highly motivated Marketing Science & Data professional with a passion for leveraging data to drive strategic marketing decisions. My expertise lies in building automated data ecosystems, executing machine learning proof-of-concepts, and implementing robust reporting solutions. With a strong foundation in data analysis, machine learning, and a wide array of technologies, I am dedicated to turning complex data into actionable insights.
+    </p>
+  </div>
  </section>
 
     <!-- Skills Section -->
- <section id="skills" class="section-common-padding">
- <hr class="section-divider"> <!-- Visual separation -->
- <!-- This section lists the technical skills and technologies that Rajure Ajay Kumar is proficient in. -->
- <!-- It uses a list format to display the different skills. -->
-        <div class="container-section" data-aos="fade-up">
-            <h2 class="text-center">Skills</h2>
- <ul class="skills-list">
- <li>Datorama</li>
-                <li>Dataiku DSS</li>
-                <li>Tableau</li>
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>Google Ads</li>
-                <li>Meta</li>
-                <li>The Trade Desk</li>
-                <li>Double Verify</li>
-                <li>IAS</li>
-                <li>Pinterest</li>
-                <li>Bing Ads</li>
-                <li>Walmart</li>
-            </ul>
-        </div>
+ <section id="skills" class="py-16 px-4 sm:px-8 lg:px-24 bg-gradient-to-b from-gray-900 to-gray-950">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400 text-center">Skills</h2>
+  <ul class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Datorama</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Dataiku DSS</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Tableau</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Python</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">JavaScript</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Google Ads</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Meta</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">The Trade Desk</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Double Verify</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">IAS</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Pinterest</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Bing Ads</li>
+    <li class="bg-fuchsia-700 text-white px-5 py-2 rounded-full text-base font-semibold shadow">Walmart</li>
+  </ul>
  </section>
 
     <!-- Experience Section -->
- <section id="experience">
- <hr class="section-divider"> <!-- Visual separation -->
- <!-- This section details Rajure Ajay Kumar's professional experience,
-      using a timeline format to present each role and key responsibilities. -->
-        <div class="container-section" data-aos="fade-up">
- <!-- Section title -->
- <!-- This is the main title for the experience section. -->
-            <h2 class="text-center" id="experience">Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right">
-                    <h4>Senior Analyst, Omnicom Media Group India PVT Ltd</h4>
-                    <p>Hyderabad | Sep 2023 – Present</p>
-                    <div class="accordion" id="omnicomAccordion">
-                        <!-- Reporting Ecosystem -->
- <!-- Accordion item for the Reporting Ecosystem role. -->
- <!-- This section details the responsibilities and achievements related to the Reporting Ecosystem. -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                                    Reporting Ecosystem & Dashboards
-                                </button>
-                            </h2>
-                            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#omnicomAccordion">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>Architected and maintained enterprise-grade reporting ecosystems using Salesforce Datorama, supporting real-time insights for over 800 marketing campaigns.</li>
-                                        <li>Led the full implementation cycle of Datorama solutions — from initial data source mapping to final dashboard delivery — significantly reducing report turnaround time by 70%.</li>
-                                        <li>Designed dynamic dashboards for stakeholders across media planning, client services, and strategy teams, tailoring views to suit each department's KPIs.</li>
-                                    </ul>
-                                    <div class="progress mt-3" data-aos="fade-up">
-                                        <div class="progress-bar bg-success" style="width: 70%;" aria-label="Turnaround Time Reduction">70% Reduction</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Integration -->
- <!-- Accordion item for the Data Integration role. -->
- <!-- This section details the responsibilities and achievements related to the Data Integration. -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                    Data Integration & QA
-                                </button>
-                            </h2>
-                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#omnicomAccordion">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>Orchestrated tracking and development of incoming data streams, seamlessly integrating and quality-assuring (QA) data from diverse paid media platforms: The Trade Desk (TTD), Double Verify, and IAS.</li>
-                                        <li>Google Ads (CM360, DV360): Unified programmatic display and audio data, addressing gaps like incomplete Privacy Sandbox integration and no interactive audio ad support.</li>
-                                        <li>Programmatic (The Trade Desk - TTD): Captured real-time bidding insights for precise budget allocation.</li>
-                                        <li>Meta (Facebook, Instagram): Integrated social ad performance for cross-channel synergy.</li>
-                                        <li>Pinterest and Bing Ads: Expanded reach to niche audiences.</li>
-                                        <li>Walmart: Incorporated retail media data for targeted shopper campaigns.</li>
-                                        <li>Double Verify and Integral Ad Science (IAS): Ensured viewability and fraud protection, enhancing trust in media investments.</li>
-                                    </ul>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Data Standardization -->
- <!-- Accordion item for the Data Standardization role. -->
- <!-- This section details the responsibilities and achievements related to the Data Standardization. -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                    Data Standardization & Analysis
-                                </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#omnicomAccordion">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>Standardized data with Harmonization Center, building custom mapping logic to unify disparate campaign naming conventions, dimensions, and KPI structures across brands.</li>
-                                        <li>Created advanced calculated fields and enabling granular performance breakdowns by channel, geography, product line, and audience segments.</li>
-                                    </ul>
-                                   
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Training & Innovation -->
- <!-- Accordion item for the Training & Innovation role. -->
- <!-- This section details the responsibilities and achievements related to the Training & Innovation. -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
-                                    Training, Collaboration & Innovation
-                                </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#omnicomAccordion">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li>Trained and mentored junior analysts on best practices for Datorama configuration, data architecture planning, and KPI governance. Facilitated internal documentation sessions.</li>
-                                        <li>Partnered with global teams to scale reporting templates across multiple regions, ensuring global alignment while allowing for local customization.</li>
-                                        <li>Contributed to innovation projects involving custom scripts, webhook automations, and external API enrichment, pushing the boundaries of Datorama's native capabilities.</li>
-                                        <li>Continuously improved operational efficiency by conducting periodic audits of data pipelines, user roles, token health, and harmonization logic.</li>
-                                    </ul>
-                                    <div class="row mt-3" data-aos="fade-up">
-                                        <div class="col-md-4 text-center">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5>Analysts Trained</h5>
-                                                    <p class="counter" data-target="10">0</p>
-                                                    <custom-counter data-target="10"></custom-counter>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5>Regions Scaled</h5>
-                                                    <p class="counter" data-target="5">0</p>
-                                                    <custom-counter data-target="5"></custom-counter>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 text-center">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h5>Innovation Projects</h5>
-                                                    <p class="counter" data-target="3">0</p>
-                                                    <custom-counter data-target="3"></custom-counter>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Other Roles -->
- <!-- Timeline item for the Freelance Data Analyst role. -->
- <!-- This section details the responsibilities and achievements as a Freelance Data Analyst. -->
-                <div class="timeline-item" data-aos="fade-left">
-                    <h4>Freelance Data Analyst, Various Clients</h4>
-                    <p>Hyderabad | Oct 2022 – Jul 2023</p>
-                    <ul>
-                        <li>Installed and maintained standalone application of Dataiku DSS in VM, handling various admin responsibilities.</li>
-                        <li>Streamlined Tableau Dashboard refreshing process, reducing data analysis time by 50%.</li>
-                        <li>Executed multiple Machine Learning proof-of-concepts (POCs) resulting in improved business insights.</li>
-                        <li>Implemented machine learning models in production using Dataiku DSS.</li>
-                        <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
-                    </ul>
-                </div>
- <!-- Timeline item for the Software Engineer role. -->
- <!-- This section details the responsibilities and achievements as a Software Engineer. -->
-                <div class="timeline-item" data-aos="fade-right">
-                    <h4>Software Engineer, Technvision Ventures Limited</h4>
-                    <p>Hyderabad | Jun 2022 – Sep 2022</p>
-                    <ul>
-                        <li>Streamlined Tableau Dashboard refreshing process, reducing data analysis time by 50%.</li>
-                        <li>Executed multiple Machine Learning proof-of-concepts (POCs) resulting in improved business insights.</li>
-                        <li>Implemented machine learning models in production using Dataiku DSS.</li>
-                        <li>Collaborated cross-functionally to identify and translate business requirements into visually appealing Tableau Dashboards.</li>
-                        <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
-                    </ul>
- <!-- Timeline item for the Data Scientist role. -->
- <!-- This section details the responsibilities and achievements as a Data Scientist. -->
-                </div>
-                <div class="timeline-item" data-aos="fade-left">
-                    <h4>Data Scientist, Team Lease Pvt. Ltd. (Client: Novartis)</h4>
-                    <p>Hyderabad | May 2021 – May 2022</p>
-                    <ul>
-                        <li>Migrated Alteryx workflows to Dataiku DSS, improving workflow efficiency by 70%.</li>
-                        <li>Managed planning and development of metrics reports for three brands.</li>
-                        <li>Explored, developed, deployed, and evaluated customer-centric digital innovation solutions.</li>
-                        <li>Developed and deployed predictive models, resulting in a 20% increase in customer retention rates.</li>
-                        <li>Collaborated with data engineering teams to optimize data storage and retrieval processes.</li>
-                    </ul>
-                </div>
- <!-- Timeline item for the Data Analyst role. -->
- <!-- This section details the responsibilities and achievements as a Data Analyst. -->
-                <div class="timeline-item" data-aos="fade-right">
-                    <h4>Data Analyst, Spoors Technologies</h4>
-                    <p>Hyderabad | Sep 2018 – Mar 2021</p>
-                    <ul>
-                        <li>Created analytical reports using Alteryx DSS, improving data accuracy by 25%.</li>
-                        <li>Optimized data collection procedures, reducing report generation time by 20%.</li>
-                        <li>Evaluated Customer/products/forecast data for actionable insights.</li>
-                        <li>Collaborated with cross-functional teams to address business needs.</li>
-                        <li>Conducted in-depth data profiling and exploratory data analysis, enabling proactive decision-making.</li>
-                        <li>Created custom SQL queries and scripts to ensure data integrity and accuracy.</li>
-                        <li>Delivered customized reports and ad-hoc analyses, enhancing data-driven decision-making.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+ <section id="experience" class="py-16 px-4 sm:px-8 lg:px-24 bg-gray-900">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">Experience</h2>
+  <div class="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-fuchsia-500 font-bold text-xl">Senior Analyst, Omnicom Media Group India PVT Ltd</div>
+      <div class="text-gray-400 text-sm mb-2">Hyderabad | Sep 2023 – Present</div>
+      <ul class="list-disc text-gray-700 ml-6 space-y-1 text-base">
+        <li>Architected and maintained enterprise-grade reporting ecosystems using Salesforce Datorama, supporting real-time insights for over 800 marketing campaigns.</li>
+        <li>Led the full implementation cycle of Datorama solutions — from initial data source mapping to final dashboard delivery — significantly reducing report turnaround time by 70%.</li>
+        <li>Designed dynamic dashboards for stakeholders across media planning, client services, and strategy teams, tailoring views to suit each department's KPIs.</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-fuchsia-500 font-bold text-xl">Freelance Data Analyst, Various Clients</div>
+      <div class="text-gray-400 text-sm mb-2">Hyderabad | Oct 2022 – Jul 2023</div>
+      <ul class="list-disc text-gray-700 ml-6 space-y-1 text-base">
+        <li>Installed and maintained standalone application of Dataiku DSS in VM, handling various admin responsibilities.</li>
+        <li>Streamlined Tableau Dashboard refreshing process, reducing data analysis time by 50%.</li>
+        <li>Executed multiple Machine Learning proof-of-concepts (POCs) resulting in improved business insights.</li>
+        <li>Implemented machine learning models in production using Dataiku DSS.</li>
+        <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-fuchsia-500 font-bold text-xl">Software Engineer, Technvision Ventures Limited</div>
+      <div class="text-gray-400 text-sm mb-2">Hyderabad | Jun 2022 – Sep 2022</div>
+      <ul class="list-disc text-gray-700 ml-6 space-y-1 text-base">
+        <li>Streamlined Tableau Dashboard refreshing process, reducing data analysis time by 50%.</li>
+        <li>Executed multiple Machine Learning proof-of-concepts (POCs) resulting in improved business insights.</li>
+        <li>Implemented machine learning models in production using Dataiku DSS.</li>
+        <li>Collaborated cross-functionally to identify and translate business requirements into visually appealing Tableau Dashboards.</li>
+        <li>Conducted comprehensive data quality assessments and implemented cleansing techniques, improving accuracy and reliability of analysis.</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-fuchsia-500 font-bold text-xl">Data Scientist, Team Lease Pvt. Ltd. (Client: Novartis)</div>
+      <div class="text-gray-400 text-sm mb-2">Hyderabad | May 2021 – May 2022</div>
+      <ul class="list-disc text-gray-700 ml-6 space-y-1 text-base">
+        <li>Migrated Alteryx workflows to Dataiku DSS, improving workflow efficiency by 70%.</li>
+        <li>Managed planning and development of metrics reports for three brands.</li>
+        <li>Explored, developed, deployed, and evaluated customer-centric digital innovation solutions.</li>
+        <li>Developed and deployed predictive models, resulting in a 20% increase in customer retention rates.</li>
+        <li>Collaborated with data engineering teams to optimize data storage and retrieval processes.</li>
+      </ul>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-fuchsia-500 font-bold text-xl">Data Analyst, Spoors Technologies</div>
+      <div class="text-gray-400 text-sm mb-2">Hyderabad | Sep 2018 – Mar 2021</div>
+      <ul class="list-disc text-gray-700 ml-6 space-y-1 text-base">
+        <li>Created analytical reports using Alteryx DSS, improving data accuracy by 25%.</li>
+        <li>Optimized data collection procedures, reducing report generation time by 20%.</li>
+        <li>Evaluated Customer/products/forecast data for actionable insights.</li>
+        <li>Collaborated with cross-functional teams to address business needs.</li>
+        <li>Conducted in-depth data profiling and exploratory data analysis, enabling proactive decision-making.</li>
+        <li>Created custom SQL queries and scripts to ensure data integrity and accuracy.</li>
+        <li>Delivered customized reports and ad-hoc analyses, enhancing data-driven decision-making.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <!-- Achievements Section -->
- <section id="achievements">
- <hr class="section-divider"> <!-- Visual separation -->
- <!-- This section highlights key achievements and accomplishments in Rajure Ajay Kumar's career. -->
- <!-- It uses a list format to display the different achievements. -->
-        <div class="container-section" data-aos="fade-up">
-            <h2 class="text-center" id="achievements">Achievements</h2>
-            <ul>
-                <li>Architected a real-time reporting system for over 800 marketing campaigns using Datorama.</li>
-                <li>Reduced report turnaround time by 70%.</li>
-                <li>Migrated Alteryx workflows to Dataiku DSS, boosting workflow efficiency by 70%.</li>
-                <li>Executed Machine Learning proof-of-concepts, leading to enhanced business insights.</li>
-                <li>Deployed machine learning models in production using Dataiku DSS.</li>
-                <li>Conducted data quality assessments and implemented data cleansing techniques.</li>
-            </ul>
-        </div>
+ <section id="achievements" class="py-16 px-4 sm:px-8 lg:px-24 bg-gray-900">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">Achievements</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <h5 class="text-xl font-bold text-gray-900 mb-2">Real-Time Reporting System</h5>
+      <p class="text-gray-600 text-base leading-relaxed">Architected a real-time reporting system for over 800 marketing campaigns using Datorama.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <h5 class="text-xl font-bold text-gray-900 mb-2">Turnaround Time</h5>
+      <p class="text-gray-600 text-base leading-relaxed">Reduced report turnaround time by 70%.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <h5 class="text-xl font-bold text-gray-900 mb-2">Workflow Migration</h5>
+      <p class="text-gray-600 text-base leading-relaxed">Migrated Alteryx workflows to Dataiku DSS, boosting workflow efficiency by 70%.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <h5 class="text-xl font-bold text-gray-900 mb-2">Machine Learning POCs</h5>
+      <p class="text-gray-600 text-base leading-relaxed">Executed Machine Learning proof-of-concepts, leading to enhanced business insights.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <h5 class="text-xl font-bold text-gray-900 mb-2">ML Model Deployment</h5>
+      <p class="text-gray-600 text-base leading-relaxed">Deployed machine learning models in production using Dataiku DSS.</p>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <h5 class="text-xl font-bold text-gray-900 mb-2">Data Quality</h5>
+      <p class="text-gray-600 text-base leading-relaxed">Conducted data quality assessments and implemented data cleansing techniques.</p>
+    </div>
+  </div>
  </section>
 
     <!-- Projects Section -->
- <section id="projects" class="section-common-padding">
- <hr class="section-divider"> <!-- Visual separation -->
- <!-- This section showcases Rajure Ajay Kumar's projects,
-      with each project presented as a card containing a brief description and a "Details" button. -->
- <!-- A/B Test: Number and Content of Project Cards -->
-        <div class="container-section" data-aos="fade-up">
-            <h2 class="text-center" id="projects">Projects</h2>
-            <div class="row">
- <div class="col-md-4 project-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Datorama Reporting Ecosystem</h5>
-                            <p>Architected real-time reporting for 800+ campaigns, integrating multiple platforms.</p>
- <button id="datoramaBtn" class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                </div>
- <div class="col-md-4 project-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Dataiku ML Model Deployment</h5>
-                            <p>Implemented machine learning models in production for business insights.</p>
- <button id="dataikuMlBtn" class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                </div>
- <div class="col-md-4 project-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Tableau Dashboard Optimization</h5>
-                            <p>Streamlined dashboard refreshing, reducing analysis time by 50%.</p>
- <button id="tableauBtn" class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                </div>
- <div class="col-md-4 project-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Alteryx to Dataiku Migration</h5>
-                            <p>Migrated workflows, improving efficiency by 70%.</p>
-                            <button id="alteryxDataikuBtn" class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                </div>
- <div class="col-md-4 project-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Predictive Models for Retention</h5>
-                            <p>Deployed models increasing customer retention by 20%.</p>
- <button id="predictiveModelsBtn" class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                </div>
- <div class="col-md-4 project-card">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Data Pipeline for a Marketing Campaign</h5>
-                            <p>This project describes the workflow for handling data in a marketing campaign.</p>
- <button id="dataPipelineBtn" class="btn btn-primary">Details</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+ <section id="projects" class="py-16 px-4 sm:px-8 lg:px-24 bg-gradient-to-b from-gray-950 to-gray-900">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">Projects</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Project Card Example -->
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-start">
+      <h5 class="text-2xl font-bold text-gray-900 mb-2">Datorama Reporting Ecosystem</h5>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">Architected real-time reporting for 800+ campaigns, integrating multiple platforms.</p>
+      <button class="btn-primary mt-auto">Details</button>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-start">
+      <h5 class="text-2xl font-bold text-gray-900 mb-2">Dataiku ML Model Deployment</h5>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">Implemented machine learning models in production for business insights.</p>
+      <button class="btn-primary mt-auto">Details</button>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-start">
+      <h5 class="text-2xl font-bold text-gray-900 mb-2">Tableau Dashboard Optimization</h5>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">Streamlined dashboard refreshing, reducing analysis time by 50%.</p>
+      <button class="btn-primary mt-auto">Details</button>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-start">
+      <h5 class="text-2xl font-bold text-gray-900 mb-2">Alteryx to Dataiku Migration</h5>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">Migrated workflows, improving efficiency by 70%.</p>
+      <button class="btn-primary mt-auto">Details</button>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-start">
+      <h5 class="text-2xl font-bold text-gray-900 mb-2">Predictive Models for Retention</h5>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">Deployed models increasing customer retention by 20%.</p>
+      <button class="btn-primary mt-auto">Details</button>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-start">
+      <h5 class="text-2xl font-bold text-gray-900 mb-2">Data Pipeline for a Marketing Campaign</h5>
+      <p class="text-gray-600 text-base leading-relaxed mb-4">This project describes the workflow for handling data in a marketing campaign.</p>
+      <button class="btn-primary mt-auto">Details</button>
+    </div>
+  </div>
+  <!-- Example dashboard table below the cards -->
+  <div class="mt-12 overflow-x-auto">
+    <table class="min-w-full bg-white rounded-xl shadow-lg">
+      <thead>
+        <tr>
+          <th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider border-b">Project</th>
+          <th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider border-b">Status</th>
+          <th class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider border-b">Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 border-b">Datorama Reporting Ecosystem</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 border-b">Live</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 border-b">800+ Campaigns</td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 border-b">Dataiku ML Model Deployment</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 border-b">Live</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 border-b">Business Insights</td>
+        </tr>
+        <tr class="hover:bg-gray-50">
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 border-b">Tableau Dashboard Optimization</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600 border-b">Live</td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 border-b">-50% Analysis Time</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
     <!-- Education Section -->
- <section id="education" class="section-common-padding">
- <hr class="section-divider"> <!-- Visual separation -->
- <!-- This section outlines Rajure Ajay Kumar's educational background,
-      using a timeline format similar to the experience section. -->
-        <div class="container-section" data-aos="fade-up">
- <!-- Section title -->
- <!-- This is the main title for the education section. -->
- <h2 class="text-center" id="education">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-right">
-                    <h4>Bachelor of Technology, Information Technology</h4>
-                    <p>Guru Nanak Institute of Technology | 2018</p>
-                </div>
-                <div class="timeline-item" data-aos="fade-left">
-                    <h4>Intermediate (+12)</h4>
-                    <p>Sri Chaitanya Jr College | 2014</p>
-                </div>
-                <div class="timeline-item" data-aos="fade-right">
-                    <h4>High School</h4>
-                    <p>Loyola High School | 2012</p>
-                </div>
-            </div>
-        </div>
-    </section>
+ <section id="education" class="py-16 px-4 sm:px-8 lg:px-24 bg-gradient-to-b from-gray-900 to-gray-950">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">Education</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-cyan-500 font-bold text-xl">Bachelor of Technology, Information Technology</div>
+      <div class="text-gray-400 text-sm mb-2">Guru Nanak Institute of Technology | 2018</div>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-cyan-500 font-bold text-xl">Intermediate (+12)</div>
+      <div class="text-gray-400 text-sm mb-2">Sri Chaitanya Jr College | 2014</div>
+    </div>
+    <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col">
+      <div class="mb-2 text-cyan-500 font-bold text-xl">High School</div>
+      <div class="text-gray-400 text-sm mb-2">Loyola High School | 2012</div>
+    </div>
+  </div>
+</section>
 
     <!-- Contact Section -->
- <section id="contact">
- <hr class="section-divider"> <!-- Visual separation -->
- <!-- This section provides contact information and a contact form for users to get in touch. -->
- <!-- It includes email, phone number, and a link to download the resume. -->
- <!-- A/B Test: Contact Form Layout and Inputs -->
-        <div class="container-section" data-aos="fade-up">
-            <!-- Contact Section Title -->
-            <h2 class="text-center" id="contact">Contact Me</h2>
-            <form id="contact-form" action="https://formspree.io/f/myzwjbgd" method="POST">
-                <!-- Name Input Field -->
-                <div class="mb-3">
-                    <input type="text" class="form-control" name="name" placeholder="Name" required>
-                </div>
-                <!-- Email Input Field -->
-                <div class="mb-3">
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
-                </div>
-                <!-- Message Textarea -->
-                <div class="mb-3">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                </div>
-                <!-- Feedback Input Field -->
- <div class="mb-3">
- <label for="feedback" class="form-label">Feedback</label>
- <input type="text" class="form-control" id="feedback" name="feedback" placeholder="Your feedback">
-                </div>
-                <!-- AI Feedback Suggestion Web Component -->
- <!-- AI Description Suggestion Web Component -->
- <!-- This web component will display AI description suggestions based on user input. -->
- <!-- <ai-description></ai-description> -->
-
- <!-- AI Feedback Suggestion Web Component -->
- <!-- This web component will display AI feedback suggestions based on user input. -->
-                <!-- <ai-feedback></ai-feedback> -->
-
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-            <p class="text-center mt-3">
-                Email: <a href="mailto:rajaykumar5555@gmail.com">rajaykumar5555@gmail.com</a> | 
-                Phone: +917416001503 | 
-                <a href="https://drive.google.com/file/d/1ct4achD2SaGLsqxVJOCmA-ZOA-60wH9x/view?usp=sharing" download>Download Resume</a>
-            </p>
-        </div>
-    </section>
+ <section id="contact" class="py-16 px-4 sm:px-8 lg:px-24 bg-gradient-to-b from-gray-900 to-gray-950">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">Contact Me</h2>
+  <form id="contact-form" action="https://formspree.io/f/myzwjbgd" method="POST" class="max-w-lg mx-auto bg-gray-800 p-8 rounded-xl shadow-lg space-y-6">
+    <div>
+      <label for="contact-name" class="block text-gray-200 mb-1">Name</label>
+      <input id="contact-name" name="name" type="text" class="w-full rounded border border-cyan-400 bg-gray-900 text-white p-3 focus:ring-2 focus:ring-fuchsia-400" required>
+    </div>
+    <div>
+      <label for="contact-email" class="block text-gray-200 mb-1">Email</label>
+      <input id="contact-email" name="email" type="email" class="w-full rounded border border-cyan-400 bg-gray-900 text-white p-3 focus:ring-2 focus:ring-fuchsia-400" required>
+    </div>
+    <div>
+      <label for="contact-message" class="block text-gray-200 mb-1">Message</label>
+      <textarea id="contact-message" name="message" rows="5" class="w-full rounded border border-cyan-400 bg-gray-900 text-white p-3 focus:ring-2 focus:ring-fuchsia-400" required></textarea>
+    </div>
+    <div>
+      <label for="feedback" class="block text-gray-200 mb-1">Feedback</label>
+      <input id="feedback" name="feedback" type="text" class="w-full rounded border border-cyan-400 bg-gray-900 text-white p-3 focus:ring-2 focus:ring-fuchsia-400">
+    </div>
+    <button type="submit" class="w-full py-3 rounded bg-fuchsia-500 text-white font-bold hover:bg-fuchsia-600 transition">Send</button>
+  </form>
+  <div class="text-center mt-8 text-gray-300 space-y-2">
+    <div>Email: <a href="mailto:rajaykumar5555@gmail.com" class="text-cyan-400 hover:underline">rajaykumar5555@gmail.com</a></div>
+    <div>Phone: <span class="text-cyan-400">+917416001503</span></div>
+    <div><a href="https://drive.google.com/file/d/1ct4achD2SaGLsqxVJOCmA-ZOA-60wH9x/view?usp=sharing" download class="text-fuchsia-400 hover:underline">Download Resume</a></div>
+  </div>
+</section>
 
     <!-- SAAS Section -->
- <!-- This section explains the Software as a Service (SAAS) nature of the services offered.
-         It highlights the benefits of the SAAS model using a card-based layout with icons.
-         Added visual separation between sections.
-         Ensured consistent card design with other sections.
-         Aligned text and increased title font size for better readability. -->
-    <section id="SAAS" class="section-common-padding">
- <hr class="section-divider"> <!-- Visual separation -->
- <!-- This section explains the SAAS nature of the services offered. -->
- <div class="container-section" data-aos="fade-up">
- <!-- Section title -->
-            <h2 class="text-center" id="SAAS">SAAS Service</h2>
-            <div class="card">
-                <div class="card-body">
-                    <!-- Description of the SAAS service -->
-                    <p class="text-center section-description">Leveraging the power of Software as a Service (SAAS) for accessible and efficient solutions, focusing on your benefits:</p>
-                    <div class="row mt-4">
-                        <!-- SAAS Feature: Cost-Effective -->
-                        <div class="col-md-4 text-center">
-                            <i class="fas fa-dollar-sign feature-icon"></i>
-                            <h5 class="feature-title">Cost-Effective</h5>
-                            <p class="feature-description">No large upfront investments, pay as you scale.</p>
-                        </div>
-                        <!-- SAAS Feature: Scalable -->
-                        <div class="col-md-4 text-center">
-                            <i class="fas fa-chart-line feature-icon"></i>
-                            <h5 class="feature-title">Scalable</h5>
-                            <p class="feature-description">Easily adjust resources based on your business growth.</p>
-                        </div>
-                        <!-- SAAS Feature: Customizable -->
-                        <div class="col-md-4 text-center">
-                            <i class="fas fa-cogs feature-icon"></i>
-                            <h5 class="feature-title">Tailored Solutions</h5>
-                            <p class="feature-description">Services customized to meet your unique needs.</p>
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <!-- SAAS Feature: Automated Updates -->
-                        <div class="col-md-6 text-center">
-                            <i class="fas fa-sync-alt feature-icon"></i>
-                            <h5 class="feature-title">Hassle-Free Maintenance</h5>
-                            <p class="feature-description">Automatic updates and maintenance handled for you.</p>
-                        </div>
-                        <!-- SAAS Feature: Easy Access -->
-                        <div class="col-md-6 text-center">
-                            <i class="fas fa-globe feature-icon"></i>
-                            <h5 class="feature-title">Access Anywhere</h5>
-                            <p class="feature-description">Securely access services from any location with internet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="SAAS" class="py-16 px-4 sm:px-8 lg:px-24 bg-gray-900">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">SAAS Service</h2>
+      <div class="max-w-5xl mx-auto">
+        <p class="text-center text-gray-200 mb-10 text-lg">Leveraging the power of Software as a Service (SAAS) for accessible and efficient solutions, focusing on your benefits:</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <i class="fas fa-dollar-sign text-3xl text-cyan-400 mb-4"></i>
+            <h5 class="text-2xl font-bold text-gray-900 mb-2">Cost-Effective</h5>
+            <p class="text-gray-600 text-base leading-relaxed text-center">No large upfront investments, pay as you scale.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <i class="fas fa-chart-line text-3xl text-cyan-400 mb-4"></i>
+            <h5 class="text-2xl font-bold text-gray-900 mb-2">Scalable</h5>
+            <p class="text-gray-600 text-base leading-relaxed text-center">Easily adjust resources based on your business growth.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <i class="fas fa-cogs text-3xl text-cyan-400 mb-4"></i>
+            <h5 class="text-2xl font-bold text-gray-900 mb-2">Tailored Solutions</h5>
+            <p class="text-gray-600 text-base leading-relaxed text-center">Services customized to meet your unique needs.</p>
+          </div>
         </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <i class="fas fa-sync-alt text-3xl text-cyan-400 mb-4"></i>
+            <h5 class="text-2xl font-bold text-gray-900 mb-2">Hassle-Free Maintenance</h5>
+            <p class="text-gray-600 text-base leading-relaxed text-center">Automatic updates and maintenance handled for you.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center">
+            <i class="fas fa-globe text-3xl text-cyan-400 mb-4"></i>
+            <h5 class="text-2xl font-bold text-gray-900 mb-2">Access Anywhere</h5>
+            <p class="text-gray-600 text-base leading-relaxed text-center">Securely access services from any location with internet.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Font Awesome for icons -->
@@ -524,6 +365,15 @@
     </footer>
 
     <custom-modal id="projectDetailModal"></custom-modal>
+
+ </main>
+
+<!-- Reusable button style -->
+<style>
+.btn-primary {
+  @apply px-6 py-2 rounded bg-fuchsia-500 text-white font-bold hover:bg-fuchsia-600 transition shadow focus:outline-none focus:ring-2 focus:ring-fuchsia-400;
+}
+</style>
 
 </body>
 </html>
